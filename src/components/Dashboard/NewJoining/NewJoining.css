@@ -1,0 +1,89 @@
+
+
+.new-joining-container {
+    background-color: #ffffff;
+    width: 100%; /* Adjust width as needed */
+    border: 1px solid #ccc;
+    padding: 20px; /* Reduced padding to give more space for content */
+    height: 330px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    margin-right: 2%; /* Space if it's next to another container */
+    position: relative; /* To help position elements if needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  
+  .new-joining-container h3 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    margin: 0;
+    position: absolute;
+    top: 10px; /* Adjusts the top position */
+    left: 20px; 
+  }
+  
+  .divider-line {
+    margin-top: 30px; /* Position the line just under the heading */
+    border-bottom: 1px solid #070000; /* Line thickness and color */
+    width: 100%; /* Span the full width of the container */
+  }
+  
+ 
+.new-joining-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .welcome-text h2{
+    font-size: 18px;
+    font-weight: 600;
+    color: red;
+    margin-bottom: 10 px;
+    text-align: center;
+  }
+  
+  .profile-image {
+    width: 130px; /* Adjust the width */
+    height: 130px; /* Adjust the height */
+    border-radius: 8px; /* Rounded corners */
+    margin-right: 15px;
+  }
+  
+  .profile-details {
+    text-align: center; /* Centers the text */
+  }
+  
+  .profile-details strong {
+    font-size: 20px; /* Name font size */
+    display: block;
+    margin-bottom: -10px;
+  }
+  
+  .profile-details small {
+    font-size: 15px;
+    color: #0e0101;
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 10px;
+  }
+  
+  .date-location {
+    font-size: 20px;
+    color: #555;
+    align-items: center;
+  }
+  
+  .date-location p {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    
+  }

@@ -1,0 +1,104 @@
+.payroll-form-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    /* border: 1px solid #ddd; */
+    /* border-radius: 10px; */
+    background-color: #fafafa;
+    /* box-shadow: 0 0 12px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .payroll-heading {
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .payroll-investment-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .payroll-form-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+  
+  .payroll-form-item {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .payroll-form-item:last-child {
+    margin-right: 0;
+  }
+  
+  .payroll-label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .payroll-input, .payroll-select {
+    width: 85%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  .payroll-input[readonly] {
+    background-color: #f4f4f4;
+  }
+  
+  /* .payroll-pan-input {
+    border: 1px solid #e74c3c;
+  } */
+  
+  .payroll-declaration {
+    margin-top: 25px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .payroll-declaration a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  .payroll-declaration b {
+    color: #3498db;
+  }
+  
+  .payroll-save-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+  }
+  
+  .payroll-btn {
+    padding: 12px 25px;
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .payroll-btn:hover {
+    background-color: #27ae60;
+  }
+  .toggle-button-Payrollinformation {
+    background-color: #ffffff;
+    color: #007bff;
+    padding: 7px 8px;
+    border: 2px solid #abcaea;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+.payrollinformation-btn-holder{
+  border-bottom: 1px solid #DDDDDD;
+}

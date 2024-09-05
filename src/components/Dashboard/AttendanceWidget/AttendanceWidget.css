@@ -1,0 +1,103 @@
+.attendance-widget-container {
+
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 40px;
+}
+
+.attendance-widget {
+    background-color: #ffffff;
+    padding: 10px;
+    width: 310px;
+    height: 95px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px auto 10px 0; /* Adjust margin to push it to the left */
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+  }
+  
+.attendance-widget-content{
+    display: flex;
+    align-items: center;
+}  
+
+.attendance-image {
+    background-color: #ffffff;
+    width: 100px !important;
+    height: 100px !important;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    left: 0px;
+    top: 50%;
+    justify-content: center;
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+  
+.attendance-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+.attendance-title {
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    padding-right: 40px;
+    color: #000000;
+    margin: 0;
+  }
+  
+.attendance-box {
+    background-color: #f48aa8;
+    border: 1px solid #ddd;
+    padding: 0px;
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+.attendance-date {
+    display: block;
+    font-weight: bold;
+  }
+  
+.attendance-clock {
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 0px;
+  }
+  
+.attendance-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+.check-in-box {
+    background-color: #09ed37a7;
+    border: none;
+    padding: 0px 15px;
+    border-radius: 4px;
+  }
+  
+.clock-out-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+.clock-out-button:hover {
+    background-color: #d32f2f;
+  }
+  

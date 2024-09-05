@@ -1,0 +1,49 @@
+.celebration-container {
+    background-color: #ffffff;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    height: 330px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    position: relative;
+    max-width: 50%;
+    flex: 1;
+}
+
+.celebration-container h3 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.divider-line {
+    margin-top: 30px;
+    border-bottom: 1px solid #070000;
+    width: 100%;
+}
+
+.celebration-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .no-data {
+    font-size: 25px;
+    text-align: center;
+    color: #6eaedf;
+    margin-top: 0px;
+  }
+  
+  .no-data-image {
+    width: 300px;
+    height: 230px;
+    margin-bottom: 10px;
+  }

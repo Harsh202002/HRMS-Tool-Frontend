@@ -1,0 +1,93 @@
+
+
+/* Individual Widget Container */
+.shift-widget-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 40px;
+  }
+  
+  .shift-widget {
+      background-color: #ffffff;
+      padding: 10px;
+      width: 310px;
+      height: 95px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 10px auto 10px 0; /* Adjust margin to push it to the left */
+      display: flex;
+      position: relative;
+      align-items: flex-start;
+  
+    }
+    
+    .shift-widget-content{
+      display: flex;
+      align-items: center;
+  
+    }
+  
+    .shift-widget-image {
+      background-color: #ffffff;
+      width: 100px !important;
+      height: 100px !important;
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+      left: 0px;
+      top: 50%;
+      justify-content: center;
+      margin-right: 15px;
+      margin-bottom: 15px;
+    }
+    
+    .shift-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: calc(80% - 110px);
+      align-items: center;
+    }
+    
+    .shift-info h3 {
+      font-family: "Open Sans", sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      padding-right: 40px;
+      color: #000000;
+      margin: 0;
+    }
+    
+    .shift-time {
+      display: flex;
+      align-items: center;
+      background-color: #e3f2fd;
+      border-radius: 5px;
+      padding: 5px 10px;
+      margin-top: 5px;
+      font-size: 14px;
+      color: #007bff;
+      width: 100%;
+      justify-content: space-between;
+    }
+    
+    .clock-icon {
+      margin-right: 5px;
+    }
+    
+    .shift-type {
+      background-color: #ef4f0b;
+      border-radius: 5px;
+      padding: 3px 5px;
+      margin-top: 5px;
+      font-size: 15px;
+      color: #f9f7f6;
+      text-align: center;
+      align-self: flex-start;
+      width: fit-content;
+      text-align: right;
+      
+    }
+    
+    

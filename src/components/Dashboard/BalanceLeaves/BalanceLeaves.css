@@ -1,0 +1,73 @@
+/* BalanceLeaves.css */
+.leaves-container {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    height: 330px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    position: relative;
+    max-width: 30%;
+    flex: 1;
+    }
+    
+    .leaves-container .header h3{
+        font-family: "Open Sans", sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        color: #000000;
+        margin: 0;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+    }
+
+    .divider {
+        margin-top: 0px; 
+        border-bottom: 1px solid #070000; 
+        width: 100%; 
+      }
+    
+  
+  .leaves-list {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+  }
+  
+  .leave-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+  }
+  
+  .leave-type {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .leave-type.el {
+    background-color: #ffc107;
+    color: white;
+  }
+  
+  .leave-type.marriage {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .leave-type.sl {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .leave-days {
+    font-size: 1.2em;
+  }
+  

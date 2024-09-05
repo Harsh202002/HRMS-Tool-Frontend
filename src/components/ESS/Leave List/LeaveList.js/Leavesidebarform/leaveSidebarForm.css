@@ -1,0 +1,142 @@
+/* SidebarForm.css */
+
+.leave-r-sidebar-form {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1000;
+    overflow-y: auto;
+    
+
+  }
+  
+  .leave-close-sidebar-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .leave-r-sidebar-form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .leave-rsidebar-form-group {
+    width: 45%;
+    margin: 10px;
+    display: flex;
+    flex: 1 1 45%;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  .rsidebar-form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .leave-rsidebar-form-group input,
+  .leave-rsidebar-form-group select,
+  .leave-rsidebar-form-group textarea {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border-left: 2px solid red;
+    border-radius: 4px;
+  }
+  
+  .leave-rsidebar-form-group select {
+    width: 100%;
+  }
+  
+  .leave-rsidebar-add-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px;
+  }
+  
+  .leave-rsidebar-add-button:hover {
+    background-color: #218838;
+  }
+  
+  .leave-rsidebar-form-group small {
+    display: block;
+    color: #888;
+    margin-top: 5px;
+  }
+  
+  .leave-rsidebar-form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .leave-rsidebar-save-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 10px;
+  }
+  
+  .leave-rsidebar-save-new-button {
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 10px;
+  }
+  
+  .leave-rsidebar-reset-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 10px;
+  }
+  
+  .leave-rsidebar-save-button:hover,
+  .leave-rsidebar-save-new-button:hover,
+  .leave-rsidebar-reset-button:hover {
+    opacity: 0.8;
+  }
+  .leave-rsidebar-form{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .leaveform-list-table {
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+  }
+  
+  .leaveform-list-table th,
+  .leaveform-list-table td {
+    padding: 10px;
+    /* text-align: left; */
+    border-bottom: 1px solid #ddd;
+  }
+  .leaveform-list-table-container{
+    background-color: white;
+    height: auto;
+    margin-bottom: 30px;
+    /* padding-top: 20px; */
+  }
+  

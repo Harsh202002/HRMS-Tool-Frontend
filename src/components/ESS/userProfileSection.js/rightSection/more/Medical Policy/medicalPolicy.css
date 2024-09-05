@@ -1,0 +1,22 @@
+.Medicalpolicy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .Medicalpolicy-table th, .Medicalpolicy-table td {
+    padding: 10px;
+     text-align: left;  
+    border-bottom: 1px solid #ddd;
+  }
+  .toggle-button-Medicalpolicy{
+    background-color: #ffffff;
+    color: #007bff;
+    padding: 7px 8px;
+    border: 2px solid #abcaea;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .medicalpolicy-btn-holder{
+    border-bottom: 1px solid #DDDDDD;
+  }

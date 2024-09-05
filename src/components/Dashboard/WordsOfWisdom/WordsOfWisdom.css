@@ -1,0 +1,43 @@
+/* WordsOfWisdom.css */
+.wisdom-container {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    height: 330px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    position: relative;
+    max-width: 30%;
+    flex: 1;
+  }
+
+  .wisdom-container .header h3 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+  }
+
+  .divider {
+    margin-top: 0px; 
+    border-bottom: 1px solid #070000; 
+    width: 100%; 
+  }
+  
+  .no-data {
+    text-align: center;
+  }
+  
+  .no-data img {
+    width: 300px;
+    height: 230px;
+    margin-bottom: 10px;
+  }
+  

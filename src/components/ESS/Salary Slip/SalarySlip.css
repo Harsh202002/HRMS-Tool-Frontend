@@ -1,0 +1,139 @@
+.salary-slip-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .back-button {
+    cursor: pointer;
+    height: 30px;
+  }
+  
+  .salary-slip-header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    margin-right: 1100px;
+  }
+  
+  .filter-icon {
+    cursor: pointer;
+    height: 30px;
+    margin-left: 0px;
+  }
+  
+  .basic-search-container {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px; 
+    transition: all 0.3s ease-in-out; /* Smooth transition when the container appears */
+  }
+  
+  .basic-search-container h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  .salary-slip-divider {
+    width: 10%;
+    height: 2px;
+    background-color: #007bff;
+    margin-bottom: 15px;
+  }
+  
+  .salary-slip-search-fields {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+  }
+  
+  .salary-slip-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 300px; 
+  }
+  
+  .salary-slip-field label {
+    margin-bottom: 10px;
+  }
+  
+  .salary-slip-field select {
+    height: 50px; 
+    padding: 10px; 
+    font-size: 18px; 
+    border-radius: 4px;
+    border: 1px solid #cccccc;
+
+  }
+  
+  .salary-slip-search-buttons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .salary-slip-search-button,
+  .salary-slip-reset-button {
+    padding: 12px 10px; 
+    font-size: 20px;
+    cursor: pointer;
+    width: 120px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 20px;
+  }
+  
+  .salary-slip-search-button {
+    background-color: #28a745;
+    color: #ffffff;
+  }
+  
+  .salary-slip-reset-button {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid black;
+  }
+  
+  .salary-slip-details-container {
+    background-color: #ffffff;
+    width: 1300px;
+    height: 300px;
+    padding: 15px;
+    border-radius: 8px;
+    transition: margin-top 0.3s ease-in-out; /* Smooth transition to push down the container */
+    margin-top: 10;
+  }
+  
+  .salary-slip-details-container h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .salary-slip-details-container h3 span {
+    font-size: 20px; 
+    background-color: #e0f7fa;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+  
+  .details-content {
+    font-size: 20px;
+    color: #333333;
+  }
+  
+  .details-content .salary-slip-no-records {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+ 

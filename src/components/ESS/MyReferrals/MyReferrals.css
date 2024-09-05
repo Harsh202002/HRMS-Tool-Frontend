@@ -1,0 +1,100 @@
+.referral-list-container {
+    padding: 10px 20px;
+    background-color: #e7f1ff; /* Light blue background */
+    height: 100vh;
+  }
+  
+  .referral-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #e7f1ff; /* Light blue background */
+    border-radius: 8px; /* Rounded corners */
+  }
+  
+  .back-button,
+  .filter-button {
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border: none;
+    font-size: 1rem;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .referral-list-header h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 4px;
+    margin-left: 10px;
+  }
+  
+  .referral-list-tabs {
+    border-bottom: 1px solid #DDDDDD;
+    background-color: white;
+    /* padding-bottom: 30px; */
+    display: flex;
+    margin-top: 10px;
+    border-radius: 13px 13px 0px 0px;
+  }
+  
+  .referral-list-table {
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+  }
+  
+  .referral-list-table th,
+  .referral-list-table td {
+    padding: 10px;
+    /* text-align: left; */
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .no-records {
+    text-align: center;
+    color: #a9a9a9;
+  }
+  
+  .referral-list-table button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  .referral-list-table button:hover {
+    background-color: #155ab6;
+  }
+  .referral-list-heading{
+    display: flex;
+  }
+  .referral-list-table-container{
+    background-color: white;
+    height: 70vh;
+    border-radius: 10px 10px 0px 0px;
+    /* padding-top: 20px; */
+  }
+  /* .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    font-size: 1rem;
+  }
+  
+  .tab.active {
+    border-color: #1a73e8; /* Blue underline for the active tab */
+      tr{
+        text-align: center;
+      }

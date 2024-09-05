@@ -1,0 +1,47 @@
+.tds-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 1340px; /* Ensure full width of the parent container */
+    margin-bottom: 20px; /* Space between components */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Include padding and border in width */
+}
+
+.tds-header {
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.tds-header h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+    text-align: left;
+}
+
+.tds-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    table-layout: fixed; /* Prevent columns from shrinking too much */
+}
+
+.tds-table td {
+    padding: 10px 5px;
+    font-size: 18px;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+}
+
+.tds-table tr:hover td {
+    background-color: #e6f7ff; 
+    color: #004085; 
+}
+
+.tds-table td:nth-child(even) {
+    text-align: right;
+    font-weight: bold;
+}

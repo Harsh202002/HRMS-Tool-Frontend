@@ -1,0 +1,39 @@
+
+.policies-container {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    height: 330px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    position: relative;
+    max-width: 46%;
+    flex: 1;
+  }
+
+  .policies-container .header h3 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+  }
+
+  .divider-2 {
+    margin-top: 0px; 
+    border-bottom: 1px solid #070000; 
+    width: 100%; 
+  }
+  
+  .no-data {
+    position: relative;
+  }
+  
+  
+  

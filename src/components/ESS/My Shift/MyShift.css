@@ -1,0 +1,113 @@
+.rmyshiftlist-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #e7f1ff; /* Light blue background */
+    border-radius: 8px 8px 0px 0px; /* Rounded corners */
+  }
+  .rmyshiftlist-header h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 4px;
+    margin-left: 10px;
+  }
+  .rmyshiftlist-heading{
+    display: flex;
+  }
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid #ddd;
+    
+  }
+  
+  .calendar-dropdowns {
+    display: flex;
+    justify-content: flex-start;
+    padding: 16px;
+    gap: 8px;
+  }
+  
+  .calendar-dropdowns select {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .calendar-days {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f4f4f4;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .calendar-row {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .calendar-col {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .calendar-cell {
+    padding: 16px 0;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+  }
+  
+  .calendar-cell:hover {
+    background-color: #eaeaea;
+  }
+  
+  .calendar-selected {
+    background-color: #ffeb3b;
+  }
+  
+  .calendar-disabled {
+    background-color: #f4f4f4;
+    color: #ddd;
+  }
+  
+  .calendar-event {
+    background-color: #dff0d8;
+    border-radius: 4px;
+    padding: 4px;
+    margin-top: 4px;
+    font-size: 12px;
+  }
+  
+  .calendar-number {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .calendar-icon {
+    cursor: pointer;
+  }
+  
+  .calendar-col-end {
+    text-align: right;
+  }
+  
+  .calendar-col-start {
+    text-align: left;
+  }
+  

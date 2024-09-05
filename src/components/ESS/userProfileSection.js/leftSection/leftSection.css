@@ -1,0 +1,135 @@
+.left-section {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+  }
+  
+  .left-panel-h,
+  .left-panel,
+  .left-panel-l
+  {
+    background-color: #fff;
+    border-right: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+  }
+  
+  .left-panel-h{
+    margin-bottom: 20px;
+    /* border-radius: 12px; */
+  }
+  .left-panel-l{
+    margin-top: 20px;
+  
+  }
+  
+  .profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-pic {
+    width: 140px;
+    height: 140px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.15)0px 5px 10px 0px;
+    border: 2px solid #ffffff;
+  }
+  
+  .profile-completeness {
+    margin-top: 10px;
+  }
+  
+  .progress-bar {
+    width: 80%;
+    background-color: #e0e0e0;
+    margin: 0 auto;
+  }
+  
+  .progress {
+    height: 3px;
+    background-color: #4caf50;
+  }
+  
+  .info-section {
+    margin-top: 20px;
+  }
+  
+  .info-box {
+    padding: 10px 0;
+    /* border-top: 1px solid #ccc; */
+  }
+  
+  .info-box:first-of-its-kind {
+    border-top: none;
+  }
+  
+  .info-box p {
+    margin: 5px 0;
+  }
+  
+  .info-box .title {
+    font-weight: bold;
+  }
+  
+  .info-box .subtitle {
+    font-size: 0.9em;
+    color: #666;
+  }
+  
+  .info-box .contact {
+    color: #333;
+    font-size: 0.95em;
+  }
+
+  .profile-completeness-icon{
+    background-color: #22C55E;
+    height: 20px;
+    width: 20px;
+    color: #ffffff;
+    margin: 2px 0 1px 0;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 10px;
+    line-height:20px;
+    text-align: center;
+    outline: rgb(255, 255, 255) 0px;
+    text-decoration: none rgb(255, 255, 255);
+    margin-right: 5px;
+    margin-bottom: 6px;
+    }
+
+    .progress-number{
+        font-weight: 600;
+          background: #e5f6ff;
+          color: #02aaff;
+          padding: 2px 5px;
+          border-radius: 6px;
+          font-size: 13px;
+      }
+
+      .side-icon{
+        display: inline-block;
+        margin: 2px 2px 1px 2px;
+        width: 30px;
+        line-height: 30px;
+        border-radius: 6px;
+        text-align: center;
+        font-size: 14px;
+        color: #00A9FF;
+        background: rgba(0, 169, 255, 0.1);
+      }
+
+      .left-img-icon{
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        box-shadow: rgba(0,0,0,0.15)0px 5px 10px 0px;
+        border: 2px solid #ffffff;
+      }
+

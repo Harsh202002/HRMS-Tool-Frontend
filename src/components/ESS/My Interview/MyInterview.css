@@ -1,0 +1,156 @@
+.myInterview-container {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .myInterview-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .myInterview-back-button, .myInterview-filter-icon {
+    cursor: pointer;
+    height: 20px;
+  }
+  
+  .myInterview-header-title {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 20px;
+    margin-left: 10px;
+    font-weight: bold;
+  }
+  
+  .myInterview-filter-section {
+    margin-top: 10px;
+    padding: 10px;
+    height: 160px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .myInterview-basic-search {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+  
+  .myInterview-basic-search span {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px; 
+  }
+  
+  .myInterview-divider{
+    width: 10%;
+    height: 2px;
+    background-color: #007bff;
+    margin-bottom: 15px;
+  }
+  
+  .myInterview-basic-search input {
+    width: 40%; 
+    height: 30px;
+    padding: 6px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #cccccc;
+    margin-bottom: 20px; 
+  }
+  
+  .myInterview-button-group {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  
+  .myInterview-search-button, .myInterview-reset-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 120px;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .myInterview-search-button {
+    background-color: #28a745;
+    color: #ffffff;
+  }
+  
+  .myInterview-reset-button {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid black;
+  }
+  
+  .myInterview-tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .myInterview-tabs button {
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #1a73e8;
+    flex-grow: 1;
+  }
+  
+  .myInterview-tabs button:hover,
+  .myInterview-tabs button:focus,
+  .myInterview-tabs button.active {
+    background-color: #e8f0fe;
+    font-weight: bold;
+    border-bottom: 2px solid #1a73e8;
+  }
+  
+  .myInterview-table-container {
+    margin-top: 10px;
+    overflow-x: auto;
+  }
+  
+  .myInterview-table-container table {
+    width: 1300px; 
+    border-collapse: collapse;
+    height: 400px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .myInterview-table-container table th,
+  table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .myInterview-table-container table th {
+    background-color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .myInterview-table-container table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .myInterview-table-container table td {
+    white-space: nowrap;
+  }
+  
+  .myInterview-table-container table .no-records {
+    text-align: center;
+  }

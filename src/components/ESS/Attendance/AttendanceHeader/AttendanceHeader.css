@@ -1,0 +1,127 @@
+.attendance-header-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   
+  }
+  
+  .attendance-header {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #E5F6FF;
+      position: sticky;
+      top: 0;
+     
+     
+      
+    }
+    
+    .header-with-arrow {
+      display: flex;
+      align-items: center;
+      margin-right: 10px; 
+    }
+    
+    .back-arrow {
+      font-size: 30px; 
+      margin-right: 20px;
+      cursor: pointer;
+    }
+    
+    .attendance-statuses {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+    }
+    
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+    
+    .legend-item .status-box {
+      padding: 5px 8px;
+      border-radius: 5px;
+      color: white; 
+      margin-right: 3px; /* Spacing between box and text */
+    }
+    
+    .legend-item.hh .status-box { background-color: #6c757d; } 
+    .legend-item.w .status-box { background-color: #17a2b8; } 
+    .legend-item.p .status-box { background-color: #28a745; } 
+    .legend-item.cm .status-box { background-color: #ffc107; } 
+    .legend-item.a .status-box { background-color: #dc3545; } 
+    .legend-item.l .status-box { background-color: #007bff; } 
+    .legend-item.hlf .status-box { background-color: #6f42c1; } 
+    .legend-item.od .status-box { background-color: #fd7e14; } 
+    .legend-item.srt .status-box { background-color: #343a40; } 
+    .legend-item.mis .status-box { background-color: #adb5bd; } 
+  
+    
+    
+    .filter-icon img {
+      cursor: pointer;
+      width: 35px;
+      height: 35px;
+      transition: filter 0.3s ease;
+    }
+    
+    .filter-icon:hover img {
+      filter: brightness(0) saturate(100%) invert(34%) sepia(100%) saturate(2864%) hue-rotate(194deg) brightness(94%) contrast(101%);
+    }
+    
+    .filter-section {
+      display: flex;
+      padding: 30px 30px;
+      background-color: #f8f9fa;
+      border: 2px solid #e1e4e8;
+      border-radius: 5px;
+      margin-top:80px;
+    }
+  
+    .filter-section.show{
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    
+    .filter-field {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .filter-field label {
+     
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    .filter-field input,
+    .filter-field select {
+      font-size: large;
+      padding: 15px;
+      border: 2px solid #ced4da;
+      border-radius: 20px;
+      margin-right: 10px;
+    }
+    
+    .search-button, .reset-button {
+      padding: 5px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-right: 20px;
+    }
+    
+    .search-button {
+      font-style: bold;
+      background-color: #676a67;
+      color: rgb(247, 243, 243);
+    }
+    
+    .reset-button {
+      background-color: #676a67;
+      color: rgb(247, 243, 243);
+    }

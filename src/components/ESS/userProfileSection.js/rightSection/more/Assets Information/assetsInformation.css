@@ -1,0 +1,22 @@
+.Assetsinformation-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .Assetsinformation-table th, .Assetsinformation-table td {
+    padding: 10px;
+     text-align: left;  
+    border-bottom: 1px solid #ddd;
+  }
+  .toggle-button-Assetsinformation {
+    background-color: #ffffff;
+    color: #007bff;
+    padding: 7px 8px;
+    border: 2px solid #abcaea;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .assetinfo-btn-holder{
+    border-bottom: 1px solid #DDDDDD;
+  }

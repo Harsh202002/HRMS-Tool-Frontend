@@ -1,0 +1,45 @@
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.job-profile .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  .j-profile-h3{
+    font-family: "Open Sans";
+    font-weight: 600;
+  }
+  
+  .job-profile .form-group label {
+    /* font-weight: bold; */
+    margin-bottom: 5px;
+  }
+  
+  .job-profile .form-group input,
+  .job-profile .form-group textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .job-profile .work-experience {
+    display: flex;
+    gap: 10px;
+  }
+  .toggle-button-j {
+    background-color: #ffffff;
+    color: #007bff;
+    padding: 7px 8px;
+    border: 2px solid #abcaea;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .toggle-button-j:hover {
+    background-color: #0056b3;
+  }
+  .btn-holder-job{
+    border-bottom: 1px solid #DDDDDD;
+    
+  }

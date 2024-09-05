@@ -1,0 +1,30 @@
+/* Dashboard.css */
+/* body{
+  margin: 0;
+  padding: 0;
+} */
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: calc(100%-80%);
+    position: sticky;
+  }
+  .content-wrapper {
+    display: flex;
+    flex: 1;
+  }
+  
+  .main-content {
+    margin-left: 60px; /*Adjust margin based on initial sidebar width*/
+    padding: 20px;
+    width: calc(100% - 60px);
+    box-sizing: border-box;
+    transition: margin-left 0.3s;
+
+  }
+  
+  /*.sidebar:hover ~ .main-content {/*
+    /* margin-left: 250px; Adjust margin when sidebar is expanded */
+  

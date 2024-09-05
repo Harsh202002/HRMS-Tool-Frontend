@@ -1,0 +1,94 @@
+.unique-form-wrapper {
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+    /* border: 1px solid #ddd; */
+    border-radius: 10px;
+    background-color: #fafafa;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .unique-heading {
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .unique-investment-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .unique-form-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+  
+  .unique-form-item {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .unique-form-item:last-child {
+    margin-right: 0;
+  }
+  
+  .unique-label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .unique-input, .unique-select {
+    width: 85%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+  
+  .unique-input[readonly] {
+    background-color: #f4f4f4;
+  }
+  
+  /* .unique-pan-input {
+    border: 1px solid #e74c3c;
+  } */
+  
+  .unique-declaration {
+    margin-top: 25px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .unique-declaration a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  .unique-declaration b {
+    color: #3498db;
+  }
+  
+  .unique-save-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 25px;
+  }
+  
+  .unique-btn {
+    padding: 12px 25px;
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .unique-btn:hover {
+    background-color: #27ae60;
+  }
+  

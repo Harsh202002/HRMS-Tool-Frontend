@@ -1,0 +1,89 @@
+
+  
+.back-button-image {
+    margin-right: 10px;
+    cursor: pointer;
+    height: 30px;
+  }
+  
+h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+
+  
+  
+h2 {
+    text-align: center;
+    font-size: 20px;
+
+  }
+  
+  .form-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .pan-input {
+    border: 1px solid red;
+  }
+  
+  .regime-select {
+    border: 1px solid red;
+  }
+  
+  .declaration-section {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .save-button-2 {
+    display: flex;
+    justify-content: flex-end; /* Align the button to the right */
+    margin-top: 20px;
+    padding: 0; /* Remove any extra padding */
+  }
+  
+  .save-button-2 button {
+    padding: 5px 10px; /* Smaller padding for a compact button */
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    width: auto; 
+    min-width: 80px; 
+    box-shadow: none; 
+  }
+  
+  .save-button-2 button:hover {
+    background-color: #218838;
+  }
+  
+  .save-button-2 button:focus {
+    outline: none;
+    background-color: #218838;
+  }
+  

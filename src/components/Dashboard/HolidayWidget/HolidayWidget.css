@@ -1,0 +1,83 @@
+.holiday-widget-container{
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 40px;
+
+}
+
+
+.holiday-widget {
+    background-color: #ffffff;
+    padding: 10px;
+    width: 310px;
+    height: 95px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px auto 10px 0; /* Adjust margin to push it to the left */
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+  }
+
+  .holiday-widget h3{
+    
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    padding-right: 40px;
+    color: #000000;
+    margin: 0;
+
+    }
+
+  .holiday-widget-content{
+    display: flex;
+    align-items: center;
+  }  
+  
+  
+  .holiday-image {
+    background-color: #ffffff;
+    width: 100px !important;
+    height: 100px !important;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    left: 0px;
+    top: 50%;
+    justify-content: center;
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+
+  
+  
+  .holiday-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .holiday-box-1 {
+    background-color: #f598b6;
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+
+  .holiday-box-2 {
+    background-color: #e3f2fd;
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .holiday-date {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .holiday-name {
+    display: block;
+  }
+  

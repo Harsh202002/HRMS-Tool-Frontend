@@ -1,0 +1,49 @@
+.performance-feedback-container {
+    background-color: #ffffff;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    height: 380px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    position: relative;
+    max-width: 50%;
+    flex: 1;
+  }
+  
+  .performance-feedback-container .header h3 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+  }
+
+  .divider-lines {
+    margin-top: 10px; 
+    border-bottom: 1px solid #070000; 
+    width: 100%; 
+  }
+  
+  .no-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .no-data img {
+    width: 300px;
+    height: 230px;
+    margin-bottom: 10px;
+  }
+  
+  .no-data p {
+    font-size: 25px;
+    text-align: center;
+    color: hsl(207, 76%, 81%);
+    margin-top: 0px;
+  }
+  

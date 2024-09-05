@@ -1,0 +1,40 @@
+.education-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .education-table th, .education-table td {
+    padding: 10px;
+     text-align: left;  
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .education-table th {
+    background-color: #f0f8ff;
+  }
+  
+  .education-table button {
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .toggle-button-Ed {
+    background-color: #ffffff;
+    color: #007bff;
+    padding: 7px 8px;
+    border: 2px solid #abcaea;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .education-btn-holder{
+    border-bottom: 1px solid #DDDDDD;
+  }
+  .rsidebar-btn-plus{
+    display: flex;
+    justify-content: end;
+  }

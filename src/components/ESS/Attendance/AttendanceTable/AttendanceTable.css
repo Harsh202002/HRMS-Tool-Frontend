@@ -1,0 +1,82 @@
+.attendance-table-container {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+
+.attendance-table {
+    margin-top: -200px; /* Space between header and table */
+    overflow-x: auto; 
+    background-color: #ffffff; 
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    display: block;
+  }
+
+  .attendance-table .header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .attendance-table .header h2 {
+    cursor: pointer;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+  
+  .attendance-table .header h2.active {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .table-container {
+    max-height: 400px; 
+    min-height: 400px;
+    overflow-y: auto; 
+  }
+  
+  .attendance-table table {
+    width: 100%;
+    border-collapse: collapse; 
+  }
+  
+  .attendance-table th, .attendance-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 3px solid #ddd;
+    white-space: nowrap;
+  }
+  
+  .attendance-table th {
+    background-color: #f2f2f2; 
+    color: #333; 
+    font-weight: bold;
+  }
+  
+  .attendance-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; 
+  }
+  
+  .attendance-table tbody tr:hover {
+    background-color: #f1f1f1; 
+  }
+  
+  .attendance-table .action-cell {
+    text-align: center; 
+  }
+
+  .action-cell {
+    width: 50px; /* Adjust based on your needs */
+  }
+  
+  /* Additional spacing to prevent overlap */
+  .attendance-table {
+    margin-top: 5px; /* Adjust based on the height of your filter section */
+  }
+  

@@ -1,0 +1,47 @@
+.tds-details {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 1340px; /* Ensures the component takes up full width */
+    box-sizing: border-box; /* Includes padding and border in element's width and height */
+  }
+  
+  .tds-details h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    text-align: left;
+  }
+  
+  .tds-table-1 {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Prevents shrinking of columns */
+  }
+  
+  .tds-table-1 th,
+  .tds-table-1 td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .tds-table-1 th {
+    background-color: #f0f0f0;
+    color: #666;
+  }
+  
+  .tds-table-1 td {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  /* Hover Effect */
+  .tds-table-1 tbody tr:hover td {
+    background-color: #e6f7ff;
+    color: #1890ff;
+    font-weight: 500;
+  }

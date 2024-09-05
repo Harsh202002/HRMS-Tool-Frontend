@@ -1,0 +1,39 @@
+.Dependent-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .Dependent-table th, .Dependent-table td {
+    padding: 10px;
+     text-align: left;  
+    border-bottom: 1px solid #ddd;
+  }
+  .Dependent-table th{
+    font-family: "Open Sans";
+    font-weight: 600;
+    height: 14px;
+    line-height: 20px;
+  }
+  .toggle-button-D {
+    background-color: #ffffff;
+    color: #007bff;
+    padding: 7px 8px;
+    border: 2px solid #abcaea;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .D-profile-h3{
+    /* font-size: 14px; */
+    font-family: "Open Sans";
+    font-weight: 600;
+  }
+  .Dependent-table td{
+    color: #666666;
+    font-family: "Open Sans";
+    height: 14px;
+    line-height: 20px;
+  }
+  .btn-holder-Dependent{
+    border-bottom: 1px solid #DDDDDD;
+  }

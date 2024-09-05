@@ -1,0 +1,43 @@
+.emergency-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .emergency-table th, .emergency-table td {
+    padding: 10px;
+     text-align: left;  
+    border-bottom: 1px solid #ddd;
+  }
+  .emergency-table th{
+    font-family: "Open Sans";
+    font-weight: 600;
+    height: 14px;
+    line-height: 20px;
+  }
+  .emergency-table td{
+    color: #666666;
+    font-family: "Open Sans";
+    height: 14px;
+    line-height: 20px;
+  }
+  .toggle-button-Em {
+    background-color: #ffffff;
+    color: #007bff;
+    padding: 7px 8px;
+    border: 2px solid #abcaea;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .E-profile-h3{
+    font-family: "Open Sans";
+    font-weight: 600;
+  }
+
+  /* .emergency-table th {
+    background-color: #f0f8ff;
+  } */
+.btn-holder-emergencyContact{
+  border-bottom: 1px solid #DDDDDD;
+}

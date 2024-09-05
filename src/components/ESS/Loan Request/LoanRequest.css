@@ -1,0 +1,81 @@
+
+  
+  
+  .loan-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 900px;
+    padding: 15px;
+    border-radius: 8px;
+    color: #0d0000; 
+    margin-bottom: 10px;
+  }
+  
+  .loan-header h1 {
+    margin-left: 10px;
+    font-size: 2px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+ 
+  .back-button-image {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+  
+  
+  .loan-request-container {
+    background-color: #ffffff; 
+    padding: 20px;
+    width: 1300px;
+    height: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .loan-request-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .loan-request-table th, .loan-request-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .loan-request-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .loan-request-table td {
+    color: #555;
+  }
+  
+  .loan-request-table .no-records {
+    text-align: center;
+    color: #888;
+    padding: 20px;
+    font-weight: bold;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .header h1 {
+      margin-left: 0;
+      margin-top: 10px;
+      font-size: 1.5rem;
+    }
+  }
+  

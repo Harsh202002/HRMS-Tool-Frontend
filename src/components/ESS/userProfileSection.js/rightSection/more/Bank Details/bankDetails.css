@@ -1,0 +1,22 @@
+.Bankdetails-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .Bankdetails-table th, .Bankdetails-table td {
+    padding: 10px;
+     text-align: left;  
+    border-bottom: 1px solid #ddd;
+  }
+  .toggle-button-Bankdetails {
+    background-color: #ffffff;
+    color: #007bff;
+    padding: 7px 8px;
+    border: 2px solid #abcaea;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .bankdetails-btn-holder{
+    border-bottom: 1px solid #DDDDDD;
+  }
