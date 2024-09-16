@@ -4,7 +4,7 @@ import backButtonImage from '../../../Assets/backButtonImage.jpg';
 
 const LoanRequest = () => {
   return (
-    <div className="main-container">
+    <div className="loan-request-main-container">
       <div className="loan-header">
         <img src={backButtonImage} alt="Back" className="back-button-image" />
         <h1>My Advance / Loan Request</h1>

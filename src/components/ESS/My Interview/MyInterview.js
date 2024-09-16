@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './MyInterview.css';
 import backButtonImage from '../../../Assets/backButtonImage.jpg';
 
+
 const MyInterview = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [activeTab, setActiveTab] = useState('Previous'); // Set default tab
@@ -48,6 +49,8 @@ const MyInterview = () => {
   };
 
   return (
+
+  <div className="myInterview-main-container">
     <div className="myInterview-container">
   
       <header className="myInterview-header">
@@ -134,6 +137,7 @@ const MyInterview = () => {
         </table>
       </div>
     </div>
+  </div>  
   );
 };
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import axios from 'axios'; // Import axios
 import logo from "../../Assets/netfotechlogo.png";
 import profile from "../../Assets/ImageAvtar.jpg";
 import "./Navbar.css";
@@ -8,11 +9,29 @@ const Navbar = () => {
     const [isBellOpen, setIsBellOpen] = useState(false);
     const [isQuestionOpen, setIsQuestionOpen] = useState(false);
     const [isPlusOpen, setIsPlusOpen] = useState(false);
-
+    const [employeeData, setEmployeeData] = useState({});
     const profileRef = useRef(null);
     const bellRef = useRef(null);
     const questionRef = useRef(null);
     const plusRef = useRef(null);
+
+    // Fetch employee data based on the employeeCode from localStorage
+    useEffect(() => {
+        const storedEmployeeCode = localStorage.getItem('employeeCode');
+        if (storedEmployeeCode) {
+            fetchEmployeeData(storedEmployeeCode); // Fetch employee data
+        }
+    }, []);
+
+    const fetchEmployeeData = async (employeeCode) => {
+        try {
+            const response = await axios.get(`http://localhost:8080/employee/${employeeCode}`);
+            const data = response.data;
+            setEmployeeData(data); // Set the employee data, including the name
+        } catch (error) {
+            console.error('Error fetching employee data:', error);
+        }
+    };
 
     const togglePrMenu = () => {
         setIsProfileOpen(!isProfileOpen);
@@ -58,7 +77,6 @@ const Navbar = () => {
 
     useEffect(() => {
         document.addEventListener('mousedown', handleClickOutside);
-
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
@@ -81,7 +99,7 @@ const Navbar = () => {
                         <div className="dropdown-content plus-dropdown">
                             <a href="#">New Item 1</a>
                             <a href="#">New Item 2</a>
-                            <a href="#">New Item 3</a>
+                            <a href="/">New Item 3</a>
                         </div>
                     )}
                 </div>
@@ -115,14 +133,14 @@ const Navbar = () => {
                 <div ref={profileRef} className="navbar-user">
                     <div className="navbar-user-dropdown">
                         <button className="dropdown-button-N" onClick={togglePrMenu}>
-                            <span>Harshit Choudhary</span>
+                        <span>{`Hey, ${employeeData.firstName || employeeData.employeeCode || "Loading..."}`}</span> {/* Display employee's name or code */}
                             <i className="fa-solid fa-circle-chevron-down"></i>
                         </button>
                         {isProfileOpen && (
                             <div className="dropdown-content">
                                 <a href="#">Profile</a>
                                 <a href="#">Settings</a>
-                                <a href="#">Logout</a>
+                                <a href="/">Logout</a>
                             </div>
                         )}
                     </div>
