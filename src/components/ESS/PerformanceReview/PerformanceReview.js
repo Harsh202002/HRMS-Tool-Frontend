@@ -28,7 +28,7 @@ const PerformanceReview = () => {
   };
 
   return (
-    <div className="main-container">
+    <div className="performance-main-container">
       <div className="performnace-header">
         <img src={backButtonImage} alt="Back" className="back-button-image" />
         <h1>Performance Review</h1>

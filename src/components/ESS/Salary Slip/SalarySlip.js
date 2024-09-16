@@ -11,6 +11,7 @@ const SalarySlip = () => {
     };
   
     return (
+     <div className='salary-slip-main-container'>
       <div className="salary-slip-container">
         <div className="salary-slip-header">
           <img src={backButtonImage} alt="Back" className="back-button" />
@@ -68,7 +69,7 @@ const SalarySlip = () => {
              <p>Record Found: 0</p>
        </div>
 </div>
-
+</div> 
       </div>
     );
   };

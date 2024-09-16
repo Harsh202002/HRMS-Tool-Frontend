@@ -1,14 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'; // Import axios
 import "./leftSection.css"
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import profile from "../../../../Assets/ImageAvtar.jpg"
 const Leftsection = () => {
+  const [employeeData, setEmployeeData] = useState({});
+
+
+  useEffect(() => {
+    const storedEmployeeCode = localStorage.getItem('employeeCode');
+
+
+    if (storedEmployeeCode) {
+        fetchEmployeeData(storedEmployeeCode); // Fetch employee data
+    }
+}, []);
+
+const fetchEmployeeData = async (employeeCode) => {
+    try {
+        const response = await axios.get(`http://localhost:8080/employee/${employeeCode}`);
+        const data = response.data;
+        setEmployeeData(data); // Set the employee data, including the name
+    } catch (error) {
+        console.error('Error fetching employee data:', error);
+    }
+};
+
+  
     return(
         <div className="left-section">
         <div className="left-panel-h">
           <div className="profile-header">
             <div><img className="profile-pic" src={profile} alt="Profile" /></div>
-            <h2>Mr. Harshit Choudhary</h2>
+            <h2>{`${employeeData.firstName + " "+ employeeData.lastName  }`}</h2>
             <p>Jr. Software Engineer</p>
             <div className="profile-completeness">
               <p><i className="profile-completeness-icon fas fa-check" ></i>Profile Completeness</p>

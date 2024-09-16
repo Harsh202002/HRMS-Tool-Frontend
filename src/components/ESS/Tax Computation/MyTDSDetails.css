@@ -1,3 +1,13 @@
+.tds-details-main-container{
+    background-color:  #E5F6FF;
+    height: 150vh;
+     margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+
 .tds-details-container {
     display: flex;
     flex-direction: column;
@@ -5,12 +15,12 @@
     padding: 10px;
     box-sizing: border-box; /* Ensure padding is included in width/height */
     width: 1340px;
+  
 }
 
 .tds-header-container {
     position: sticky; /* Keeps the header in place */
     top: 0px;
-    z-index: 1000; /* Ensures it stays above other content */
     padding: 10px;
 }
 

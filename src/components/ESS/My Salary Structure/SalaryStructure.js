@@ -18,7 +18,7 @@ const SalaryStructure = () => {
   };
 
   return (
-    <div className="main-container-1" id="salary-structure-container">
+    <div className="salary-structure-main-container" id="salary-structure-container">
       <div className="salary-header">
         <img src={backButtonImage} alt="Back" className="back-button-image" />
         <h1>My Salary Structure</h1>
