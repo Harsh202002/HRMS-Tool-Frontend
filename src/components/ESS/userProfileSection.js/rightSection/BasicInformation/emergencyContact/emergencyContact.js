@@ -1,6 +1,26 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import axios from 'axios'; // Import axios
 import "./emergencyContact.css"
 const Emergencycontact = ({ isVisible, onToggle }) =>{
+  const [employeeData, setEmployeeData] = useState({});
+  useEffect(() => {
+    const storedEmployeeCode = localStorage.getItem('employeeCode');
+    if (storedEmployeeCode) {
+        fetchEmployeeData(storedEmployeeCode); // Fetch employee data
+    }
+}, []);
+const fetchEmployeeData = async (employeeCode) => {
+  try {
+      const response = await axios.get(`http://localhost:8080/employee/${employeeCode}`);
+      const data = response.data;
+      setEmployeeData(data); // Set the employee data, including the name
+  } catch (error) {
+      console.error('Error fetching employee data:', error);
+  }
+};
+
+
+  
     return(
         <div className="emergencyContact-Profile">
         <div className="btn-holder-emergencyContact" style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
@@ -26,14 +46,14 @@ const Emergencycontact = ({ isVisible, onToggle }) =>{
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Ashok</td>
-                        <td>Choudhary</td>
-                        <td>3 N.S Path Purani Bazar Titagarh</td>
-                        <td>9874221980</td>
-                        <td>9007886749</td>
-                        <td>India</td>
-                        <td>Hard@gmail.com</td>
-                        <td>abc@gmail.com</td>
+                        <td>{employeeData.emergencyFirstName}</td>
+                        <td>{employeeData.emergencyLastName}</td>
+                        <td>{employeeData.emergencyAddress}</td>
+                        <td>{employeeData.emergencyMobileNumber}</td>
+                        <td>{employeeData.emergencyAlternateMobileNumber}</td>
+                        <td>{employeeData.emergencyCountryName}</td>
+                        <td>{employeeData.emergencyEmailId}</td>
+                        <td>{employeeData.emergencyAlternateEmailId}</td>
                       </tr>
 
                     </tbody>

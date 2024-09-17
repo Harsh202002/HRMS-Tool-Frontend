@@ -133,7 +133,7 @@ const Navbar = () => {
                 <div ref={profileRef} className="navbar-user">
                     <div className="navbar-user-dropdown">
                         <button className="dropdown-button-N" onClick={togglePrMenu}>
-                        <span>{`Hey, ${employeeData.firstName || employeeData.employeeCode || "Loading..."}`}</span> {/* Display employee's name or code */}
+                        <span>{`${employeeData.firstName || employeeData.employeeCode || "Loading..."}`}</span> {/* Display employee's name or code */}
                             <i className="fa-solid fa-circle-chevron-down"></i>
                         </button>
                         {isProfileOpen && (

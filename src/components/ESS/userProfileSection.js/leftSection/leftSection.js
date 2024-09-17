@@ -33,7 +33,7 @@ const fetchEmployeeData = async (employeeCode) => {
           <div className="profile-header">
             <div><img className="profile-pic" src={profile} alt="Profile" /></div>
             <h2>{`${employeeData.firstName + " "+ employeeData.lastName  }`}</h2>
-            <p>Jr. Software Engineer</p>
+            <p>{employeeData.jobTitle || ''}</p>
             <div className="profile-completeness">
               <p><i className="profile-completeness-icon fas fa-check" ></i>Profile Completeness</p>
               <div className="progress-bar">
@@ -57,11 +57,11 @@ const fetchEmployeeData = async (employeeCode) => {
             </div>
             <div className="info-box">
               <p className="title">Company</p>
-              <p>Nefotech Solutions</p>
+              <p>{employeeData.company || ''}</p>
             </div>
             <div className="info-box">
               <p className="title">Location</p>
-              <p>Kolkata</p>
+              <p>{employeeData.location || ''}</p>
             </div>
           </div>
         </div>
