@@ -1,6 +1,23 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import axios from 'axios'; // Import axios
 import "./addressInformation.css"
 const Addressinformation = ({ isVisible, onToggle }) =>{
+  const [employeeData, setEmployeeData] = useState({});
+  useEffect(() => {
+    const storedEmployeeCode = localStorage.getItem('employeeCode');
+    if (storedEmployeeCode) {
+        fetchEmployeeData(storedEmployeeCode); // Fetch employee data
+    }
+}, []);
+const fetchEmployeeData = async (employeeCode) => {
+  try {
+      const response = await axios.get(`http://localhost:8080/employee/${employeeCode}`);
+      const data = response.data;
+      setEmployeeData(data); // Set the employee data, including the name
+  } catch (error) {
+      console.error('Error fetching employee data:', error);
+  }
+};
     return(
         <div  className="AddressInformation-Profile">
         <div className="btn-holder-AddressInformation" style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
@@ -25,13 +42,14 @@ const Addressinformation = ({ isVisible, onToggle }) =>{
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Present</td>
-                        <td>3 N.S Path Purani Bazar Titagarh</td>
-                        <td>Titagarh</td>
-                        <td>9874221980</td>
-                        <td>700119</td>
-                        <td>India</td>
-                        <td>West Bengal</td>
+                        
+                        <td>{employeeData.addressType}</td>
+                        <td>{employeeData.address}</td>
+                        <td>{employeeData.city}</td>
+                        <td>{employeeData.telephone}</td>
+                        <td>{employeeData.zipCode}</td>
+                        <td>{employeeData.country}</td>
+                        <td>{employeeData.state}</td>
                       </tr>
 
                     </tbody>
