@@ -22,7 +22,7 @@ function AdminLogin() {
         localStorage.setItem("adminId", adminData.id); // Store adminId in local storage
         alert("Login Successful!");
         // Save token and redirect to Admin Dashboard
-        navigate(`/dashboardlayout/admin/dashboard/${adminData.id}`);
+        navigate(`/admindashboard/${adminData.id}`);
       } catch (error) {
         if (error.response && error.response.data) {
           setError(error.response.data);

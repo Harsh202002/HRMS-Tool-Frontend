@@ -22,6 +22,7 @@ function AdminDashboard() {
   const handleLogout = () => {
     // Remove adminId from local storage and redirect to home page
     localStorage.removeItem("adminId");
+    alert();
     navigate("/admin/login", { replace: true }); // Use navigate to redirect to the home page
   };
 
@@ -30,7 +31,7 @@ function AdminDashboard() {
     <div>
       <h1>Admin Dashboard</h1>
       <p>Welcome, Admin!</p>
-      <Link to={`/dashboardlayout/employee/register/${adminId}`}>Register New Employee</Link>
+      <Link to={`/employee/register/${adminId}`}>Register New Employee</Link>
       <br></br>
       <button onClick={handleLogout}>Logout</button>
       <h2>Employees:</h2>
