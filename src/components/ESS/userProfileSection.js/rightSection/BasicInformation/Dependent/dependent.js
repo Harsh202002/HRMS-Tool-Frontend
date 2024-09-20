@@ -1,6 +1,23 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import axios from 'axios'; // Import axios
 import "./dependent.css"
 const Dependent = ({ isVisible, onToggle }) =>{
+  const [employeeData, setEmployeeData] = useState({});
+  useEffect(() => {
+    const storedEmployeeCode = localStorage.getItem('employeeCode');
+    if (storedEmployeeCode) {
+        fetchEmployeeData(storedEmployeeCode); // Fetch employee data
+    }
+}, []);
+const fetchEmployeeData = async (employeeCode) => {
+  try {
+      const response = await axios.get(`http://localhost:8080/employee/${employeeCode}`);
+      const data = response.data;
+      setEmployeeData(data); // Set the employee data, including the name
+  } catch (error) {
+      console.error('Error fetching employee data:', error);
+  }
+};
     return(
         <div className="Dependent-Profile">
         <div className="btn-holder-Dependent" style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
@@ -23,11 +40,11 @@ const Dependent = ({ isVisible, onToggle }) =>{
                     </thead>
                     <tbody>
                       <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{employeeData.dependentName}</td>
+                        <td>{employeeData.dependentAge}</td>
+                        <td>{employeeData.dependentMobileNo}</td>
+                        <td>{employeeData.dependentEmailId}</td>
+                        <td>{employeeData.dependentRelation}</td>
                       </tr>
 
                     </tbody>
