@@ -13,7 +13,7 @@
 }
 
 .navbar-right {
-  margin-right: 35px;
+  /* margin-right: 35px; */
   display: flex;
   align-items: center;
 }

@@ -8,7 +8,9 @@ const ShiftWidget = () => {
       <div className="shift-widget">
         <img src={ShiftIcon} alt="My Shift" className="shift-widget-image" />
         <div className="shift-info">
+          <div>
           <h3>My Shift</h3>
+          </div>
           <div className="shift-time">
             <span className="clock-icon">🕒</span> 10:00 To 19:00
           </div>

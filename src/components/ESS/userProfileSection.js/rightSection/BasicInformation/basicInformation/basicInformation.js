@@ -136,7 +136,7 @@ const fetchEmployeeData = async (employeeCode) => {
           </div>
           <div className="form-group">
             <label>Nationality</label>
-            <input type="text" value={employeeData.nationality || ''} readOnly />
+            <input type="text" value={employeeData.nationality|| ''} readOnly />
           </div>
         </div>
       )}
