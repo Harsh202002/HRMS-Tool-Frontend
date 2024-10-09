@@ -4,13 +4,13 @@ body {
     margin: 0;
     padding: 0;
 }
-
+ 
 .attendance-main-container{
     height: auto;
     padding: 10px;
     background-color:  #E5F6FF;
 }
-
+ 
 .attendance-container {
     max-width: 1600px;
     margin: 20px ;
@@ -18,10 +18,9 @@ body {
     background-color: #E5F6FF;;
    
 }
-
-.attendance-header-wrapper, 
-.filter-section, 
+ 
+.attendance-header-wrapper,
+.filter-section,
 .attendance-table-container {
     margin-bottom: 20px; /* Equal space between sections */
 }
-

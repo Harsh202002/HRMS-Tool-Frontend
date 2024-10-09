@@ -4,7 +4,7 @@ body {
   padding: 0;
   background: #ffffff;
 }
-.logo-container {
+.login-logo-container {
   position: color;
   top: 20px;
   left: 20px;
@@ -20,21 +20,20 @@ body {
 }
 
 
-.container {
+.login-container {
   display: flex;
   height: 100vh;
 }
 
-
-.left-side {
+.login-left-side {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #ffffff;
 }
-.left-side img {
-  animation: float 3s ease-in-out infinite;
+.login-left-side img {
+  animation: float 5s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -46,12 +45,12 @@ body {
   }
 }
 
-.left-side img {
+.login-left-side img {
   width: 100%;
   height: auto;
 }
 
-.right-side {
+.login-right-side {
   flex: 1;
   display: flex;
   justify-content: right;
@@ -67,22 +66,23 @@ body {
   border-radius: 50px; 
   text-align: center ;
   border: none; 
+  margin-right: 80px;
 }
 
 .login-box h2 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-align: left;
   color: #333333;
 }
 
 
 
-.input-group {
+.login-input-group {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
-.input-group input {
+.login-input-group input {
   width: 90%;
   padding: 20px;
   border: none;
@@ -93,29 +93,30 @@ body {
   transition: all 0.3s ease; 
 }
 
-.input-group input:focus {
+.login-input-group input:focus {
   background: #ffffff; /* Slightly darker background on focus */
   box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.3); /* More pronounced shadow on focus */
 }
 
 
 
-.remember-me {
+
+.login-remember-me {
   display: flex;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 
-.remember-me input {
+.login-remember-me input {
   margin-right: 5px;
 }
 
-.forgot-password {
+.login-forgot-password {
   text-align: right;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
-.forgot-password-button {
+.login-forgot-password-button {
   background: none;
   border: none;
   color: #007bff;
@@ -124,11 +125,11 @@ body {
   font: inherit;
 }
 
-.forgot-password-button:hover {
+.login-forgot-password-button:hover {
   text-decoration: underline;
 }
 
-button {
+.login-submit-button {
   width: 100%;
   padding: 15px;
   background: #007bff;
@@ -138,7 +139,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.login-button:hover {
   background: #0056b3;
 }
 
@@ -148,8 +149,43 @@ button:hover {
   text-align: center;
 }
 
+@media screen and (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
 
+  .login-left-side img {
+    width: 60%;
+    margin-bottom: 20px;
+    position: absolute;
+        top: 554px;
+  }
 
+  .login-box {
+    width: 80%;
+    margin-left: 84px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .login-left-side img {
+    width: 80%;
+    margin-bottom: 15px;
+  }
+
+  .login-box {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .login-input-group input {
+    padding: 10px;
+  }
+
+  .login-submit-button {
+    padding: 10px;
+  }
+}
 
 
 

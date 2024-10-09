@@ -28,9 +28,9 @@ body {
   
   .widgets-container {
     display: flex;
-    justify-content: flex-start; /* Align widgets to the left */
+    justify-content: center; /* Align widgets to the left */
     gap: 20px; /* Space between widgets */
-    flex-wrap: wrap; /* Allow widgets to wrap to the next line if necessary */
+    flex-wrap: nowrap; /* Allow widgets to wrap to the next line if necessary */
     width: 100%; /* Ensure widgets container takes full width */
     padding: 10px 0; /* Add some padding at the top and bottom */
   }

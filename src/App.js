@@ -51,8 +51,6 @@ const App = () => {
         <Route path="/employee/register/:adminId" element={<EmployeeRegister />} />
         <Route path="admindashboard" element={<AdminDashboard />} />
         <Route path="admindashboard/:adminId" element={<AdminDashboard />} />
-        <Route path="admin/:adminId/employee/:employeeCode" element={<EmployeeEdit />} />
-
 
         {/* Private Routes */}
         <Route
@@ -84,7 +82,8 @@ const App = () => {
           <Route path='loanrequest/:employeeCode' element={<LoanRequest />} />
           <Route path='myinterview/:employeeCode' element={<MyInterview />} />
           <Route path='performancereview/:employeeCode' element={<PerformanceReview />} />
-          
+          <Route path="admindashboard" element={<AdminDashboard />} />
+          <Route path="admindashboard/:adminId" element={<AdminDashboard />} />
         </Route>
       </Routes>
     </Router>

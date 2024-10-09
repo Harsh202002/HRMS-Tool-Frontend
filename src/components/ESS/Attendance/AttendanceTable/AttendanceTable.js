@@ -54,6 +54,7 @@ const AttendanceTable = ({ filters }) => {
   const currentEntries = filteredData.slice(indexOfFirstEntry, indexOfLastEntry);
 
   return (
+    <div>
     <div className="attendance-table">
       <div className="header">
         <h2 className={showEdited ? '' : 'active'} onClick={() => setShowEdited(false)}>My Attendance</h2>
@@ -100,6 +101,7 @@ const AttendanceTable = ({ filters }) => {
         onPageChange={setCurrentPage}
         onEntriesChange={setEntriesPerPage}
       />
+    </div>
     </div>
   );
 };

@@ -7,21 +7,36 @@ const Sidebar = ({ employeeCode }) => {
     const [isEssOpen, setEssOpen] = useState(false);
     const [isDssOpen, setDssOpen] = useState(false);
 
+    // Toggle the Dashboard menu
     const toggleDssMenu = () => {
-        setDssOpen(!isDssOpen);
+        setDssOpen(!isDssOpen);  // Toggle Dashboard menu
+        if (!isDssOpen) {
+            setEssOpen(false);   // Close ESS if it's open
+        }
     };
 
+    // Toggle the ESS menu
     const toggleEssMenu = () => {
-        setEssOpen(!isEssOpen);
+        setEssOpen(!isEssOpen);  // Toggle ESS menu
+        if (!isEssOpen) {
+            setDssOpen(false);   // Close Dashboard if it's open
+        }
+    };
+
+    // Close both dropdowns when the sidebar is collapsed
+    const closeAllMenus = () => {
+        setEssOpen(false);
+        setDssOpen(false);
     };
 
     return (
-        <nav className="sidebar">
+        <nav className="sidebar" onMouseLeave={closeAllMenus}>
             <ul>
                 <li>
                     <button onClick={toggleDssMenu} className='dropdown-button'>
                         <i className="fa-solid fa-gauge"></i>
                         <span className='sidebar-title'>Dashboard</span>
+                        <i className={`fa-solid fa-chevron-right arrow ${isDssOpen ? 'rotate' : ''}`}></i>
                     </button>
                 </li>
                 {isDssOpen && (
@@ -33,6 +48,7 @@ const Sidebar = ({ employeeCode }) => {
                     <button onClick={toggleEssMenu} className="dropdown-button">
                         <i className="fa-solid fa-users"></i>
                         <span className='sidebar-title'>Ess</span>
+                        <i className={`fa-solid fa-chevron-right arrow ${isEssOpen ? 'rotate' : ''}`}></i>
                     </button>
                     {isEssOpen && (
                         <ul className="dropdown-menu">

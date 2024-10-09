@@ -5,8 +5,9 @@ import profilePlaceholder from '../../../Assets/ImageAvtar.jpg'; // Ensure this 
 const NewJoining = () => {
   return (
     <div className="new-joining-container">
-      <h3>New Joinings</h3>
-      <div className="divider-line"></div>
+      <div className="newjoinings-divider-line">
+        <h3>New Joinings</h3>
+      </div>
       <div className="new-joining-content">
         <div className="welcome-text">
           <h2>Welcome!</h2>

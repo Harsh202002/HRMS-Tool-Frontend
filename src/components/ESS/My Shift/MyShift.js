@@ -54,6 +54,7 @@ const Calendar = () => {
     const dateFormat = 'MMMM yyyy';
 
     return (
+      <div>
       <div className="calendar-header row flex-middle">
         <div className="calendar-col calendar-col-start">
           <div className="calendar-icon" onClick={prevMonth}>
@@ -66,6 +67,7 @@ const Calendar = () => {
         <div className="calendar-col calendar-col-end" onClick={nextMonth}>
           <div className="calendar-icon">❯</div>
         </div>
+      </div>
       </div>
     );
   };
@@ -136,7 +138,7 @@ const Calendar = () => {
       );
       days = [];
     }
-    return <div className="calendar-body">{rows}</div>;
+    return <div className="calendar-body">{rows}</div>
   };
 
   const onDateClick = (day) => {

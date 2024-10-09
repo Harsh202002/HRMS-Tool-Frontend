@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './AttendanceHeader.css';
-
+ 
 const AttendanceHeader = ({ onFilterClick, onFilterChange }) => {
   const [showFilter, setShowFilter] = useState(false);
   const [filters, setFilters] = useState({
@@ -8,14 +8,14 @@ const AttendanceHeader = ({ onFilterClick, onFilterChange }) => {
     toDate: '',
     status: '',
   });
-
+ 
   const handleFilterClick = () => {
     setShowFilter(!showFilter);
     if (onFilterClick) {
       onFilterClick(!showFilter);
     }
   };
-
+ 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFilters({
@@ -23,13 +23,13 @@ const AttendanceHeader = ({ onFilterClick, onFilterChange }) => {
       [name]: value,
     });
   };
-
+ 
   const handleSearchClick = () => {
     if (onFilterChange) {
       onFilterChange(filters);
     }
   };
-
+ 
   const handleResetClick = () => {
     setFilters({
       fromDate: '',
@@ -40,7 +40,7 @@ const AttendanceHeader = ({ onFilterClick, onFilterChange }) => {
       onFilterChange({ fromDate: '', toDate: '', status: '' });
     }
   };
-
+ 
   return (
     <div className="attendance-header-container">
       <div className="attendance-header">
@@ -100,30 +100,30 @@ const AttendanceHeader = ({ onFilterClick, onFilterChange }) => {
         <div className="filter-section">
           <div className="filter-field">
             <label htmlFor="from-date">From Date</label>
-            <input 
-              type="date" 
-              id="from-date" 
-              name="fromDate" 
-              value={filters.fromDate} 
-              onChange={handleInputChange} 
+            <input
+              type="date"
+              id="from-date"
+              name="fromDate"
+              value={filters.fromDate}
+              onChange={handleInputChange}
             />
           </div>
           <div className="filter-field">
             <label htmlFor="to-date">To Date</label>
-            <input 
-              type="date" 
-              id="to-date" 
-              name="toDate" 
-              value={filters.toDate} 
-              onChange={handleInputChange} 
+            <input
+              type="date"
+              id="to-date"
+              name="toDate"
+              value={filters.toDate}
+              onChange={handleInputChange}
             />
           </div>
           <div className="filter-field">
             <label htmlFor="status">Status</label>
-            <select 
-              id="status" 
-              name="status" 
-              value={filters.status} 
+            <select
+              id="status"
+              name="status"
+              value={filters.status}
               onChange={handleInputChange}
             >
               <option value="">--Select--</option>
@@ -146,5 +146,5 @@ const AttendanceHeader = ({ onFilterClick, onFilterChange }) => {
     </div>
   );
 };
-
+ 
 export default AttendanceHeader;

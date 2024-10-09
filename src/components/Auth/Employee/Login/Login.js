@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import './Login.css';
-import hrmsMain from '../../../../Assets/login-info.png';
+import hrmsMain from '../../../../Assets/6343825.jpg';
 // import background from '../../Assets/background.jpg';
-import logo from '../../../../Assets/logo.jpeg';
+import logo from '../../../../Assets/netfotechlogo.png';
 
 function Login() {
   const [employeeCode, setEmployeeCode] = useState("");
@@ -42,18 +42,18 @@ function Login() {
   };
 
   return (
-    <div className="container">
-        <div className="logo-container">
+    <div className="login-container">
+        <div className="login-logo-container">
         <img src={logo} alt="Logo" className="logo" />
         </div>
-      <div className="left-side">
+      <div className="login-left-side">
         <img src={hrmsMain} alt="HRMS Main" />
       </div>
-      <div className="right-side">
+      <div className="login-right-side">
         <div className="login-box">
           <h2>LOGIN</h2>
           <form onSubmit={handleLogin}>
-            <div className="input-group">
+            <div className="login-input-group">
               <input
                 type="text"
                 placeholder="Enter Username"
@@ -61,7 +61,7 @@ function Login() {
                 onChange={(e) => setEmployeeCode(e.target.value)}
               />
             </div>
-            <div className="input-group">
+            <div className="login-input-group">
               <input
                 type="password"
                 placeholder="Enter Password"
@@ -69,14 +69,14 @@ function Login() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <div className="remember-me">
+            <div className="login-remember-me">
               <input type="checkbox" id="rememberMe" />
               <label htmlFor="rememberMe">Remember me</label>
             </div>
-            <div className="forgot-password">
-              <button type="button" className="forgot-password-button">Forgot Password?</button>
+            <div className="login-forgot-password">
+              <button type="button" className="login-forgot-password-button">Forgot Password?</button>
             </div>
-            <button type="submit">Login</button>
+            <button type="submit" className='login-submit-button'>Login</button>
             {error && <p className="error">{error}</p>}
           </form>
         </div>

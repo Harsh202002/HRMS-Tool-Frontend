@@ -4,21 +4,21 @@ import holidayImage from '../../../Assets/holiday-image.png'; // Update with you
 
 const HolidayWidget = () => {
   return (
-  <div className="holiday-widget-container">
-     <div className="holiday-widget">
-      <img src={holidayImage} alt="Holiday" className="holiday-image" />
-      <div className="holiday-info">
-      <h3>Holiday</h3>
-        <div className="holiday-box-1">
-          <span className="holiday-date">15/08/2024</span>
+    <div className="holiday-widget-container">
+      <div className="holiday-widget">
+        <img src={holidayImage} alt="Holiday" className="holiday-image" />
+        <div className="holiday-info">
+          <h3>Holiday</h3>
+          <div className="holiday-box-1">
+            <span className="holiday-date">15/08/2024</span>
+          </div>
+          <div className="holiday-box-2">
+            <span className="holiday-name">Independence Day</span>
+          </div>
+          {/* Add more holiday boxes as needed */}
         </div>
-        <div className="holiday-box-2">
-        <span className="holiday-name">Independence Day</span>
-        </div>
-        {/* Add more holiday boxes as needed */}
       </div>
-     </div>
-  </div>
+    </div>
   );
 }
 
