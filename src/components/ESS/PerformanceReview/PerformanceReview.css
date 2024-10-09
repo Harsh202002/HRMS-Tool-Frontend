@@ -31,6 +31,7 @@
     padding: 20px;
     width: 1340px;
     height: 400px;
+    overflow-y: auto; /* Enable vertical scrolling */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-left: auto;
@@ -49,7 +50,7 @@
   }
   
   .review-table th {
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     font-weight: bold;
     color: #333;
   }
@@ -58,11 +59,13 @@
     color: #333;
   }
   
-  .review-table .no-records {
-    text-align: center;
-    color: #888;
-    padding: 20px;
-    font-weight: bold;
+  .review-table button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
    
   }
   

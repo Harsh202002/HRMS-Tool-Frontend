@@ -47,7 +47,7 @@ const fetchEmployeeData = async (employeeCode) => {
           <div className="info-section">
             <div className="info-box">
               <p className="title">Joining Date</p>
-              <p>06 Mar 2024</p>
+              <p>{`${employeeData.dateOfJoining }`}</p>
               <p className="subtitle">(0 Year 4 Months 30 Days)</p>
             </div>
             <div className="info-box">

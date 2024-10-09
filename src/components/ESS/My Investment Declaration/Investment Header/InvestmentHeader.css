@@ -19,10 +19,13 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    margin-right: 80px;
   }
   
-  h1 {
+  .investment-header-section  h1 {
     margin: 0;
     font-size: 20px;
+    margin-right: 80px;
+    
   }
   

@@ -26,6 +26,7 @@ import AdminDashboard from './components/Auth/Admin/AdminDashboard/AdminDashboar
 import Register from './components/Auth/Admin/AdminRegister/Register';
 import AdminLogin from './components/Auth/Admin/AdminLogin/AdminLogin.js';
 import EmployeeRegister from './components/Auth/Admin/EmployeeRegister/EmployeeRegister.js';
+import EmployeeEdit from './components/Auth/Admin/EmployeeEdit/EmployeeEdit.js';
 import "./App.css";
 
 const App = () => {
@@ -48,6 +49,9 @@ const App = () => {
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/employeeregister" element={<EmployeeRegister />} />
         <Route path="/employee/register/:adminId" element={<EmployeeRegister />} />
+        <Route path="admindashboard" element={<AdminDashboard />} />
+        <Route path="admindashboard/:adminId" element={<AdminDashboard />} />
+        <Route path="admin/:adminId/employee/:employeeCode" element={<EmployeeEdit />} />
 
         {/* Private Routes */}
         <Route
@@ -79,8 +83,7 @@ const App = () => {
           <Route path='loanrequest/:employeeCode' element={<LoanRequest />} />
           <Route path='myinterview/:employeeCode' element={<MyInterview />} />
           <Route path='performancereview/:employeeCode' element={<PerformanceReview />} />
-          <Route path="admindashboard" element={<AdminDashboard />} />
-          <Route path="admindashboard/:adminId" element={<AdminDashboard />} />
+          
         </Route>
       </Routes>
     </Router>

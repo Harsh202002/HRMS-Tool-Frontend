@@ -1,14 +1,13 @@
 .attendance-header-wrapper {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-   
-  }
+  width: 95%; /* Adjust width to create side space */
+  margin: 0 auto 20px auto; /* Center align with margin at bottom */
+}
+
   
   .attendance-header {
       display: flex;
       align-items: center;
-      padding: 10px 20px;
+      padding: 5px 10px;
       background-color: #E5F6FF;
       position: sticky;
       top: 0;
@@ -42,7 +41,7 @@
     }
     
     .legend-item .status-box {
-      padding: 5px 8px;
+      padding: 3px ;
       border-radius: 5px;
       color: white; 
       margin-right: 3px; /* Spacing between box and text */
@@ -72,14 +71,20 @@
       filter: brightness(0) saturate(100%) invert(34%) sepia(100%) saturate(2864%) hue-rotate(194deg) brightness(94%) contrast(101%);
     }
     
+   
     .filter-section {
-      display: flex;
-      padding: 30px 30px;
-      background-color: #f8f9fa;
-      border: 2px solid #e1e4e8;
-      border-radius: 5px;
-      margin-top:80px;
+        display: flex;
+        flex-wrap: wrap; /* Allows responsiveness */
+        padding: 20px; /* Consistent padding around the filter */
+        background-color: #ffffff;
+        border: 2px solid #e1e4e8;
+        border-radius: 5px;
+        margin-top: 30px;
+        gap: 20px; /* Adds space between elements */
+        width: 95%; /* Adjust width to create side space */
+        margin: 0 auto 20px auto; /* Center align with margin at bottom */
     }
+    
   
     .filter-section.show{
       display: flex;
@@ -107,21 +112,25 @@
       margin-right: 10px;
     }
     
-    .search-button, .reset-button {
-      padding: 5px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      margin-right: 20px;
+    .attendance-search-button, .attendance-reset-button {
+     padding: 12px 10px;
+     font-size: 20px;
+     cursor: pointer;
+     width: 120px;
+     border: none;
+     border-radius: 4px;
+     margin-top: 20px;
     }
     
-    .search-button {
-      font-style: bold;
-      background-color: #676a67;
-      color: rgb(247, 243, 243);
+    .attendance-search-button {
+      background-color: #28a745;
+      color: #ffffff;
+      margin-right: 5px; /* Adds space between the buttons */
     }
     
-    .reset-button {
-      background-color: #676a67;
-      color: rgb(247, 243, 243);
+    .attendance-reset-button {
+      background-color: #ffffff;
+      color: #333333;
+      border: 1px solid black;
+    
     }

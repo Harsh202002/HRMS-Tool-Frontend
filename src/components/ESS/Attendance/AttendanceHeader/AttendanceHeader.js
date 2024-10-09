@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import './AttendanceHeader.css';
-import filterIcon from '../../../../Assets/filter-icon.png'; // Adjust the path based on your project structure
 
-const AttendanceHeader = ({ onFilterClick }) => {
+const AttendanceHeader = ({ onFilterClick, onFilterChange }) => {
   const [showFilter, setShowFilter] = useState(false);
+  const [filters, setFilters] = useState({
+    fromDate: '',
+    toDate: '',
+    status: '',
+  });
 
   const handleFilterClick = () => {
     setShowFilter(!showFilter);
@@ -12,15 +16,42 @@ const AttendanceHeader = ({ onFilterClick }) => {
     }
   };
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFilters({
+      ...filters,
+      [name]: value,
+    });
+  };
+
+  const handleSearchClick = () => {
+    if (onFilterChange) {
+      onFilterChange(filters);
+    }
+  };
+
+  const handleResetClick = () => {
+    setFilters({
+      fromDate: '',
+      toDate: '',
+      status: '',
+    });
+    if (onFilterChange) {
+      onFilterChange({ fromDate: '', toDate: '', status: '' });
+    }
+  };
+
   return (
     <div className="attendance-header-container">
       <div className="attendance-header">
         <div className="header-with-arrow">
-          <span className="back-arrow">&lt;</span>
+          <button className="back-button">
+            <i className="fa-solid fa-chevron-left"></i>
+          </button>
           <h2>My Attendance List</h2>
         </div>
         <div className="attendance-statuses">
-          <div className="legend-item hh">
+        <div className="legend-item hh">
             <span className="status-box">HH</span>
             <span>Company Holiday</span>
           </div>
@@ -60,24 +91,41 @@ const AttendanceHeader = ({ onFilterClick }) => {
             <span className="status-box">MIS</span>
             <span>Miss Punch</span>
           </div>
-          <div className="filter-icon" onClick={handleFilterClick}>
-            <img src={filterIcon} alt="Filter" />
-          </div>
+          <button className="filter-button" onClick={handleFilterClick}>
+            <i className="fa-solid fa-filter"></i>
+          </button>
         </div>
       </div>
       {showFilter && (
         <div className="filter-section">
           <div className="filter-field">
             <label htmlFor="from-date">From Date</label>
-            <input type="date" id="from-date" />
+            <input 
+              type="date" 
+              id="from-date" 
+              name="fromDate" 
+              value={filters.fromDate} 
+              onChange={handleInputChange} 
+            />
           </div>
           <div className="filter-field">
             <label htmlFor="to-date">To Date</label>
-            <input type="date" id="to-date" />
+            <input 
+              type="date" 
+              id="to-date" 
+              name="toDate" 
+              value={filters.toDate} 
+              onChange={handleInputChange} 
+            />
           </div>
           <div className="filter-field">
             <label htmlFor="status">Status</label>
-            <select id="status">
+            <select 
+              id="status" 
+              name="status" 
+              value={filters.status} 
+              onChange={handleInputChange}
+            >
               <option value="">--Select--</option>
               <option value="HH">Company Holiday</option>
               <option value="W">Week Off</option>
@@ -91,8 +139,8 @@ const AttendanceHeader = ({ onFilterClick }) => {
               <option value="MIS">Miss Punch</option>
             </select>
           </div>
-          <button className="search-button">Search</button>
-          <button className="reset-button">Reset</button>
+          <button className="attendance-search-button" onClick={handleSearchClick}>Search</button>
+          <button className="attendance-reset-button" onClick={handleResetClick}>Reset</button>
         </div>
       )}
     </div>

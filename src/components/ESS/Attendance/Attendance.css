@@ -5,10 +5,23 @@ body {
     padding: 0;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.attendance-main-container{
+    height: auto;
+    padding: 10px;
+    background-color:  #E5F6FF;
 }
+
+.attendance-container {
+    max-width: 1600px;
+    margin: 20px ;
+    height: 80rem;
+    background-color: #E5F6FF;;
+   
+}
+
+.attendance-header-wrapper, 
+.filter-section, 
+.attendance-table-container {
+    margin-bottom: 20px; /* Equal space between sections */
+}
+

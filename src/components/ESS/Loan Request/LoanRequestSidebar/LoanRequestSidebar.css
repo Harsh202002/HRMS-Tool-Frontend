@@ -1,0 +1,83 @@
+.loan-request-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+  
+  .loan-request-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .loan-request-sidebar-header h2 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .close-button {
+    height: 40px;
+    width: 40px;
+    background-color: rgb(97, 12, 236);
+    border: none;
+    font-size: 1rem;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for buttons */
+  }
+  
+  .loan-request-sidebar-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .loan-request-sidebar-content label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .loan-request-sidebar-content input,
+  .loan-request-sidebar-content select,
+  .loan-request-sidebar-content textarea {
+    margin-bottom: 25px;
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .loan-request-sidebar-footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .loan-save-button,
+  .loan-reset-button {
+    padding: 10px ;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .loan-save-button {
+    background-color: #28a745;
+    color: #fff;
+    margin-right: 10px;
+  }
+  
+  .loan-reset-button {
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid black;
+  }
+  

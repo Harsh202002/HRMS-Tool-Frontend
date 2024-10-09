@@ -5,7 +5,7 @@
     width: 100%;
     border: 1px solid #ccc;
     padding: 20px;
-    height: 850px;
+    height: 900px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 10px;
     position: relative;
@@ -60,24 +60,30 @@
   
   .form-actions {
     display: flex;
-    justify-content: flex-end;
     margin-top: 20px;
   }
   
-  .save-button, .reset-button {
-    padding: 10px 15px;
-    margin-left: 10px;
+  .apply-save-button, .apply-reset-button {
+    padding: 12px 5px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 120px;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
+   
   }
   
-  .save-button {
+  .apply-save-button {
     background-color: #28a745;
-    color: #fff;
+  color: #ffffff;
+  margin-right: 10px;
+
   }
   
-  .reset-button {
-    background-color: #dc3545;
-    color: #fff;
+  .apply-reset-button {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid black;
+
+     
   }
