@@ -1,6 +1,6 @@
 import React from 'react';
 import './SalaryStructure.css'; // Create and link your CSS file
-import backButtonImage from '../../../Assets/backButtonImage.jpg';
+//import backButtonImage from '../../../Assets/backButtonImage.jpg';
 import pdfIcon from '../../../Assets/pdfIcon.jpg'; // Replace with the actual path to your PDF icon
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
@@ -20,7 +20,9 @@ const SalaryStructure = () => {
   return (
     <div className="salary-structure-main-container" id="salary-structure-container">
       <div className="salary-header">
-        <img src={backButtonImage} alt="Back" className="back-button-image" />
+      <button className="back-button">
+        <i className="fa-solid fa-chevron-left"></i>
+        </button>
         <h1>My Salary Structure</h1>
         <img 
           src={pdfIcon} 

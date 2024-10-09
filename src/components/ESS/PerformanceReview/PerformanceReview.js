@@ -1,14 +1,25 @@
 import React, { useState } from 'react';
 import './PerformanceReview.css'; 
 import Pagination from './Pagination/Pagination'; 
-import backButtonImage from '../../../Assets/backButtonImage.jpg';
 
 const PerformanceReview = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [entriesPerPage, setEntriesPerPage] = useState(10);
-  
-  // Assuming no data for now
-  const data = [];
+
+  // Sample data
+  const data = [
+    { action: 'View', year: '2023-2024', setupName: 'Annual Review', reviewType: 'Performance', finalDate: '2024-03-31', initiationDate: '2024-01-01' },
+    { action: 'View', year: '2022-2023', setupName: 'Mid-Year Review', reviewType: 'Performance', finalDate: '2023-09-30', initiationDate: '2023-07-01' },
+    { action: 'View', year: '2021-2022', setupName: 'Quarterly Review', reviewType: 'Performance', finalDate: '2022-12-31', initiationDate: '2022-10-01' },
+    { action: 'View', year: '2020-2021', setupName: 'Annual Review', reviewType: 'Performance', finalDate: '2021-03-31', initiationDate: '2021-01-01' },
+    { action: 'View', year: '2019-2020', setupName: 'Year-End Review', reviewType: 'Performance', finalDate: '2020-03-31', initiationDate: '2020-01-01' },
+    { action: 'View', year: '2019-2020', setupName: 'Year-End Review', reviewType: 'Performance', finalDate: '2020-03-31', initiationDate: '2020-01-01' },
+    { action: 'View', year: '2022-2023', setupName: 'Mid-Year Review', reviewType: 'Performance', finalDate: '2023-09-30', initiationDate: '2023-07-01' },
+    { action: 'View', year: '2023-2024', setupName: 'Annual Review', reviewType: 'Performance', finalDate: '2024-03-31', initiationDate: '2024-01-01' },
+    { action: 'View', year: '2021-2022', setupName: 'Quarterly Review', reviewType: 'Performance', finalDate: '2022-12-31', initiationDate: '2022-10-01' },
+    { action: 'View', year: '2020-2021', setupName: 'Annual Review', reviewType: 'Performance', finalDate: '2021-03-31', initiationDate: '2021-01-01' },
+   
+  ];
 
   const totalEntries = data.length;
 
@@ -30,7 +41,9 @@ const PerformanceReview = () => {
   return (
     <div className="performance-main-container">
       <div className="performnace-header">
-        <img src={backButtonImage} alt="Back" className="back-button-image" />
+        <button className="back-button">
+          <i className="fa-solid fa-chevron-left"></i>
+        </button>
         <h1>Performance Review</h1>
       </div>
       <div className="performance-review-container">
@@ -50,7 +63,7 @@ const PerformanceReview = () => {
               {displayedData.length > 0 ? (
                 displayedData.map((row, index) => (
                   <tr key={index}>
-                    <td>{row.action}</td>
+                    <td><button >View</button></td>
                     <td>{row.year}</td>
                     <td>{row.setupName}</td>
                     <td>{row.reviewType}</td>

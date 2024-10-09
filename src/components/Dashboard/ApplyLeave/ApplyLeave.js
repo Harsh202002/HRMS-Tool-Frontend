@@ -55,8 +55,8 @@ const ApplyLeave = () => {
               </select>
             </div>
             <div className="form-actions">
-              <button type="submit" className="save-button">Save</button>
-              <button type="reset" className="reset-button">Reset</button>
+              <button type="submit" className="apply-save-button">Save</button>
+              <button type="reset" className="apply-reset-button">Reset</button>
             </div>
           </form>
         );
@@ -77,8 +77,8 @@ const ApplyLeave = () => {
               <input type="text" />
             </div>
             <div className="form-actions">
-              <button type="submit" className="save-button">Save</button>
-              <button type="reset" className="reset-button">Reset</button>
+              <button type="submit" className="apply-save-button">Save</button>
+              <button type="reset" className="apply-reset-button">Reset</button>
             </div>
           </form>
         );
@@ -95,8 +95,8 @@ const ApplyLeave = () => {
               <input type="date" />
             </div>
             <div className="form-actions">
-              <button type="submit" className="save-button">Save</button>
-              <button type="reset" className="reset-button">Reset</button>
+              <button type="submit" className="apply-save-button">Save</button>
+              <button type="reset" className="apply-reset-button">Reset</button>
             </div>
           </form>
         );
@@ -117,8 +117,8 @@ const ApplyLeave = () => {
               <textarea />
             </div>
             <div className="form-actions">
-              <button type="submit" className="save-button">Submit</button>
-              <button type="reset" className="reset-button">Reset</button>
+              <button type="submit" className="apply-save-button">Submit</button>
+              <button type="reset" className="apply-reset-button">Reset</button>
             </div>
           </form>
         );

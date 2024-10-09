@@ -1,72 +1,57 @@
 import React, { useState } from 'react';
 import './AttendanceHeader.css';
-import filterIcon from '../../../../Assets/filter-icon.png'; // Adjust the path based on your project structure
-
-const AttendanceHeader = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [entriesPerPage, setEntriesPerPage] = useState(5);
-  const [isFilterVisible, setIsFilterVisible] = useState(false);
-  const [keyword, setKeyword] = useState(""); // State for keyword input
-  const [fromDate, setFromDate] = useState(""); // State for from date input
-  const [toDate, setToDate] = useState(""); // State for to date input
-  const [filteredData, setFilteredData] = useState([]); // State for filtered data
-
-
-  const toggleFilterVisibility = () => {
-    setIsFilterVisible(!isFilterVisible);
-};
-
-const handleKeywordChange = (e) => {
-  setKeyword(e.target.value);
-};
-
-const handleFromDateChange = (e) => {
-  setFromDate(e.target.value);
-};
-
-const handleToDateChange = (e) => {
-  setToDate(e.target.value);
-};
-
-// const handleSearch = () => {
-//   let filtered = referralData;
-
-//   if (keyword) {
-//       filtered = filtered.filter((entry) =>
-//           entry.Reason.toLowerCase().includes(keyword.toLowerCase())
-//       );
-//   }
-
-//   if (fromDate) {
-//       filtered = filtered.filter((entry) => new Date(entry.StartDate) >= new Date(fromDate));
-//   }
-
-//   if (toDate) {
-//       filtered = filtered.filter((entry) => new Date(entry.EndDate) <= new Date(toDate));
-//   }
-
-//   setFilteredData(filtered);
-//   setCurrentPage(1); // Reset to the first page
-// };
-
-const handleReset = () => {
-  setKeyword("");
-  setFromDate("");
-  setToDate("");
-  // setFilteredData(referralData); // Reset to original data
-  setCurrentPage(1); // Reset to the first page
-};
-
-
+ 
+const AttendanceHeader = ({ onFilterClick, onFilterChange }) => {
+  const [showFilter, setShowFilter] = useState(false);
+  const [filters, setFilters] = useState({
+    fromDate: '',
+    toDate: '',
+    status: '',
+  });
+ 
+  const handleFilterClick = () => {
+    setShowFilter(!showFilter);
+    if (onFilterClick) {
+      onFilterClick(!showFilter);
+    }
+  };
+ 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFilters({
+      ...filters,
+      [name]: value,
+    });
+  };
+ 
+  const handleSearchClick = () => {
+    if (onFilterChange) {
+      onFilterChange(filters);
+    }
+  };
+ 
+  const handleResetClick = () => {
+    setFilters({
+      fromDate: '',
+      toDate: '',
+      status: '',
+    });
+    if (onFilterChange) {
+      onFilterChange({ fromDate: '', toDate: '', status: '' });
+    }
+  };
+ 
   return (
     <div className="attendance-header-container">
       <div className="attendance-header">
         <div className="header-with-arrow">
-          <span className="back-arrow">&lt;</span>
+          <button className="back-button">
+            <i className="fa-solid fa-chevron-left"></i>
+          </button>
           <h2>My Attendance List</h2>
         </div>
         <div className="attendance-statuses">
-          <div className="legend-item hh">
+        <div className="legend-item hh">
             <span className="status-box">HH</span>
             <span>Company Holiday</span>
           </div>
@@ -106,44 +91,60 @@ const handleReset = () => {
             <span className="status-box">MIS</span>
             <span>Miss Punch</span>
           </div>
-          {/* <div className="filter-icon" > */}
-          <button className="filter-button" onClick={toggleFilterVisibility}>
-                    <i className="fa-solid fa-filter"></i>
-        </button>
-          {/* </div> */}
+          <button className="filter-button" onClick={handleFilterClick}>
+            <i className="fa-solid fa-filter"></i>
+          </button>
         </div>
       </div>
-      {isFilterVisible && (
-                <div className="wfh-filter-section">
-                    <h3>Basic Search</h3>
-                    <div className="wfh-filter-fields">
-                        <input
-                            type="text"
-                            placeholder="Keyword"
-                            value={keyword}
-                            onChange={handleKeywordChange}
-                        />
-                        <input
-                            type="date"
-                            placeholder="From Date"
-                            value={fromDate}
-                            onChange={handleFromDateChange}
-                        />
-                        <input
-                            type="date"
-                            placeholder="To Date"
-                            value={toDate}
-                            onChange={handleToDateChange}
-                        />
-                    </div>
-                    <div className="wfh-filter-actions">
-                        <button className="search-button">Search</button>
-                        <button className="reset-button" onClick={handleReset}>Reset</button>
-                    </div>
-                </div>
-            )}
+      {showFilter && (
+        <div className="filter-section">
+          <div className="filter-field">
+            <label htmlFor="from-date">From Date</label>
+            <input
+              type="date"
+              id="from-date"
+              name="fromDate"
+              value={filters.fromDate}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="filter-field">
+            <label htmlFor="to-date">To Date</label>
+            <input
+              type="date"
+              id="to-date"
+              name="toDate"
+              value={filters.toDate}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="filter-field">
+            <label htmlFor="status">Status</label>
+            <select
+              id="status"
+              name="status"
+              value={filters.status}
+              onChange={handleInputChange}
+            >
+              <option value="">--Select--</option>
+              <option value="HH">Company Holiday</option>
+              <option value="W">Week Off</option>
+              <option value="P">Present</option>
+              <option value="CM">Comp Off</option>
+              <option value="A">Absent</option>
+              <option value="L">Leave</option>
+              <option value="HLF">Half Day</option>
+              <option value="OD">On Duty</option>
+              <option value="SRT">Short Leave</option>
+              <option value="MIS">Miss Punch</option>
+            </select>
+          </div>
+          <button className="attendance-search-button" onClick={handleSearchClick}>Search</button>
+          <button className="attendance-reset-button" onClick={handleResetClick}>Reset</button>
+        </div>
+      )}
     </div>
   );
 };
-
+ 
 export default AttendanceHeader;

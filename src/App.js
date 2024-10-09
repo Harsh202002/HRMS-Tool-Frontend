@@ -26,6 +26,7 @@ import AdminDashboard from './components/Auth/Admin/AdminDashboard/AdminDashboar
 import Register from './components/Auth/Admin/AdminRegister/Register';
 import AdminLogin from './components/Auth/Admin/AdminLogin/AdminLogin.js';
 import EmployeeRegister from './components/Auth/Admin/EmployeeRegister/EmployeeRegister.js';
+import EmployeeEdit from './components/Auth/Admin/EmployeeEdit/EmployeeEdit.js';
 import "./App.css";
 
 const App = () => {

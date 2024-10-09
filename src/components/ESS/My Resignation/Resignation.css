@@ -6,8 +6,8 @@
   .resignation-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 20px;
-    margin-right: 20px;
     padding: 10px 10px;
   }
   
@@ -16,12 +16,27 @@
     height: 30px;
     margin-right: 10px;
   }
+
   
   .resignation-header h1 {
     font-size: 22px;
     font-weight: bold;
     margin: 0;
     padding: 10px ;
+    margin-right: 1100px;
+  }
+
+  .resignation-add-button {
+    height: 40px;
+    width: 40px;
+    background-color: rgb(97, 12, 236);
+    border: none;
+    font-size: 1rem;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for buttons */
+   
   }
   
   .resignation-table-container {
@@ -49,14 +64,16 @@
   }
   
   .resignation-table th {
-    background-color: #f2f2f2;
+    background-color: #ffffff;
     font-weight: bold;
   }
   
-  .resignation-no-records {
-    text-align: center;
-    color: #888;
-    padding: 20px;
-    font-weight: bold;
+  .resignation-table button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
   }
   

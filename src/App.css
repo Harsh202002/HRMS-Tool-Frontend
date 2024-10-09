@@ -24,6 +24,7 @@
     transition: margin-left 0.3s;
 
   }
+
   
   /*.sidebar:hover ~ .main-content {/*
     /* margin-left: 250px; Adjust margin when sidebar is expanded */

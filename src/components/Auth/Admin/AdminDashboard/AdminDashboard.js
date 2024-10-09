@@ -54,7 +54,7 @@ function AdminDashboard() {
                 <td>{employee.lastName}</td>
                 <td>{employee.email}</td>
                 <td>
-                  <Link to={`/employee/${employee.employeeCode}`}>
+                  <Link to={`admin/:adminId/employee/${employee.employeeCode}`}>
                     Edit
                   </Link>
                 </td>

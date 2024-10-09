@@ -1,13 +1,41 @@
-import React from 'react';
-import './LoanRequest.css'; // Add your CSS file here
-import backButtonImage from '../../../Assets/backButtonImage.jpg';
+import React, { useState } from 'react';
+import LoanRequestSidebar from './LoanRequestSidebar/LoanRequestSidebar'; // Import the sidebar component
+import './LoanRequest.css';
 
 const LoanRequest = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [loanRequests, setLoanRequests] = useState([
+    {
+      action: 'View',
+      requestType: 'Advance',
+      loanType: 'Personal Loan',
+      amount: '$3,000',
+      reason: 'Medical Emergency',
+      isManagerApproved: 'Yes',
+      isHRApproved: 'Pending',
+      isFinanceApproved: 'Pending',
+    },
+    // ... other requests
+  ]);
+
+  const handleSidebarClose = () => {
+    setIsSidebarOpen(false);
+  };
+
+  const handleSidebarSubmit = (newRequest) => {
+    setLoanRequests([...loanRequests, newRequest]);
+  };
+
   return (
     <div className="loan-request-main-container">
       <div className="loan-header">
-        <img src={backButtonImage} alt="Back" className="back-button-image" />
+        <button className="back-button">
+          <i className="fa-solid fa-chevron-left"></i>
+        </button>
         <h1>My Advance / Loan Request</h1>
+        <button className="loan-add-button" onClick={() => setIsSidebarOpen(true)}>
+          <i className="fa fa-plus"></i>
+        </button>
       </div>
 
       <div className="loan-request-container">
@@ -25,12 +53,34 @@ const LoanRequest = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td colSpan="8" className="no-records">No records Found</td>
-            </tr>
+            {loanRequests.length > 0 ? (
+              loanRequests.map((request, index) => (
+                <tr key={index}>
+                  <td><button>View</button></td>
+                  <td>{request.requestType}</td>
+                  <td>{request.loanType}</td>
+                  <td>{request.amount}</td>
+                  <td>{request.reason}</td>
+                  <td>{request.isManagerApproved}</td>
+                  <td>{request.isHRApproved}</td>
+                  <td>{request.isFinanceApproved}</td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="8" className="no-records">No records Found</td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
+
+      {isSidebarOpen && (
+        <LoanRequestSidebar
+          onClose={handleSidebarClose}
+          onSubmit={handleSidebarSubmit}
+        />
+      )}
     </div>
   );
 };
