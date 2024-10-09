@@ -22,6 +22,7 @@ function AdminDashboard() {
   const handleLogout = () => {
     // Remove adminId from local storage and redirect to home page
     localStorage.removeItem("adminId");
+    alert();
     navigate("/admin/login", { replace: true }); // Use navigate to redirect to the home page
   };
 

@@ -8,7 +8,7 @@ import Login from './components/Auth/Employee/Login/Login.js';
 import Dashboard from './components/Dashboard/Dashboard.js';
 import Attendance from './components/ESS/Attendance/Attendance.js';
 import LeaveList from './components/ESS/Leave List/LeaveList.js/LeaveList.js';
-import Myreferrals from './components/ESS/MyReferrals/MyReferrals.js';
+import MyReferrals from './components/ESS/MyReferrals/MyReferrals.js';
 import Wfhrequest from './components/ESS/WFH Request/WFHRequest.js';
 import Myrequest from './components/ESS/MyRequest/MyRequest.js';
 import Myassets from './components/ESS/My Assets/Myassets.js';
@@ -53,6 +53,7 @@ const App = () => {
         <Route path="admindashboard/:adminId" element={<AdminDashboard />} />
         <Route path="admin/:adminId/employee/:employeeCode" element={<EmployeeEdit />} />
 
+
         {/* Private Routes */}
         <Route
           path='/dashboardlayout'
@@ -69,7 +70,7 @@ const App = () => {
           <Route path='profile/:employeeCode' element={<Profile />} />
           <Route path='attendance/:employeeCode' element={<Attendance />} />
           <Route path='leavelist/:employeeCode' element={<LeaveList />} />
-          <Route path='myreferrals/:employeeCode' element={<Myreferrals />} />
+          <Route path='myreferrals/:employeeCode' element={<MyReferrals />} />
           <Route path='wfhrequest/:employeeCode' element={<Wfhrequest />} />
           <Route path='myrequest/:employeeCode' element={<Myrequest />} />
           <Route path='myassets/:employeeCode' element={<Myassets />} />
