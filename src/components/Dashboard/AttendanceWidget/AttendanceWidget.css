@@ -16,7 +16,7 @@
     margin: 10px auto 10px 0; /* Adjust margin to push it to the left */
     display: flex;
     position: relative;
-    align-items: flex-start;
+    align-items: center;
   }
   
 .attendance-widget-content{
@@ -26,22 +26,17 @@
 
 .attendance-image {
     background-color: #ffffff;
-    width: 100px !important;
-    height: 100px !important;
+    width: 85px;
+    height: 85px;
     display: flex;
-    align-items: center;
     border-radius: 8px;
-    left: 0px;
-    top: 50%;
-    justify-content: center;
-    margin-right: 15px;
-    margin-bottom: 15px;
   }
   
 .attendance-info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-left: 10px;
   }
   
 .attendance-title {
@@ -54,25 +49,60 @@
   }
   
 .attendance-box {
-    background-color: #f48aa8;
+    /* background-color: #f48aa8;
     border: 1px solid #ddd;
     padding: 0px;
     margin-bottom: 10px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; */
   }
   
 .attendance-date {
-    display: block;
-    font-weight: bold;
+    /* display: block;
+    font-weight: bold; */
+
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    background-color: #FBF0DA;
+    color: #73510D;
+    height: 18.6px;
+    padding: 3px 7px 3px 7px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 13px;
+    text-align: center;
+    text-transform: capitalize;
+    vertical-align: middle;
+    white-space: nowrap;
+    word-spacing: 0px;
+    display: inline-block;
+    box-sizing: border-box;
   }
   
 .attendance-clock {
-    display: block;
+    /* display: block;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 16px; */
     margin-top: 0px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    background-color: #FBF0DA;
+    color: #73510D;
+    height: 18.6px;
+    padding: 3px 7px 3px 7px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 13px;
+    text-align: center;
+    text-transform: capitalize;
+    vertical-align: middle;
+    white-space: nowrap;
+    word-spacing: 0px;
+    display: inline-block;
+    box-sizing: border-box;
   }
   
 .attendance-actions {
@@ -83,18 +113,43 @@
   
 .check-in-box {
     background-color: #09ed37a7;
-    border: none;
-    padding: 0px 15px;
     border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: center;
+    text-transform: capitalize;
+    white-space: pre;
+    height: 27px;
+    width: 64px;
+    border: 1px solid #DDDDDD;
+    margin: 0 5px 0 0;
+    padding: 4px 5px 4px 5px;
+    float: left;
+    display: block;
+    overflow: clip;
+    box-sizing: border-box;
+    cursor: pointer;
   }
   
 .clock-out-button {
     background-color: #f44336;
     color: white;
-    border: none;
-    padding: 5px 10px;
     border-radius: 4px;
-    cursor: pointer;
+    font-size: 13px;
+    /* font-weight: 500; */
+    line-height: 18px;
+    text-align: center;
+    text-transform: capitalize;
+    white-space: pre;
+    height: 27px;
+    border: 1px solid #DDDDDD;
+    margin: 0 5px 0 0;
+    padding: 4px 5px 4px 5px;
+    float: left;
+    display: block;
+    overflow: clip;
+    box-sizing: border-box;
   }
   
 .clock-out-button:hover {

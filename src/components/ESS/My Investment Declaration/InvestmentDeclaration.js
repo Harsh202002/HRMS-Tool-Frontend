@@ -10,7 +10,7 @@ const InvestmentDeclaration = () => {
 
      
       <div className="investment-declaration-form-container">
-        <h2>Investment Declaration Form For Tax Saving For Financial Year 2024-2025</h2>
+        <h2 className='inv-h2'>Investment Declaration Form For Tax Saving For Financial Year 2024-2025</h2>
         
         <div className="form-section">
          

@@ -48,6 +48,8 @@ const App = () => {
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/employeeregister" element={<EmployeeRegister />} />
         <Route path="/employee/register/:adminId" element={<EmployeeRegister />} />
+        <Route path="admindashboard" element={<AdminDashboard />} />
+        <Route path="admindashboard/:adminId" element={<AdminDashboard />} />
 
         {/* Private Routes */}
         <Route

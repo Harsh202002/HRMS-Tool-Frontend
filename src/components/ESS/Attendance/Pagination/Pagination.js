@@ -5,7 +5,7 @@ const Pagination = ({ totalEntries, entriesPerPage, currentPage, onPageChange, o
   const totalPages = Math.ceil(totalEntries / entriesPerPage);
 
   return (
-    <div className="pagination">
+    <div className="r-pagination">
       <span>Showing {((currentPage - 1) * entriesPerPage) + 1} to {Math.min(currentPage * entriesPerPage, totalEntries)} of {totalEntries} entries</span>
       <div className="page-numbers">
         <span>Show</span>

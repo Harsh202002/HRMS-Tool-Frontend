@@ -7,6 +7,11 @@ const MyReferrals = () => {
   const [referralData, setReferralData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [entriesPerPage, setEntriesPerPage] = useState(5);
+  const [isFilterVisible, setIsFilterVisible] = useState(false);
+  const [keyword, setKeyword] = useState(""); // State for keyword input
+  const [fromDate, setFromDate] = useState(""); // State for from date input
+  const [toDate, setToDate] = useState(""); // State for to date input
+  const [filteredData, setFilteredData] = useState([]); // State for filtered data
 
   // Function to fetch referral data
   const fetchReferralData = async (employeeCode) => {
@@ -28,6 +33,51 @@ const MyReferrals = () => {
     }
   }, []);
 
+  const toggleFilterVisibility = () => {
+    setIsFilterVisible(!isFilterVisible);
+};
+
+const handleKeywordChange = (e) => {
+  setKeyword(e.target.value);
+};
+
+const handleFromDateChange = (e) => {
+  setFromDate(e.target.value);
+};
+
+const handleToDateChange = (e) => {
+  setToDate(e.target.value);
+};
+
+const handleSearch = () => {
+  let filtered = referralData;
+
+  if (keyword) {
+      filtered = filtered.filter((entry) =>
+          entry.Reason.toLowerCase().includes(keyword.toLowerCase())
+      );
+  }
+
+  if (fromDate) {
+      filtered = filtered.filter((entry) => new Date(entry.StartDate) >= new Date(fromDate));
+  }
+
+  if (toDate) {
+      filtered = filtered.filter((entry) => new Date(entry.EndDate) <= new Date(toDate));
+  }
+
+  setFilteredData(filtered);
+  setCurrentPage(1); // Reset to the first page
+};
+
+const handleReset = () => {
+  setKeyword("");
+  setFromDate("");
+  setToDate("");
+  setFilteredData(referralData); // Reset to original data
+  setCurrentPage(1); // Reset to the first page
+};
+
   // Calculate indices for current page data
   const indexOfLastEntry = currentPage * entriesPerPage;
   const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
@@ -40,7 +90,40 @@ const MyReferrals = () => {
           <button className="back-button">←</button>
           <h2>Referral List</h2>
         </div>
+        <button className="filter-button" onClick={toggleFilterVisibility}>
+                    <i className="fa-solid fa-filter"></i>
+        </button>
       </div>
+      
+      {isFilterVisible && (
+                <div className="wfh-filter-section">
+                    <h3>Basic Search</h3>
+                    <div className="wfh-filter-fields">
+                        <input
+                            type="text"
+                            placeholder="Keyword"
+                            value={keyword}
+                            onChange={handleKeywordChange}
+                        />
+                        <input
+                            type="date"
+                            placeholder="From Date"
+                            value={fromDate}
+                            onChange={handleFromDateChange}
+                        />
+                        <input
+                            type="date"
+                            placeholder="To Date"
+                            value={toDate}
+                            onChange={handleToDateChange}
+                        />
+                    </div>
+                    <div className="wfh-filter-actions">
+                        <button className="search-button" onClick={handleSearch}>Search</button>
+                        <button className="reset-button" onClick={handleReset}>Reset</button>
+                    </div>
+                </div>
+            )}
 
       <div className="referral-list-table-container">
         <table className="referral-list-table">

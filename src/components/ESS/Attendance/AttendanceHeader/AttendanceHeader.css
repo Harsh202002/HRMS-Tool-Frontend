@@ -24,15 +24,19 @@
     }
     
     .back-arrow {
-      font-size: 30px; 
-      margin-right: 20px;
+      /* font-size: 30px; 
+      margin-right: 20px; */
       cursor: pointer;
+    }
+    .header-with-arrow h2{
+      font-size: 14px;
     }
     
     .attendance-statuses {
       display: flex;
       align-items: center;
       margin-left: auto;
+      font-size: 11px;
     }
     
     .legend-item {
@@ -42,7 +46,7 @@
     }
     
     .legend-item .status-box {
-      padding: 5px 8px;
+      padding: 2px 4px;
       border-radius: 5px;
       color: white; 
       margin-right: 3px; /* Spacing between box and text */

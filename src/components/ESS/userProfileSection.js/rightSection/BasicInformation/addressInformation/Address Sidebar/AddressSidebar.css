@@ -1,0 +1,103 @@
+/* Sidebar container */
+.address-sidebar {
+    width: 100%;
+    max-width: 400px; /* Set the maximum width for the sidebar */
+    background-color: #fff; /* Background color of the sidebar */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    position: fixed; /* Fixed positioning to the right of the screen */
+    top: 0; /* Align to the top */
+    right: -400px; /* Initially hidden */
+    height: 100%; /* Full height */
+    transition: right 0.3s ease; /* Smooth transition for sliding effect */
+    z-index: 1000; /* Ensure the sidebar is on top of other elements */
+}
+
+/* When the sidebar is open */
+.address-sidebar.open {
+    right: 0; /* Slide in when open */
+}
+
+/* Header styling */
+.address-sidebar-header {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between title and close button */
+    align-items: center; /* Center align items vertically */
+    padding: 10px; /* Padding inside the header */
+    background-color: #f8f9fa; /* Light gray background */
+    border-bottom: 1px solid #e9ecef; /* Bottom border for separation */
+}
+
+/* Close button */
+.address-close-button {
+    background: none; /* Remove default button styles */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Sidebar content */
+.address-sidebar-content {
+    padding: 20px; /* Padding inside the sidebar content */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    height: calc(100% - 50px); /* Adjust height to account for header */
+}
+
+/* Form group styling */
+.address-form-group {
+    margin-bottom: 15px; /* Space between form groups */
+}
+
+/* Input styling */
+.address-form-control {
+    width: 100%; /* Full width for inputs */
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 14px; /* Font size */
+}
+
+/* Buttons styling */
+.address-form-buttons {
+    display: flex; /* Use flexbox for button layout */
+    justify-content: space-between; /* Space between buttons */
+}
+
+/* Individual button styling */
+.address-btn {
+    padding: 10px 15px; /* Padding for buttons */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Save button */
+.address-btn-save {
+    background-color: #007bff; /* Blue background for save button */
+    color: #fff; /* White text */
+}
+
+/* Reset/Cancel button */
+.address-btn-reset {
+    background-color: #6c757d; /* Gray background for cancel button */
+    color: #fff; /* White text */
+}
+
+/* Button hover effects */
+.address-btn:hover {
+    opacity: 0.9; /* Slightly dim buttons on hover */
+}
+
+/* Button focus styles */
+.address-btn:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Custom focus effect */
+}
+/* Overlay styling */
+.overlay {
+    position: fixed; /* Fixed positioning */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 999; /* Behind the sidebar but in front of other content */
+}

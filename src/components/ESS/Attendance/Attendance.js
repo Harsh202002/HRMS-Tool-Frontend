@@ -12,6 +12,7 @@ const Attendance = () => {
   const handleEntriesChange = (entries) => setEntriesPerPage(parseInt(entries));
  
   return (
+    <div className='attendence-main-container'>
     <div className="attendance-container">
       <AttendanceHeader />
       <AttendanceTable
@@ -21,6 +22,7 @@ const Attendance = () => {
         onEntriesChange={handleEntriesChange}
       />
       {/* <Footer /> */}
+    </div>
     </div>
   );
 };

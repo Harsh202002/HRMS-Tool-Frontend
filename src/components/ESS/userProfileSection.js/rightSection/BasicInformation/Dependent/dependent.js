@@ -3,6 +3,8 @@ import axios from 'axios'; // Import axios
 import "./dependent.css"
 const Dependent = ({ isVisible, onToggle }) =>{
   const [employeeData, setEmployeeData] = useState({});
+  const [isSidebarOpen, setSidebarOpen] = useState(false); // Sidebar state
+
   useEffect(() => {
     const storedEmployeeCode = localStorage.getItem('employeeCode');
     if (storedEmployeeCode) {
@@ -18,6 +20,23 @@ const fetchEmployeeData = async (employeeCode) => {
       console.error('Error fetching employee data:', error);
   }
 };
+
+const handleSidebarToggle = () => {
+  setSidebarOpen(!isSidebarOpen);
+};
+
+const handleUpdateAddressData = (newData) => {
+  setEmployeeData((prevData) => ({
+    ...prevData,
+    addressType: newData.addressType,
+    address: newData.address,
+    city: newData.city,
+    telephone: newData.telephone,
+    zipCode: newData.zipCode,
+    country: newData.country,
+    state: newData.state,
+  }));
+};
     return(
         <div className="Dependent-Profile">
         <div className="btn-holder-Dependent" style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
@@ -27,6 +46,7 @@ const fetchEmployeeData = async (employeeCode) => {
          </button>
         </div>
      {isVisible && (
+      <div>
                   <div>
                   <table className="Dependent-table">
                     <thead>
@@ -50,6 +70,12 @@ const fetchEmployeeData = async (employeeCode) => {
                     </tbody>
                   </table>
                 </div>
+                 <div className="rsidebar-btn-plus">
+                 <button className="sidebar-button-Ed">
+                   <i className="fa fa-plus"></i>
+                 </button>
+               </div>
+               </div>
         )}
            
         </div>

@@ -1,0 +1,115 @@
+/* Sidebar styling */
+.ec-sidebar {
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1001;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .ec-sidebar.open {
+    transform: translateX(0);
+  }
+  
+  /* Overlay to cover the rest of the screen */
+  .ec-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+    z-index: 1000; /* Below the sidebar */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .ec-overlay.open {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Sidebar header */
+  .ec-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .ec-sidebar-header h3 {
+    margin: 0;
+    font-size: 1.2em;
+  }
+  
+  .ec-close-button {
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Form group */
+  .ec-form-group {
+    margin-bottom: 15px;
+  }
+  
+  .ec-form-group label {
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+  }
+  
+  .ec-form-group input,
+  .ec-form-group select,
+  .ec-form-group textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 0.9em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Form buttons */
+  .ec-form-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  
+  .ec-btn-save {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .ec-btn-save-new {
+    background-color: #ff9800;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .ec-btn-reset {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

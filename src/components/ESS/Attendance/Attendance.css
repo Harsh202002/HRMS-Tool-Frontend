@@ -11,4 +11,11 @@ body {
     padding: 20px;
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    background-color: aliceblue;
+}
+.attendence-main-container{
+    height: auto;
+    padding: 20px;
+    background-color: #E5F6FF;
 }

@@ -39,37 +39,61 @@
   
   .holiday-image {
     background-color: #ffffff;
-    width: 100px !important;
-    height: 100px !important;
+    height: 95px;
+    width: 90px;
     display: flex;
-    align-items: center;
     border-radius: 8px;
-    left: 0px;
-    top: 50%;
-    justify-content: center;
-    margin-right: 15px;
-    margin-bottom: 15px;
   }
 
   
   
   .holiday-info {
+    height: 95px;
     display: flex;
     flex-direction: column;
   }
   
   .holiday-box-1 {
-    background-color: #f598b6;
     border: 1px solid #ddd;
-    padding: 5px;
     margin-bottom: 5px;
+    background-color: #FBF0DA;
+    color: #73510D;
+    height: 18.6px;
+    padding: 3px 7px 3px 7px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 13px;
+    text-align: center;
+    text-transform: capitalize;
+    vertical-align: middle;
+    white-space: nowrap;
+    word-spacing: 0px;
+    display: inline-block;
+    box-sizing: border-box;
   }
 
   .holiday-box-2 {
-    background-color: #e3f2fd;
+    /* background-color: #e3f2fd; */
     border: 1px solid #ddd;
-    padding: 5px;
-    margin-bottom: 5px;
+    /* padding: 5px; */
+    /* margin-bottom: 5px; */
+    background-color: #292f41;
+    color: #ffffff;
+    height: 22px;
+    padding: 2px 10px 2px 10px;
+    border-radius: 6px;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: left;
+    text-transform: capitalize;
+    white-space: nowrap;
+    word-spacing: 0px
   }
   
   .holiday-date {

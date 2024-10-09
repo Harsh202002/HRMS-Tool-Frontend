@@ -1,7 +1,8 @@
 .referral-list-container {
     padding: 10px 20px;
     background-color: #e7f1ff; /* Light blue background */
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
   }
   
   .referral-list-header {
