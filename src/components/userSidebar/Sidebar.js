@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 
-const Sidebar = ({ employeeCode }) => {
+const Sidebar = ({ username }) => {
     const navigate = useNavigate();
     const [isEssOpen, setEssOpen] = useState(false);
     const [isDssOpen, setDssOpen] = useState(false);
@@ -41,7 +41,7 @@ const Sidebar = ({ employeeCode }) => {
                 </li>
                 {isDssOpen && (
                     <ul className="dropdown-menu">
-                        <li><button onClick={() => navigate(`dashboard/${employeeCode}`)}>Dashboard</button></li>
+                        <li><button onClick={() => navigate(`dashboard`)}>Dashboard</button></li>
                     </ul>
                 )}
                 <li>
@@ -52,23 +52,23 @@ const Sidebar = ({ employeeCode }) => {
                     </button>
                     {isEssOpen && (
                         <ul className="dropdown-menu">
-                            <li><button onClick={() => navigate(`/dashboardlayout/profile/${employeeCode}`)}>My Profile</button></li>
-                            <li><button onClick={() => navigate(`/dashboardlayout/myreferrals/${employeeCode}`)}>My Referrals</button></li>
-                            <li><button onClick={() => navigate(`/dashboardlayout/attendance/${employeeCode}`)}>My Attendance</button></li>
-                            <li><button onClick={() => navigate(`/dashboardlayout/leavelist/${employeeCode}`)}>My Leave</button></li>
-                            <li><button onClick={() => navigate(`/dashboardlayout/wfhrequest/${employeeCode}`)}>WFH Request</button></li>
-                            <li><button onClick={() => navigate(`/dashboardlayout/myrequest/${employeeCode}`)}>My Requests</button></li>
-                            <li><button onClick={() => navigate(`/dashboardlayout/myassets/${employeeCode}`)}>My Assets</button></li>
-                            <li><button onClick={() => navigate(`/dashboardlayout/myshift/${employeeCode}`)}>My Shift</button></li>
-                            <li><button onClick={() => navigate(`/dashboardlayout/accolades/${employeeCode}`)}>My Accolades</button></li>
-                            <li><button onClick={() => navigate(`/dashboardlayout/resignation/${employeeCode}`)}>My Resignation</button></li>
-                            <li><button onClick={() => navigate(`/dashboardlayout/salaryslip/${employeeCode}`)}>Salary Slip</button></li>
-                            <li><button onClick={() => navigate(`/dashboardlayout/salarystructure/${employeeCode}`)}>My Salary Structure</button></li>
-                            <li><button onClick={() => navigate(`/dashboardlayout/investmentdeclaration/${employeeCode}`)}>My Investment Declaration</button></li>
-                            <li><button onClick={() => navigate(`/dashboardlayout/mytdsdetails/${employeeCode}`)}>Tax Computation</button></li>
-                            <li><button onClick={() => navigate(`/dashboardlayout/loanrequest/${employeeCode}`)}>My Advance/Loan Request</button></li>
-                            <li><button onClick={() => navigate(`/dashboardlayout/myinterview/${employeeCode}`)}>My Interviews</button></li>
-                            <li><button onClick={() => navigate(`/dashboardlayout/performancereview/${employeeCode}`)}>My Performance Review</button></li>
+                            <li><button onClick={() => navigate(`/dashboardlayout/profile`)}>My Profile</button></li>
+                            <li><button onClick={() => navigate(`/dashboardlayout/myreferrals`)}>My Referrals</button></li>
+                            <li><button onClick={() => navigate(`/dashboardlayout/attendance`)}>My Attendance</button></li>
+                            <li><button onClick={() => navigate(`/dashboardlayout/leavelist`)}>My Leave</button></li>
+                            <li><button onClick={() => navigate(`/dashboardlayout/wfhrequest`)}>WFH Request</button></li>
+                            <li><button onClick={() => navigate(`/dashboardlayout/myrequest`)}>My Requests</button></li>
+                            <li><button onClick={() => navigate(`/dashboardlayout/myassets`)}>My Assets</button></li>
+                            <li><button onClick={() => navigate(`/dashboardlayout/myshift`)}>My Shift</button></li>
+                            <li><button onClick={() => navigate(`/dashboardlayout/accolades`)}>My Accolades</button></li>
+                            <li><button onClick={() => navigate(`/dashboardlayout/resignation`)}>My Resignation</button></li>
+                            <li><button onClick={() => navigate(`/dashboardlayout/salaryslip`)}>Salary Slip</button></li>
+                            <li><button onClick={() => navigate(`/dashboardlayout/salarystructure`)}>My Salary Structure</button></li>
+                            <li><button onClick={() => navigate(`/dashboardlayout/investmentdeclaration`)}>My Investment Declaration</button></li>
+                            <li><button onClick={() => navigate(`/dashboardlayout/mytdsdetails`)}>Tax Computation</button></li>
+                            <li><button onClick={() => navigate(`/dashboardlayout/loanrequest`)}>My Advance/Loan Request</button></li>
+                            <li><button onClick={() => navigate(`/dashboardlayout/myinterview`)}>My Interviews</button></li>
+                            <li><button onClick={() => navigate(`/dashboardlayout/performancereview`)}>My Performance Review</button></li>
                         </ul>
                     )}
                 </li>

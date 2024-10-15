@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Outlet, Navigate } from 'react-router-dom';
+import React, { useState} from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate, Outlet } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Profile from './components/ESS/userProfileSection.js/profileSection.js';
 import Navbar from './components/userNavbar/Navbar';
 import Sidebar from './components/userSidebar/Sidebar.js';
-import Login from './components/Auth/Employee/Login/Login.js';
+import Login from './components/Auth/Login/Login.js'; // Login page
 import Dashboard from './components/Dashboard/Dashboard.js';
 import Attendance from './components/ESS/Attendance/Attendance.js';
 import LeaveList from './components/ESS/Leave List/LeaveList.js/LeaveList.js';
@@ -22,79 +22,62 @@ import MyTDSDetails from './components/ESS/Tax Computation/MyTDSDetails.js';
 import LoanRequest from './components/ESS/Loan Request/LoanRequest.js';
 import MyInterview from './components/ESS/My Interview/MyInterview.js';
 import PerformanceReview from './components/ESS/PerformanceReview/PerformanceReview.js';
-import AdminDashboard from './components/Auth/Admin/AdminDashboard/AdminDashboard.js';
-import Register from './components/Auth/Admin/AdminRegister/Register';
-import AdminLogin from './components/Auth/Admin/AdminLogin/AdminLogin.js';
-import EmployeeRegister from './components/Auth/Admin/EmployeeRegister/EmployeeRegister.js';
-import EmployeeEdit from './components/Auth/Admin/EmployeeEdit/EmployeeEdit.js';
+import authService from './services/authService.js';
 import "./App.css";
 
 const App = () => {
-  const [employeeCode, setEmployeeCode] = useState(null);
+  const [user, setUser] = useState(authService.getCurrentUser()); // Initialize user state
 
-  useEffect(() => {
-    // Fetch employeeCode from localStorage
-    const loggedInEmployeeCode = localStorage.getItem('employeeCode');
-    if (loggedInEmployeeCode) {
-      setEmployeeCode(loggedInEmployeeCode);
-    }
-  }, []);
+  const handleLoginSuccess = (user) => {
+    setUser(user); // Set user after successful login
+  }
 
   return (
     <Router>
       <Routes>
-        {/* Public Routes */}
-        <Route path='/' element={<Login />} />
-        <Route path="/admin/register" element={<Register />} />
-        <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/employeeregister" element={<EmployeeRegister />} />
-        <Route path="/employee/register/:adminId" element={<EmployeeRegister />} />
-        <Route path="admindashboard" element={<AdminDashboard />} />
-        <Route path="admindashboard/:adminId" element={<AdminDashboard />} />
-
+        {/* Login Route */}
+        <Route path="/" element={<Login onLoginSuccess={handleLoginSuccess} />} />
+        
         {/* Private Routes */}
         <Route
-          path='/dashboardlayout'
+          path="/dashboardlayout"
           element={
-            employeeCode ? ( // Check if employeeCode exists in localStorage
-              <DashboardLayout employeeCode={employeeCode} />
+            user ? ( // Check if user exists
+              <DashboardLayout username={user.username} />
             ) : (
               <Navigate to="/" /> // Redirect to login if not authenticated
             )
           }
         >
-          <Route path='dashboard' element={<Dashboard />} />
-          <Route path="dashboard/:employeeCode" element={<Dashboard />} />
-          <Route path='profile/:employeeCode' element={<Profile />} />
-          <Route path='attendance/:employeeCode' element={<Attendance />} />
-          <Route path='leavelist/:employeeCode' element={<LeaveList />} />
-          <Route path='myreferrals/:employeeCode' element={<MyReferrals />} />
-          <Route path='wfhrequest/:employeeCode' element={<Wfhrequest />} />
-          <Route path='myrequest/:employeeCode' element={<Myrequest />} />
-          <Route path='myassets/:employeeCode' element={<Myassets />} />
-          <Route path='myshift/:employeeCode' element={<Calendar />} />
-          <Route path='accolades/:employeeCode' element={<Accolades />} />
-          <Route path='resignation/:employeeCode' element={<Resignation />} />
-          <Route path='salaryslip/:employeeCode' element={<SalarySlip />} />
-          <Route path='salarystructure/:employeeCode' element={<SalaryStructure />} />
-          <Route path='investmentdeclaration/:employeeCode' element={<InvestmentDeclaration />} />
-          <Route path='mytdsdetails/:employeeCode' element={<MyTDSDetails />} />
-          <Route path='loanrequest/:employeeCode' element={<LoanRequest />} />
-          <Route path='myinterview/:employeeCode' element={<MyInterview />} />
-          <Route path='performancereview/:employeeCode' element={<PerformanceReview />} />
-          <Route path="admindashboard" element={<AdminDashboard />} />
-          <Route path="admindashboard/:adminId" element={<AdminDashboard />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="attendance" element={<Attendance />} />
+          <Route path="leavelist" element={<LeaveList />} />
+          <Route path="myreferrals" element={<MyReferrals />} />
+          <Route path="wfhrequest" element={<Wfhrequest />} />
+          <Route path="myrequest" element={<Myrequest />} />
+          <Route path="myassets" element={<Myassets />} />
+          <Route path="myshift" element={<Calendar />} />
+          <Route path="accolades" element={<Accolades />} />
+          <Route path="resignation" element={<Resignation />} />
+          <Route path="salaryslip" element={<SalarySlip />} />
+          <Route path="salarystructure" element={<SalaryStructure />} />
+          <Route path="investmentdeclaration" element={<InvestmentDeclaration />} />
+          <Route path="mytdsdetails" element={<MyTDSDetails />} />
+          <Route path="loanrequest" element={<LoanRequest />} />
+          <Route path="myinterview" element={<MyInterview />} />
+          <Route path="performancereview" element={<PerformanceReview />} />
         </Route>
       </Routes>
     </Router>
   );
 };
 
-const DashboardLayout = ({ employeeCode }) => {
+const DashboardLayout = ({ username }) => {
   return (
     <div className="dashboard-container">
       <Navbar />
-      <Sidebar employeeCode={employeeCode} /> {/* Pass employeeCode to Sidebar */}
+      <Sidebar username={username} /> {/* Pass username to Sidebar */}
       <div className="main-content">
         <Outlet />
       </div>
