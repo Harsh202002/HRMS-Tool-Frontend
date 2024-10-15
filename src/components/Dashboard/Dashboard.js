@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React  from "react";
+//import {  useNavigate } from "react-router-dom";
 import './Dashboard.css'; 
 import EmployeeDirectory from './EmployeeDirectoryWidget/EmployeeDirectory';
 import ShiftWidget from "./ShiftWidget.js/ShiftWidget";
@@ -19,13 +19,14 @@ import Policies from './Policies/Policies';
 import MyLeaveApplied from './MyLeaveApplied/MyLeaveApplied';
 import ApplyLeave from './ApplyLeave/ApplyLeave';
 import Gallery from './Gallery/Gallery';
+//import authService from "../../services/authService";
+//import { isTokenValid, getToken } from "../../utils/jwtUtil";
 // import Footer from "./Footer/Footer.js";
+
 const Dashboard = () => {
-    // const [isEssOpen, setEssOpen] = useState(false);
-   
-    // const toggleEssMenu = () => {
-    //   setEssOpen(!isEssOpen);
-    // };
+
+
+
    
      return (
        <div className="dash-dashboard-container">
