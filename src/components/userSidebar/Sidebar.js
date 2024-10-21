@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import "./Sidebar.css";
 
-const Sidebar = ({ username }) => {
+const Sidebar = ({ role }) => {
     const navigate = useNavigate();
     const [isEssOpen, setEssOpen] = useState(false);
     const [isDssOpen, setDssOpen] = useState(false);
-
+    const [isSssOpen, setSssOpen] = useState(false);
     // Toggle the Dashboard menu
     const toggleDssMenu = () => {
         setDssOpen(!isDssOpen);  // Toggle Dashboard menu
@@ -22,6 +22,17 @@ const Sidebar = ({ username }) => {
             setDssOpen(false);   // Close Dashboard if it's open
         }
     };
+
+    const toggleSssMenu = () => {
+        if (isEssOpen && isDssOpen) {
+            setEssOpen(false); // Close ESS menu
+            setDssOpen(false); // Close DSS menu
+            setSssOpen(true);  // Open SSS menu
+        } else {
+            setSssOpen((prev) => !prev); // Toggle SSS menu if ESS and DSS aren't both open
+        }
+    };
+    
 
     // Close both dropdowns when the sidebar is collapsed
     const closeAllMenus = () => {
@@ -71,6 +82,18 @@ const Sidebar = ({ username }) => {
                             <li><button onClick={() => navigate(`/dashboardlayout/performancereview`)}>My Performance Review</button></li>
                         </ul>
                     )}
+                </li>
+                <li>
+                    <button onClick={toggleSssMenu} className='dropdown-button'>
+                    <i class="fa fa-cogs" aria-hidden="true"></i>
+                        <span className='sidebar-title'>Settings</span>
+                        <i className={`fa-solid fa-chevron-right arrow ${isSssOpen ? 'rotate' : ''}`}></i>
+                    </button>
+                {isSssOpen && (
+                    <ul className="dropdown-menu">
+                        <li><button onClick={() => navigate(`workflow`)}>work Flow</button></li>
+                    </ul>
+                )}
                 </li>
             </ul>
         </nav>

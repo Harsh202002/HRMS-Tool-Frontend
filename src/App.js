@@ -24,6 +24,7 @@ import MyInterview from './components/ESS/My Interview/MyInterview.js';
 import PerformanceReview from './components/ESS/PerformanceReview/PerformanceReview.js';
 import authService from './services/authService.js';
 import "./App.css";
+import Workflow from './components/Settings/Work flow Management/Work flow/Workflow.js';
 
 const App = () => {
   const [user, setUser] = useState(authService.getCurrentUser()); // Initialize user state
@@ -67,6 +68,7 @@ const App = () => {
           <Route path="loanrequest" element={<LoanRequest />} />
           <Route path="myinterview" element={<MyInterview />} />
           <Route path="performancereview" element={<PerformanceReview />} />
+          <Route path="workflow" element={<Workflow />} />
         </Route>
       </Routes>
     </Router>
