@@ -1,6 +1,7 @@
 .resignation-main-container{
   background-color: #E5F6FF;
   height: 130vh;
+  padding: 20px;
 }
   
   .resignation-header {
@@ -45,7 +46,7 @@
   border-radius: 10px;
   padding: 10px;
   height: 400px;
-  width: 1390px;
+  width: auto;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   margin-left: auto;
   margin-right: auto;
