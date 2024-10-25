@@ -25,6 +25,7 @@ import PerformanceReview from './components/ESS/PerformanceReview/PerformanceRev
 import authService from './services/authService.js';
 import "./App.css";
 import Workflow from './components/Settings/Work flow Management/Work flow/Workflow.js';
+import Generalsetup from './components/Settings/General Setup/Generalsetup.js';
 
 const App = () => {
   const [user, setUser] = useState(authService.getCurrentUser()); // Initialize user state
@@ -69,6 +70,7 @@ const App = () => {
           <Route path="myinterview" element={<MyInterview />} />
           <Route path="performancereview" element={<PerformanceReview />} />
           <Route path="workflow" element={<Workflow />} />
+          <Route path="generalsetup" element={<Generalsetup/>} />
         </Route>
       </Routes>
     </Router>
