@@ -92,11 +92,8 @@ const Sidebar = ({ role }) => {
                 {isSssOpen && (
                     <ul className="dropdown-menu">
                         <li><button onClick={() => navigate(`workflow`)}>work Flow</button></li>
-<<<<<<< HEAD
                         <li><button onClick={() => navigate(`generalsetup`)}>General</button></li>
-=======
                         <li><button onClick={() => navigate(`userroles`)}>User/Roles</button></li>
->>>>>>> 7c83f40784eaf92364b5ea881d5e074955d42add
                     </ul>
                 )}
                 </li>
