@@ -2,33 +2,28 @@ import React, { useState, useEffect } from "react";
 import "./Generalsetup.css";
 import Pagination from "../../../components/ESS/Attendance/Pagination/Pagination";
 
-
 const Generalsetup = () => {
     const [generalData, setgeneralData] = useState([]);
-    const [activeTab, setActiveTab] = useState("general"); // State to track the active tab
-    const [currentPage, setCurrentPage] = useState(1); // State to manage current page
-     const [entriesPerPage, setEntriesPerPage] = useState(5); // State to define items per page
+    const [activeTab, setActiveTab] = useState("general"); // Track active tab
+    const [currentPage, setCurrentPage] = useState(1); // Manage current page
+    const [entriesPerPage, setEntriesPerPage] = useState(5); // Items per page
 
     useEffect(() => {
         const fetchData = async () => {
             await new Promise((resolve) => setTimeout(resolve, 1000));
             const data = [
-                // Your data here
-
-                    {
-                        id: 1,
-                        Request: "Annual Leave",
-                        Requestid: "None",
-                        Priority: "2024-08-01",
-                        Assignedto: "2024-08-05",
-                        Attachment: 5,
-                        Requestdate: "No",
-                        Status: "Vacation",
-                    },
+                {
+                    id: 1,
+                    companyname: "Annual Leave",
+                    companycode: "None",
+                    address: "2024-08-01",
+                    website: "2024-08-05",
+                    telephone: 5,
+                    email: "No",
+                },
             ];
             setgeneralData(data);
         };
-
         fetchData();
     }, []);
 
@@ -37,25 +32,32 @@ const Generalsetup = () => {
         setCurrentPage(1); 
     };
 
-    
     const indexOfLastEntry = currentPage * entriesPerPage;
-  const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
-  const currentEntries = generalData.slice(indexOfFirstEntry, indexOfLastEntry);
-
+    const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
+    const currentEntries = generalData.slice(indexOfFirstEntry, indexOfLastEntry);
 
     return (
         <div className="generalsetup-list-container">
             <div className="generalsetup-list-header">
                 <div className="generalsetup-list-heading">
                     <button className="back-button">←</button>
-
-                    <h2>{activeTab === "general" ? "General" : activeTab === "locations" ? "Locations" : activeTab === "Department" ? "Department":activeTab === "jobtittle" ? "Job Tittle" : "Job Level" }</h2>
+                    <h2>
+                        {activeTab === "general"
+                            ? "General"
+                            : activeTab === "locations"
+                            ? "Locations"
+                            : activeTab === "department"
+                            ? "Department"
+                            : activeTab === "jobtittle"
+                            ? "Job Title"
+                            : "Job Level"}
+                    </h2>
                 </div>
                 <div className="generalsetup-right-btn">
-                <button className="filter-button">🔍</button>
+                    <button className="filter-button">🔍</button>
                 </div>
             </div>
-            
+
             <div className="generalsetup-list-tabs">
                 <div
                     className={`tab ${activeTab === "general" ? "active" : ""}`}
@@ -70,8 +72,8 @@ const Generalsetup = () => {
                     Locations
                 </div>
                 <div
-                    className={`tab ${activeTab === "Department" ? "active" : ""}`}
-                    onClick={() => handleTabClick("Department")}
+                    className={`tab ${activeTab === "department" ? "active" : ""}`}
+                    onClick={() => handleTabClick("department")}
                 >
                     Department
                 </div>
@@ -79,7 +81,7 @@ const Generalsetup = () => {
                     className={`tab ${activeTab === "jobtittle" ? "active" : ""}`}
                     onClick={() => handleTabClick("jobtittle")}
                 >
-                    Job Tittle
+                    Job Title
                 </div>
                 <div
                     className={`tab ${activeTab === "joblevel" ? "active" : ""}`}
@@ -88,60 +90,45 @@ const Generalsetup = () => {
                     Job Level
                 </div>
             </div>
-            {activeTab === "workflow" ? (
+
+            {/* Render sections based on activeTab */}
+            {activeTab === "general" && (
                 <div>
                 <div className="generalsetup-list-table-container">
-                    <div>
                     <table className="generalsetup-list-table">
                         <thead>
                             <tr>
                                 <th>Action</th>
-                                <th>View</th>
-                                <th>Request</th>
-                                <th>Request Id</th>
-                                <th>Priority</th>
-                                <th>Assigned To</th>
-                                <th>Attachment</th>
-                                <th>Request Date</th>
-                                <th>Status</th>
+                                <th>Company Name</th>
+                                <th>Company Code</th>
+                                <th>Address</th>
+                                <th>Website</th>
+                                <th>Telephone</th>
+                                <th>Email</th>
                             </tr>
                         </thead>
                         <tbody>
                             {currentEntries.length > 0 ? (
-                                currentEntries.map((Workflow) => (
-                                    <tr key={Workflow.id}>
-                                        <td>
-                                            <button>Edit</button>
-                                        </td>
-                                        <td>
-                                            <button>View</button>
-                                        </td>
-                                        <td>{Workflow.Request}</td>
-                                        <td>{Workflow.Requestid}</td>
-                                        <td>{Workflow.Priority}</td>
-                                        <td>{Workflow.Assignedto}</td>
-                                        <td>{Workflow.Attachment}</td>
-                                        <td>{Workflow.Requestdate}</td>
-                                        <td>{Workflow.Status}</td>
-                                        <td>
-                                            {Workflow.cancelLeave === "Yes" && (
-                                                <button>Cancel</button>
-                                            )}
-                                        </td>
+                                currentEntries.map((general) => (
+                                    <tr key={general.id}>
+                                        <td><button>Edit</button></td>
+                                        <td>{general.companyname}</td>
+                                        <td>{general.companycode}</td>
+                                        <td>{general.address}</td>
+                                        <td>{general.website}</td>
+                                        <td>{general.telephone}</td>
+                                        <td>{general.email}</td>
                                     </tr>
                                 ))
                             ) : (
                                 <tr>
-                                    <td colSpan="13" className="no-records">
+                                    <td colSpan="7" className="no-records">
                                         No records found
                                     </td>
                                 </tr>
                             )}
                         </tbody>
                     </table>
-                   
-                    </div>
-            
                 </div>
                 <Pagination
                         totalEntries={generalData.length}
@@ -151,26 +138,86 @@ const Generalsetup = () => {
                         onEntriesChange={setEntriesPerPage}
                     />
                 </div>
-            ) : (
+            )}
+
+            {activeTab === "locations" && (
                 <div className="generalsetup-list-table-container">
                     <table className="generalsetup-list-table">
                         <thead>
                             <tr>
                                 <th>Action</th>
-                                <th>View</th>
-                                <th>Request</th>
-                                <th>Request Id</th>
-                                <th>Priority</th>
-                                <th>Assignedto</th>
-                                <th>Attachment</th>
-                                <th>Request Date</th>
+                                <th>Location Name</th>
+                                <th>Address</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {/* Your leave credit request data rendering here */}
                             <tr>
-                                <td colSpan="9" className="no-records">
+                                <td colSpan="4" className="no-records">
+                                    No records found
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            )}
+
+            {activeTab === "department" && (
+                <div className="generalsetup-list-table-container">
+                    <table className="generalsetup-list-table">
+                        <thead>
+                            <tr>
+                                <th>Action</th>
+                                <th>Department Name</th>
+                                <th>Head</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colSpan="4" className="no-records">
+                                    No records found
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            )}
+            {activeTab === "jobtittle" && (
+                <div className="generalsetup-list-table-container">
+                    <table className="generalsetup-list-table">
+                        <thead>
+                            <tr>
+                                <th>Action</th>
+                                <th>Jobtittle Name</th>
+                                <th>Head</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colSpan="4" className="no-records">
+                                    No records found
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            )}
+             {activeTab === "joblevel" && (
+                <div className="generalsetup-list-table-container">
+                    <table className="generalsetup-list-table">
+                        <thead>
+                            <tr>
+                                <th>Action</th>
+                                <th>Joblevel Name</th>
+                                <th>Head</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colSpan="4" className="no-records">
                                     No records found
                                 </td>
                             </tr>
@@ -181,6 +228,5 @@ const Generalsetup = () => {
         </div>
     );
 };
-
 
 export default Generalsetup;
