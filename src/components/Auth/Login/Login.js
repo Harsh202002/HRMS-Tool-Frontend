@@ -5,34 +5,21 @@ import hrmsMain from '../../../Assets/6343825.jpg';
 import logo from '../../../Assets/netfotechlogo.png';
 import authService from "../../../services/authService";
 
-const Login = ({ onLoginSuccess }) => {
+const Login = (  ) => {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(''); // State for error handling
+  const [error , setErrorMessage] = useState(''); // State for error handling
   const [rememberMe, setRememberMe] = useState(false); // State for 'Remember Me'
 
   // Handle login function
   const handleLogin = async (e) => {
-    e.preventDefault(); // Prevent default form submission
-
+    e.preventDefault();
     try {
-      // Perform login using the authService
-      const user = await authService.login(username, password);
-      onLoginSuccess(user); // Pass the user back to the App component
-
-      // If "Remember me" is checked, store credentials in local storage
-      if (rememberMe) {
-        localStorage.setItem('rememberMe', JSON.stringify({ username, password }));
-      } else {
-        localStorage.removeItem('rememberMe'); // Clear stored credentials if not checked
-      }
-
-      // Redirect to the dashboard
-      navigate(`/dashboardlayout/dashboard`);
+      await authService.login(username, password);
+      navigate("/dashboardlayout/dashboard"); // Redirect to dashboard after login
     } catch (error) {
-      console.error("Login failed", error);
-      setError('Invalid username or password. Please try again.'); // Display error message
+      setErrorMessage("Invalid username or password");
     }
   };
 

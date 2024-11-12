@@ -1,0 +1,64 @@
+.approval-sidebar {
+    width: 350px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  .approval-sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .leave-approval-close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .module-select select,
+  .level-group select,
+  .exceptions select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+  }
+  
+  .level-group label,
+  .exceptions label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn-save, .btn-save-new, .btn-reset {
+    padding: 15px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  .btn-save { background-color: #4CAF50; color: white; }
+  .btn-save-new { background-color: #FF9800; color: white; }
+  .btn-reset { background-color: #f44336; color: white; }
+  

@@ -1,0 +1,119 @@
+.request-reason-container {
+    padding: 10px 20px;
+    background-color: #e7f1ff;
+    height: 100vh;
+}
+
+.request-reason-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.request-reason-back-button {
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border: none;
+    font-size: 1rem;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.request-reason-filter-button {
+    margin-left: auto;
+    background-color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.request-reason-table-container {
+    background-color: white;
+    height: 70vh;
+    border-radius: 10px 10px 0px 0px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.request-reason-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.request-reason-table th, .request-reason-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.action-button {
+    background: white;
+    color: black;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.status-label {
+    padding: 5px 10px;
+    border-radius: 12px;
+}
+
+.status-label.active {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-label.inactive {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.no-records {
+    text-align: center;
+    padding: 20px;
+}
+
+.request-reason-sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.request-reason-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sidebar-close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}

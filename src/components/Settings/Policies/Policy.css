@@ -1,0 +1,97 @@
+.policy-main-container {
+  padding: 10px 20px;
+    background-color: #e7f1ff; /* Light blue background */
+    height: 100vh;
+  }
+  
+  .policy-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e7f1ff; /* Light blue background */
+    border-radius: 8px; /* Rounded corners */
+  
+  }
+  
+  .policy-back-button-image,
+  .policy-add-button {
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border: none;
+    font-size: 1rem;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .policy-header h1 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    margin-top: 4px;
+    margin-right: 1200px;
+  }
+  
+ 
+  
+  .policy-table-container {
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    height: 70vh;
+    width: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .policy-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+  }
+  
+  .policy-table th, 
+  .policy-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .policy-table th {
+    background-color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .policy-table button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+
+  .status-label.active {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-label.inactive {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+  
+  /* Additional styling for "No records found" */
+  .policy-no-records {
+    text-align: center;
+    color: red;
+    font-size: 16px;
+  }
+  

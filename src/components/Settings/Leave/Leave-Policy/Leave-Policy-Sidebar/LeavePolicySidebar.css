@@ -1,0 +1,77 @@
+/* LeavePolicySidebar.css */
+.leave-policy-sidebar {
+    width: 500px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.leave-policy-sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.leave-policy-close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.leave-policy-form-group {
+    margin-bottom: 15px;
+}
+
+.leave-policy-form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.leave-policy-form-group select,
+.leave-policy-form-group input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border-left: 2px solid red;
+    border-radius: 4px;
+}
+
+.leave-policy-form-checkbox label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.leave-policy-form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.leave-policy-save-button,
+.leave-policy-reset-button {
+    padding: 15px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.leave-policy-save-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+

@@ -7,14 +7,17 @@
   .attendance-header {
       display: flex;
       align-items: center;
-      padding: 5px 10px;
+      padding: 5px 15px;
       background-color: #E5F6FF;
       position: sticky;
-      top: 0;
-     
-     
-     
+      top: 0;    
     }
+
+    .attendance-header h2 {
+      font-size: 20px;
+    }
+
+
    
     .header-with-arrow {
       display: flex;

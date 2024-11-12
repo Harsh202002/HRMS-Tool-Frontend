@@ -1,0 +1,102 @@
+.policy-form-container {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 30%;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.policy-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.policy-form-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.policy-close-sidebar-button {
+  background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.policy-form {
+  padding: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 400px;
+    padding: 8px;
+    border-left: 2px solid red;
+    border-radius: 4px;
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.form-group input[type="file"] {
+  border: none;
+}
+
+.form-group small {
+  color: #999;
+  font-size: 14px; /* Increased font size for better visibility */
+  margin-top: 5px;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.save-button,
+.save-new-button,
+.reset-button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 50px;
+  border-radius: 4px;
+}
+
+.save-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.save-new-button {
+  background-color: #ffc107;
+  color: white;
+}
+
+.reset-button {
+  background-color: #dc3545;
+  color: white;
+}

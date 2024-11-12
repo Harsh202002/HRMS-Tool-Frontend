@@ -1,5 +1,5 @@
-import React  from "react";
-//import {  useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import './Dashboard.css'; 
 import EmployeeDirectory from './EmployeeDirectoryWidget/EmployeeDirectory';
 import ShiftWidget from "./ShiftWidget.js/ShiftWidget";
@@ -21,58 +21,56 @@ import ApplyLeave from './ApplyLeave/ApplyLeave';
 import Gallery from './Gallery/Gallery';
 //import authService from "../../services/authService";
 //import { isTokenValid, getToken } from "../../utils/jwtUtil";
+
 // import Footer from "./Footer/Footer.js";
 
+
 const Dashboard = () => {
+  
 
+  return (
+    <div className="dash-dashboard-container">
+      <div className="dashboard-main-content">
+        <div className="dash-dashboard-header">
+          <h2>Ess Dashboard</h2>
+        </div>
+        <div className="widgets-container">
+          <EmployeeDirectory />  
+          <ShiftWidget />
+          <HolidayWidget />
+          <AttendanceWidget />
+        </div>
+        <div className="containers-row">
+          <NewJoining />  
+          <Celebration />  
+        </div>
+        <div className="vacancy-container">
+          <OpenVacancies />  
+        </div>
+        <div className="containers-row">
+          <AttendanceT />  
+          <PerformanceFeedback />
+        </div>
+        <div className="containers-row">
+          <Training />
+          <MyToDoList />
+        </div>
+        <div className="containers-row">
+          <AccoladesRewards />
+          <WordsOfWisdom />
+          <BalanceLeaves />
+        </div>
+        <div className="containers-row">
+          <Policies />
+          <MyLeaveApplied />
+        </div>
+        <div className="containers-row">
+          <ApplyLeave />
+          <Gallery />
+        </div>
+      </div>
+    </div>
+  );
+};
 
-
-   
-     return (
-       <div className="dash-dashboard-container">
-         
-         <div className="dashboard-main-content">
-           <div className="dash-dashboard-header">
-             <h2>Ess Dashboard</h2>
-           </div>
-           <div className="widgets-container"> 
-             <EmployeeDirectory />  
-             <ShiftWidget />
-             <HolidayWidget />
-             <AttendanceWidget />
-           </div>
-           <div className="containers-row">
-             <NewJoining />  
-             <Celebration />  
-           </div>
-           <div className="vacancy-container">
-             <OpenVacancies />  
-           </div>
-           <div className="containers-row">
-             <AttendanceT />  
-             <PerformanceFeedback />
-           </div>
-           <div className="containers-row">
-             <Training />
-             <MyToDoList />
-           </div>
-           <div className="containers-row">
-             <AccoladesRewards />
-             <WordsOfWisdom />
-             <BalanceLeaves />
-           </div>
-           <div className="containers-row">
-              <Policies />
-              <MyLeaveApplied />
-           </div>
-           <div className="containers-row">
-              <ApplyLeave />
-              <Gallery />
-           </div>
-         </div>
-             {/* <Footer /> */}
-       </div>
-     );
-   };
-   
-   export default Dashboard;
+export default Dashboard;

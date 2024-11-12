@@ -25,6 +25,16 @@ import PerformanceReview from './components/ESS/PerformanceReview/PerformanceRev
 import authService from './services/authService.js';
 import "./App.css";
 import Workflow from './components/Settings/Work flow Management/Work flow/Workflow.js';
+import AccoladesAndRewards from './components/Settings/Accolades & Rewards/Accolades&rewards.js';
+import Policy from './components/Settings/Policies/Policy.js';
+import TypeOfEmployment from './components/Settings/Employee Setting/TypeOfEmployeement/TypeOfEmployment.js';
+import EducationSetting from './components/Settings/Employee Setting/Employee-education-setting/EducationSetting.js';
+import RequestReason from './components/Settings/Employee Setting/Request-Reason/RequestReason.js';
+import StandardSetting from './components/Settings/Employee Setting/Stanadard-Settings/StandardSetting.js';
+import LeavePolicy from './components/Settings/Leave/Leave-Policy/LeavePolicy.js';
+import LeavePolicyPeriod from './components/Settings/Leave/Leave-policy-Period/LeavePolicyPeriod.js';
+import LeaveApproval from './components/Settings/Leave/Leave-Approval/LeaveApproval.js';
+
 
 const App = () => {
   const [user, setUser] = useState(authService.getCurrentUser()); // Initialize user state
@@ -69,6 +79,16 @@ const App = () => {
           <Route path="myinterview" element={<MyInterview />} />
           <Route path="performancereview" element={<PerformanceReview />} />
           <Route path="workflow" element={<Workflow />} />
+          <Route path="Accolade&rewards" element={<AccoladesAndRewards />} />
+          <Route path="policy" element={<Policy />} />
+          <Route path="type-of-employment" element={<TypeOfEmployment />} />
+          <Route path="education-setting" element={<EducationSetting />} />
+          <Route path="request-reason" element={<RequestReason />} />
+          <Route path="standards-setting" element={<StandardSetting />} />
+          <Route path="leave-policy" element={<LeavePolicy />} />
+          <Route path="leave-policy-period" element={<LeavePolicyPeriod />} />
+          <Route path="leave-approval" element={<LeaveApproval />} />
+         
         </Route>
       </Routes>
     </Router>
