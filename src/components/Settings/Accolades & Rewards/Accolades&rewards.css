@@ -1,0 +1,198 @@
+.accolades-and-rewards-main-container {
+  padding: 10px 20px;
+  background-color: #e7f1ff; /* Light blue background */
+  height: 100vh;
+}
+
+.accolades-and-rewards-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensure space between items */
+  background-color: #e7f1ff; /* Light blue background */
+  border-radius: 8px; /* Rounded corners */
+  margin-bottom: 20px;
+}
+
+.accolades-and-rewards-back-button {
+  display: flex;
+  align-items: center;
+}
+
+.accolades-and-rewards-back-button img {
+  cursor: pointer;
+  margin-right: 10px;
+  height: 40px;
+}
+
+.accolades-and-rewards-header h1 {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0; /* Removed margins to align with back button */
+  margin-left: 10px; /* Add some space between back button and header */
+  /* Center the title vertically in line with the back button */
+}
+
+.accolades-and-rewards-add-button {
+  height: 30px;
+  width: 30px;
+  background-color: white;
+  border: none;
+  font-size: 1rem;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for buttons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto; /* Push the add button to the extreme right */
+}
+
+
+.accolades-and-rewards-table-container {
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  height: 70vh;
+  width: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: auto; /* Handle overflow for horizontal scrolling if needed */
+}
+
+.accolades-and-rewards-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.accolades-and-rewards-table th,
+.accolades-and-rewards-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left; /* Align text to the left for both header and rows */
+}
+
+.accolades-and-rewards-table th {
+  background-color: #ffffff; /* Light background for headers */
+  font-weight: 600;
+}
+
+.accolades-and-rewards-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.accolades-and-rewards-table button {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+/* Form styles */
+.accolades-and-rewards-form {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 600px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  z-index: 1000; /* Ensure form is above other elements */
+}
+
+.accolades-and-rewards-form-group {
+  margin-bottom: 15px;
+}
+
+
+.accolades-and-rewards-form h2 {
+  margin: 0;
+  font-size: 20px;
+  padding: 15px ;
+}
+
+.accolades-and-rewards-form-group label {
+  display: block;
+  margin-bottom: 5px; /* Slightly more space for readability */
+  font-weight: bold; /* Bold labels for better clarity */
+}
+
+.accolades-and-rewards-form-group input,
+.accolades-and-rewards-form-group select,
+.accolades-and-rewards-form-group textarea {
+  width: calc(100% - 20px);
+  padding: 8px;
+  border-left: 2px solid red;
+  border-radius: 4px;
+}
+
+.accolades-and-rewards-form-buttons {
+  display: flex;
+  justify-content: space-between; /* Ensure even spacing between buttons */
+  margin-top: 20px;
+}
+
+.accolades-and-rewards-submit,
+.accolades-and-rewards-save,
+.accolades-and-rewards-reset {
+  padding: 20px 10px ; /* Increased padding for larger buttons */
+  font-size: 18px; /* Adjusted for better visibility */
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.accolades-and-rewards-submit {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.accolades-and-rewards-save {
+  background-color: #FFA500;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.accolades-and-rewards-reset {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Updated close button styles */
+.accolades-and-rewards-form-close-button {
+  position: absolute; /* Ensure it's positioned relative to the form container */
+  top: 10px; /* Position close to the top */
+  right: 10px; /* Position close to the right edge */
+  height: 30px;
+  width: 30px;
+  background-color: none;
+  border: none;
+  font-size: 1rem;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+

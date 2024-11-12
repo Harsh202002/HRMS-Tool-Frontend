@@ -1,0 +1,81 @@
+.leave-policy-container {
+    padding: 10px 20px;
+    background-color: #e7f1ff;
+    height: 100vh;
+}
+
+.leave-policy-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.leave-policy-back-button {
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border: none;
+    font-size: 1rem;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.leave-policy-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.leave-policy-table-container {
+    background-color: white;
+    height: 70vh;
+    border-radius: 10px 10px 0px 0px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.leave-policy-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.leave-policy-table th, .leave-policy-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.leave-policy-table th {
+    background-color: #ffffff;
+    font-weight: 600;
+}
+
+.action-button, .view-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.status-label.active {
+    color: green;
+    font-weight: bold;
+}
+
+.status-label.inactive {
+    color: red;
+    font-weight: bold;
+}
+
+.no-records {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+}

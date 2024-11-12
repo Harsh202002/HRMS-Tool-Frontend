@@ -7,8 +7,6 @@
   .rmyassetslist-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px;
     background-color: #e7f1ff; /* Light blue background */
     border-radius: 8px; /* Rounded corners */
   }

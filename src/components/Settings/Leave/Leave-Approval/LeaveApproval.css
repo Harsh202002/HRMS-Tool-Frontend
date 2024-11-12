@@ -1,0 +1,144 @@
+.leave-approval-container {
+    padding: 10px 20px;
+    background-color: #e7f1ff;
+    height: 100vh;
+}
+
+.leave-approval-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.leave-approval-back-button {
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border: none;
+    font-size: 1rem;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.leave-approval-header h1 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    margin: 0; /* Remove extra margin around h1 */
+}
+
+.leave-approval-add-button {
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border: none;
+    font-size: 1rem;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.approval-table-section {
+    background-color: white;
+    border-radius: 10px 10px 0px 0px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.approval-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.approval-table th,
+.approval-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.action-button, .view-button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.exceptions-section {
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.exceptions-section h2 {
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 10px;
+    color: black;
+}
+
+.exceptions-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+.exceptions-table th,
+.exceptions-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.action-button, .view-button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.exceptions-section {
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.exceptions-section h2 {
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 10px;
+    color: black;
+}
+
+.exceptions-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+.exceptions-table th,
+.exceptions-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}

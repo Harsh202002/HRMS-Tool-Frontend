@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 600px;
+    width: 700px;
     height: 1000%;
     background-color: #fff;
     box-shadow: -2px 0 5px rgba(0,0,0,0.5);
@@ -12,31 +12,27 @@
   }
   
   .resignation-sidebar-form h2 {
+    margin: 0;
     font-size: 20px;
-    margin-bottom: 20px;
-    color: black;
+    padding: 10px;
   }
   
   .resignation-close-sidebar-button {
-    height: 40px;
-    width: 40px;
-    background-color: rgb(97, 12, 236);
+    background: none;
     border: none;
-    font-size: 1rem;
-    padding: 8px;
+    font-size: 24px;
     cursor: pointer;
-    border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for buttons */
   }
   
   .resignation-rsidebar-form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 20px;
   }
   
   .resignation-rsidebar-form-group {
-    width: 50%;
+  
     margin-bottom: 15px;
   }
   
@@ -44,16 +40,15 @@
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
-    padding: 10px 20px;
+    padding: 20px 30px;
   }
   
   .resignation-rsidebar-form-group input,
   .resignation-rsidebar-form-group select {
-    width: 85%;
-    padding: 12px;
-    border: 1px solid #ccc;
+    width: calc(100% - 20px);
+    padding: 15px 10px;
+    border-left: 2px solid red;
     border-radius: 4px;
-    font-size: 14px;
   }
   
   .resignation-rsidebar-form-actions {

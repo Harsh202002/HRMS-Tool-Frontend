@@ -1,16 +1,13 @@
 .attendance-table-container {
-  max-height: 400px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  width: 95%;
-  margin: 0 auto;
+  background-color: white;
+  border-radius: 10px 10px 0px 0px;
+  margin-top: 20px;
+  padding: 10px;
 }
 
 .attendance-table {
   background-color: #ffffff;
-  padding: 20px; /* Added padding */
+  padding: 10px; /* Added padding */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   
@@ -36,20 +33,23 @@
   }
 
   .table-container {
-    max-height: 600px; 
-    overflow-y: auto; 
+    background-color: white;
+    border-radius: 10px 10px 0px 0px;
+    margin-top: 20px;
+    height: 600px;
   }
   
   .attendance-table table {
     width: 100%;
-    border-collapse: collapse; 
+    border-collapse: collapse;
+    background-color: white;
+
   }
   
   .attendance-table th, .attendance-table td {
-    padding: 18px 15px;
+    padding: 12px;
     text-align: left;
-    border-bottom: 3px solid #ddd;
-    white-space: nowrap;
+    border-bottom: 1px solid #ddd;
   }
   
   .attendance-table th {
@@ -76,6 +76,6 @@
   
   /* Additional spacing to prevent overlap */
   .attendance-table {
-    margin-top: 5px; /* Adjust based on the height of your filter section */
+    margin-top: 15px; /* Adjust based on the height of your filter section */
   }
   

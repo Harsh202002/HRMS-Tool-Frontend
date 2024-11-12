@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './PerformanceReview.css'; 
-import Pagination from './Pagination/Pagination'; 
+import Pagination from '../Attendance/Pagination/Pagination'; 
 
 const PerformanceReview = () => {
   const [currentPage, setCurrentPage] = useState(1);

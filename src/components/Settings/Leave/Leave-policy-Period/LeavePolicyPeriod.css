@@ -1,0 +1,94 @@
+/* Main Container */
+.leave-policy-period-container {
+    padding: 10px 20px;
+    background-color: #e7f1ff;
+    height: 100vh;
+}
+
+/* Header Section */
+.leave-policy-period-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.leave-policy-period-back-button {
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border: none;
+    font-size: 1rem;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.leave-policy-period-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Table Container */
+.leave-policy-period-table-container {
+    background-color: white;
+    height: 70vh;
+    border-radius: 10px 10px 0px 0px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+/* Table Styling */
+.leave-policy-period-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.leave-policy-period-table th,
+.leave-policy-period-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.leave-policy-period-table th {
+    background-color: #ffffff;
+    font-weight: 600;
+}
+
+/* Action Button */
+.leave-policy-period-action-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
+}
+
+/* Status Label */
+.leave-policy-period-status-label {
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.leave-policy-period-status-label.active {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+/* Footer */
+.leave-policy-period-footer {
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+    padding-top: 20px;
+}

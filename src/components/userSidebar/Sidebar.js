@@ -7,34 +7,45 @@ const Sidebar = ({ role }) => {
     const [isEssOpen, setEssOpen] = useState(false);
     const [isDssOpen, setDssOpen] = useState(false);
     const [isSssOpen, setSssOpen] = useState(false);
+    const [isEmployeeSettingOpen, setIsEmployeeSettingOpen] = useState(false);
+    const [isLeaveOpen, setIsLeaveOpen] = useState(false); // New state for Leave menu
+
     // Toggle the Dashboard menu
     const toggleDssMenu = () => {
-        setDssOpen(!isDssOpen);  // Toggle Dashboard menu
+        setDssOpen(!isDssOpen);
         if (!isDssOpen) {
-            setEssOpen(false);   // Close ESS if it's open
+            setEssOpen(false);
         }
     };
 
     // Toggle the ESS menu
     const toggleEssMenu = () => {
-        setEssOpen(!isEssOpen);  // Toggle ESS menu
+        setEssOpen(!isEssOpen);
         if (!isEssOpen) {
-            setDssOpen(false);   // Close Dashboard if it's open
+            setDssOpen(false);
         }
     };
 
     const toggleSssMenu = () => {
         if (isEssOpen && isDssOpen) {
-            setEssOpen(false); // Close ESS menu
-            setDssOpen(false); // Close DSS menu
-            setSssOpen(true);  // Open SSS menu
+            setEssOpen(false);
+            setDssOpen(false);
+            setSssOpen(true);
         } else {
-            setSssOpen((prev) => !prev); // Toggle SSS menu if ESS and DSS aren't both open
+            setSssOpen((prev) => !prev);
         }
     };
-    
 
-    // Close both dropdowns when the sidebar is collapsed
+    const toggleEmployeeSettingMenu = () => {
+        setIsEmployeeSettingOpen(!isEmployeeSettingOpen);
+    };
+
+    // New function to toggle Leave menu
+    const toggleLeaveMenu = () => {
+        setIsLeaveOpen(!isLeaveOpen);
+    };
+
+    // Close all menus when the sidebar is collapsed
     const closeAllMenus = () => {
         setEssOpen(false);
         setDssOpen(false);
@@ -64,7 +75,7 @@ const Sidebar = ({ role }) => {
                     {isEssOpen && (
                         <ul className="dropdown-menu">
                             <li><button onClick={() => navigate(`/dashboardlayout/profile`)}>My Profile</button></li>
-                            <li><button onClick={() => navigate(`/dashboardlayout/myreferrals`)}>My Referrals</button></li>
+                             <li><button onClick={() => navigate(`/dashboardlayout/myreferrals`)}>My Referrals</button></li>
                             <li><button onClick={() => navigate(`/dashboardlayout/attendance`)}>My Attendance</button></li>
                             <li><button onClick={() => navigate(`/dashboardlayout/leavelist`)}>My Leave</button></li>
                             <li><button onClick={() => navigate(`/dashboardlayout/wfhrequest`)}>WFH Request</button></li>
@@ -85,10 +96,46 @@ const Sidebar = ({ role }) => {
                 </li>
                 <li>
                     <button onClick={toggleSssMenu} className='dropdown-button'>
-                    <i class="fa fa-cogs" aria-hidden="true"></i>
+                        <i className="fa fa-cogs" aria-hidden="true"></i>
                         <span className='sidebar-title'>Settings</span>
                         <i className={`fa-solid fa-chevron-right arrow ${isSssOpen ? 'rotate' : ''}`}></i>
                     </button>
+
+                    {isSssOpen && (
+                        <ul className="dropdown-menu">
+                            <li><button onClick={() => navigate(`/dashboardlayout/workflow`)}>Work Flow</button></li>
+                            <li><button onClick={() => navigate(`/dashboardlayout/Accolade&rewards`)}>Accolades & Rewards</button></li>
+                            <li><button onClick={() => navigate(`/dashboardlayout/policy`)}>Policies</button></li>
+                            <li>
+                                <button onClick={toggleEmployeeSettingMenu} className='dropdown-button'>
+                                    <span>Employee Setting</span>
+                                    <i className={`fa-solid fa-chevron-right arrow ${isEmployeeSettingOpen ? 'rotate' : ''}`}></i>
+                                </button>
+                                {isEmployeeSettingOpen && (
+                                    <ul className="dropdown-submenu">
+                                        <li><button onClick={() => navigate(`/dashboardlayout/type-of-employment`)}>Type of Employment</button></li>
+                                        <li><button onClick={() => navigate(`/dashboardlayout/education-setting`)}>Education Setting</button></li>
+                                        <li><button onClick={() => navigate(`/dashboardlayout/request-reason`)}>Request Reason</button></li>
+                                        <li><button onClick={() => navigate(`/dashboardlayout/standards-setting`)}>Standards Setting</button></li>
+                                    </ul>
+                                )}
+                            </li>
+                            <li>
+                                <button onClick={toggleLeaveMenu} className='dropdown-button'>
+                                    <span>Leave</span>
+                                    <i className={`fa-solid fa-chevron-right arrow ${isLeaveOpen ? 'rotate' : ''}`}></i>
+                                </button>
+                                {isLeaveOpen && (
+                                    <ul className="dropdown-submenu">
+                                        <li><button onClick={() => navigate(`/dashboardlayout/leave-policy`)}>Leave Policy</button></li>
+                                        <li><button onClick={() => navigate(`/dashboardlayout/leave-policy-period`)}>Leave Policy Period</button></li>
+                                        <li><button onClick={() => navigate(`/dashboardlayout/leave-approval`)}>Leave Approval</button></li>
+                                    </ul>
+                                )}
+                            </li>
+                        </ul>
+                    )}
+
                 {isSssOpen && (
                     <ul className="dropdown-menu">
                         <li><button onClick={() => navigate(`workflow`)}>work Flow</button></li>
@@ -96,6 +143,7 @@ const Sidebar = ({ role }) => {
                         <li><button onClick={() => navigate(`userroles`)}>User/Roles</button></li>
                     </ul>
                 )}
+
                 </li>
             </ul>
         </nav>
