@@ -100,6 +100,7 @@ const Sidebar = ({ role }) => {
                         <span className='sidebar-title'>Settings</span>
                         <i className={`fa-solid fa-chevron-right arrow ${isSssOpen ? 'rotate' : ''}`}></i>
                     </button>
+
                     {isSssOpen && (
                         <ul className="dropdown-menu">
                             <li><button onClick={() => navigate(`/dashboardlayout/workflow`)}>Work Flow</button></li>
@@ -134,6 +135,15 @@ const Sidebar = ({ role }) => {
                             </li>
                         </ul>
                     )}
+
+                {isSssOpen && (
+                    <ul className="dropdown-menu">
+                        <li><button onClick={() => navigate(`workflow`)}>work Flow</button></li>
+                        <li><button onClick={() => navigate(`generalsetup`)}>General</button></li>
+                        <li><button onClick={() => navigate(`userroles`)}>User/Roles</button></li>
+                    </ul>
+                )}
+
                 </li>
             </ul>
         </nav>

@@ -36,6 +36,10 @@ import LeavePolicyPeriod from './components/Settings/Leave/Leave-policy-Period/L
 import LeaveApproval from './components/Settings/Leave/Leave-Approval/LeaveApproval.js';
 
 
+import Userroles from "./components/Settings/User/Userroles.js"
+import Generalsetup from './components/Settings/General Setup/Generalsetup.js';
+
+
 const App = () => {
   const [user, setUser] = useState(authService.getCurrentUser()); // Initialize user state
 
@@ -79,6 +83,7 @@ const App = () => {
           <Route path="myinterview" element={<MyInterview />} />
           <Route path="performancereview" element={<PerformanceReview />} />
           <Route path="workflow" element={<Workflow />} />
+
           <Route path="Accolade&rewards" element={<AccoladesAndRewards />} />
           <Route path="policy" element={<Policy />} />
           <Route path="type-of-employment" element={<TypeOfEmployment />} />
@@ -89,6 +94,11 @@ const App = () => {
           <Route path="leave-policy-period" element={<LeavePolicyPeriod />} />
           <Route path="leave-approval" element={<LeaveApproval />} />
          
+
+          <Route path="userroles" element={< Userroles/>} />
+          <Route path="generalsetup" element={<Generalsetup />} />
+
+
         </Route>
       </Routes>
     </Router>
