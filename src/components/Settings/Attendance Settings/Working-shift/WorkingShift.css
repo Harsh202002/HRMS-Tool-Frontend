@@ -1,0 +1,150 @@
+/* General container styling */
+.working-shift-container {
+    padding: 10px 20px;
+    background-color: #e7f1ff;
+    height: 100vh;
+}
+
+/* Header styling */
+.working-shift-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.working-shift-back-button {
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    border: none;
+    font-size: 1rem;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+
+}
+
+.working-shift-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.working-shift-filter-button {
+    margin-left: auto;
+    background-color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.working-shift-filter-button i {
+    font-size: 1rem;
+}
+
+/* Table container styling */
+.working-shift-table-container {
+    background-color: white;
+    height: 70vh;
+    border-radius: 10px 10px 0px 0px;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.working-shift-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.working-shift-table th,
+.working-shift-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.working-shift-table th {
+    background-color: #ffffff;
+    font-weight: bold;
+}
+
+
+
+.no-records {
+    text-align: center;
+    color: #888;
+    font-size: 1rem;
+    padding: 20px 0;
+}
+
+/* Action button styling */
+.action-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+}
+
+/* Pagination styling (if needed adjustments) */
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.pagination-container select,
+.pagination-container button {
+    margin: 0 5px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination-container button:hover {
+    background-color: #f1f1f1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .working-shift-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .working-shift-filter-button {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+
+    .working-shift-table th,
+    .working-shift-table td {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+
+    .action-button {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+    }
+}

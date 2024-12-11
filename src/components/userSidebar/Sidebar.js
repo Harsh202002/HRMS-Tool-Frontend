@@ -9,6 +9,7 @@ const Sidebar = ({ role }) => {
     const [isSssOpen, setSssOpen] = useState(false);
     const [isEmployeeSettingOpen, setIsEmployeeSettingOpen] = useState(false);
     const [isLeaveOpen, setIsLeaveOpen] = useState(false); // New state for Leave menu
+    const [isAttendanceOpen, setIsAttendanceOpen] = useState(false);
 
     // Toggle the Dashboard menu
     const toggleDssMenu = () => {
@@ -43,6 +44,10 @@ const Sidebar = ({ role }) => {
     // New function to toggle Leave menu
     const toggleLeaveMenu = () => {
         setIsLeaveOpen(!isLeaveOpen);
+    };
+
+    const toggleAttendanceMenu = () => {
+        setIsAttendanceOpen(!isAttendanceOpen);
     };
 
     // Close all menus when the sidebar is collapsed
@@ -106,6 +111,8 @@ const Sidebar = ({ role }) => {
                             <li><button onClick={() => navigate(`/dashboardlayout/workflow`)}>Work Flow</button></li>
                             <li><button onClick={() => navigate(`/dashboardlayout/Accolade&rewards`)}>Accolades & Rewards</button></li>
                             <li><button onClick={() => navigate(`/dashboardlayout/policy`)}>Policies</button></li>
+                            <li><button onClick={() => navigate(`generalsetup`)}>General</button></li>
+                            <li><button onClick={() => navigate(`userroles`)}>User/Roles</button></li>
                             <li>
                                 <button onClick={toggleEmployeeSettingMenu} className='dropdown-button'>
                                     <span>Employee Setting</span>
@@ -133,17 +140,24 @@ const Sidebar = ({ role }) => {
                                     </ul>
                                 )}
                             </li>
+
+                             {/* Attendance Setting */}
+                             <li>
+                                 <button onClick={toggleAttendanceMenu} className="dropdown-button">
+                                 <span>Attendance Setting</span>
+                                 <i className={`fa-solid fa-chevron-right arrow ${isAttendanceOpen ? 'rotate' : ''}`}></i>
+                             </button>
+                                 {isAttendanceOpen && (
+                                 <ul className="dropdown-submenu">
+                                 <li><button onClick={() => navigate(`/dashboardlayout/attendance-rule`)}>Attendance Rule</button></li>
+                                 <li><button onClick={() => navigate(`/dashboardlayout/working-shift`)}>Working Shift</button></li>
+                                 <li><button onClick={() => navigate(`/dashboardlayout/attendance-approval`)}>Attendance Approval</button></li>
+                             </ul>
+                     )}
+                             </li>
                         </ul>
                     )}
-
-                {isSssOpen && (
-                    <ul className="dropdown-menu">
-                        <li><button onClick={() => navigate(`workflow`)}>work Flow</button></li>
-                        <li><button onClick={() => navigate(`generalsetup`)}>General</button></li>
-                        <li><button onClick={() => navigate(`userroles`)}>User/Roles</button></li>
-                    </ul>
-                )}
-
+                    
                 </li>
             </ul>
         </nav>
