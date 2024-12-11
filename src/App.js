@@ -34,10 +34,11 @@ import StandardSetting from './components/Settings/Employee Setting/Stanadard-Se
 import LeavePolicy from './components/Settings/Leave/Leave-Policy/LeavePolicy.js';
 import LeavePolicyPeriod from './components/Settings/Leave/Leave-policy-Period/LeavePolicyPeriod.js';
 import LeaveApproval from './components/Settings/Leave/Leave-Approval/LeaveApproval.js';
-
-
 import Userroles from "./components/Settings/User/Userroles.js"
 import Generalsetup from './components/Settings/General Setup/Generalsetup.js';
+import AttendanceRule from './components/Settings/Attendance Settings/Attendance-Rule/AttendanceRule.js';
+import WorkingShift from './components/Settings/Attendance Settings/Working-shift/WorkingShift.js';
+import AttendanceApproval from './components/Settings/Attendance Settings/Attendance-Approval/AttendanceApproval.js';
 
 
 const App = () => {
@@ -93,10 +94,11 @@ const App = () => {
           <Route path="leave-policy" element={<LeavePolicy />} />
           <Route path="leave-policy-period" element={<LeavePolicyPeriod />} />
           <Route path="leave-approval" element={<LeaveApproval />} />
-         
-
           <Route path="userroles" element={< Userroles/>} />
           <Route path="generalsetup" element={<Generalsetup />} />
+          <Route path="attendance-rule" element={<AttendanceRule />} />
+          <Route path="working-shift" element={<WorkingShift />} />
+          <Route path="attendance-approval" element={<AttendanceApproval />} />
 
 
         </Route>

@@ -1,0 +1,102 @@
+.attendance-approval-container {
+    padding: 10px 20px;
+    background-color: #e7f1ff;
+    height: 100vh;
+}
+
+.attendance-approval-header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.attendance-approval-container h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.approval-form {
+    margin-bottom: 40px;
+}
+
+.approval-form label {
+    font-size: 1rem;
+    color: black;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.approver-input-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.approver-input-wrapper input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+.add-approver-btn {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-approver-btn:hover {
+    background-color: #0056b3;
+}
+
+.approvers-list {
+    margin-top: 20px;
+}
+
+.approver-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.approver-item span {
+    font-size: 1rem;
+    color: #333;
+}
+
+.remove-approver-btn {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.remove-approver-btn:hover {
+    background-color: #a71d2a;
+}
+
+.no-approvers {
+    text-align: center;
+    color: #555;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.info-text {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    margin-top: 20px;
+}

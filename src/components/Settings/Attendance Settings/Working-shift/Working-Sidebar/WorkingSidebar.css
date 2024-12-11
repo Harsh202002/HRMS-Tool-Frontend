@@ -1,0 +1,86 @@
+.working-sidebar {
+    width: 400px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .working-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .working-sidebar-header h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .close-sidebar-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkbox-group label {
+    margin-left: 8px;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .btn-save,
+  .btn-save-new,
+  .btn-reset {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-save {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .btn-save-new {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .btn-reset {
+    background-color: #ffc107;
+    color: #fff;
+  }
+  
