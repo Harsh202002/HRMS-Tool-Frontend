@@ -157,7 +157,6 @@ const Sidebar = ({ role }) => {
                              </li>
                         </ul>
                     )}
-<<<<<<< HEAD
 
                 {isSssOpen && (
                     <ul className="dropdown-menu">
@@ -169,9 +168,7 @@ const Sidebar = ({ role }) => {
                     </ul>
                 )}
 
-=======
                     
->>>>>>> fc415670b73afd29a3b2361240804dd607a9f5c2
                 </li>
             </ul>
         </nav>
