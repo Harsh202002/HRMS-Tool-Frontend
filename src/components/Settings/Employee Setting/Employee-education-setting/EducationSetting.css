@@ -26,7 +26,7 @@
     margin-right: 10px; /* Space between the button and the header text */
 }
 
-h2 {
+.educationSetting-header-h2 {
     margin: 0;
     font-size: 1.2rem;
     font-weight: bold;

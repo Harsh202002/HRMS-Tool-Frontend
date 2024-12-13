@@ -14,7 +14,7 @@ const Login = (  ) => {
 
   // Handle login function
   const handleLogin = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); 
     try {
       await authService.login(username, password);
       navigate("/dashboardlayout/dashboard"); // Redirect to dashboard after login

@@ -1,12 +1,22 @@
 import React, { useState, useEffect } from "react";
 import "./Generalsetup.css";
 import Pagination from "../../../components/ESS/Attendance/Pagination/Pagination";
+import GeneralSidebarForm from "./General Sidebar Form/GeneralSidebarForm.js";
 
 const Generalsetup = () => {
     const [generalData, setgeneralData] = useState([]);
     const [activeTab, setActiveTab] = useState("general"); // Track active tab
     const [currentPage, setCurrentPage] = useState(1); // Manage current page
     const [entriesPerPage, setEntriesPerPage] = useState(5); // Items per page
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+    const handleOpenSidebar = ()=>{
+        setIsSidebarOpen(true);
+    }
+
+    const handleCloseSidebar = ()=>{
+        setIsSidebarOpen(false);
+    }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -55,7 +65,8 @@ const Generalsetup = () => {
                 </div>
                 <div className="generalsetup-right-btn">
                     <button className="filter-button">🔍</button>
-                </div>
+                    <button onClick={handleOpenSidebar}><i className="fa fa-plus"></i></button>
+                </div> 
             </div>
 
             <div className="generalsetup-list-tabs">
@@ -130,6 +141,9 @@ const Generalsetup = () => {
                         </tbody>
                     </table>
                 </div>
+                {isSidebarOpen && (
+        <GeneralSidebarForm onClose={handleCloseSidebar} />
+      )}
                 <Pagination
                         totalEntries={generalData.length}
                         entriesPerPage={entriesPerPage}

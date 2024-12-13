@@ -36,7 +36,7 @@ const EducationSetting = () => {
         <div className="educationSetting-container">
             <div className="educationSetting-header">
                 <button className="educationSetting-back-button">←</button>
-                <h2>Employee Education Setting</h2>
+                <h2 className="educationSetting-header-h2">Employee Education Setting</h2>
             </div>
             <div className="educationSetting-table-container">
                 <table className="educationSetting-table">

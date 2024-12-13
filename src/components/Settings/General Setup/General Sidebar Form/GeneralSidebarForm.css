@@ -1,0 +1,150 @@
+/* SidebarForm.css */
+
+.generalsetup-r-sidebar-form {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1000;
+    overflow-y: auto;
+    
+
+  }
+  
+  .generalsetup-close-sidebar-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .generalsetup-r-sidebar-form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .generalsetup-rsidebar-form-group {
+    width: 45%;
+    margin: 10px;
+    display: flex;
+    flex: 1 1 45%;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  .generalsetup-rsidebar-form-group-spcl {
+    width: 45%;
+    margin: 10px;
+    display: flex;
+    flex:100%;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  .rsidebar-form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .generalsetup-rsidebar-form-group input,
+  .generalsetup-rsidebar-form-group select,
+  .generalsetup-rsidebar-form-group-spcl textarea {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border-left: 2px solid red;
+    border-radius: 4px;
+  }
+  
+  .generalsetup-rsidebar-form-group select {
+    width: 100%;
+  }
+  
+  .generalsetup-rsidebar-add-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px;
+  }
+  
+  .generalsetup-rsidebar-add-button:hover {
+    background-color: #218838;
+  }
+  
+  .generalsetup-rsidebar-form-group small {
+    display: block;
+    color: #888;
+    margin-top: 5px;
+  }
+  
+  .generalsetup-rsidebar-form-actions {
+    display: flex;
+    justify-content: right;
+    margin-top: 7px;
+    margin-bottom: 10px;
+  }
+  
+  .generalsetup-rsidebar-save-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 10px;
+  }
+  
+  .generalsetup-rsidebar-save-new-button {
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 10px;
+  }
+  
+  .generalsetup-rsidebar-reset-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 10px;
+  }
+  
+  .generalsetup-rsidebar-save-button:hover,
+  .generalsetup-rsidebar-save-new-button:hover,
+  .generalsetup-rsidebar-reset-button:hover {
+    opacity: 0.8;
+  }
+  .generalsetup-rsidebar-form{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .generalsetupform-list-table {
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+  }
+  
+  .generalsetupform-list-table th,
+  .generalsetupform-list-table td {
+    padding: 10px;
+    /* text-align: left; */
+    border-bottom: 1px solid #ddd;
+  }
+  .generalsetupform-list-table-container{
+    background-color: white;
+    height: auto;
+    margin-bottom: 30px;
+    /* padding-top: 20px; */
+  }
+  

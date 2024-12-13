@@ -18,8 +18,7 @@ const ApplyLeave = () => {
               <select>
                 <option value="">--Select--</option>
                 <option value="sick">Sick Leave</option>
-                <option value="casual">Casual Leave</option>
-                
+                <option value="casual">Casual Leave</option>               
               </select>
             </div>
             <div className="form-group">

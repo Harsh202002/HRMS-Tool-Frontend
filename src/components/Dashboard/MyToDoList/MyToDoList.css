@@ -25,7 +25,7 @@
 }
 
 .divider-l {
-    margin-top: 0; 
+    /* margin-top: 0;  */
     border-bottom: 1px solid #070000; 
     width: 100%; 
 }

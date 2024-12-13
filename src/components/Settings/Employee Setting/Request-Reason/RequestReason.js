@@ -43,7 +43,7 @@ const RequestReason = () => {
       <div className="request-reason-container">
         <div className="request-reason-header">
           <button className="request-reason-back-button">←</button>
-          <h2>Request Reason</h2>
+          <h2 className='request-reason-header-h2'>Request Reason</h2>
           <button className="request-reason-filter-button" onClick={openSidebar}>
             <i className="fa fa-filter"></i>
           </button>

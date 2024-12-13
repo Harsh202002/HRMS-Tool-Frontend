@@ -32,7 +32,7 @@ const Dashboard = () => {
     <div className="dash-dashboard-container">
       <div className="dashboard-main-content">
         <div className="dash-dashboard-header">
-          <h2>Ess Dashboard</h2>
+          <h2 >Ess Dashboard</h2>
         </div>
         <div className="widgets-container">
           <EmployeeDirectory />  
