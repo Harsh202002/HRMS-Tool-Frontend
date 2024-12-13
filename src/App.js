@@ -34,9 +34,15 @@ import StandardSetting from './components/Settings/Employee Setting/Stanadard-Se
 import LeavePolicy from './components/Settings/Leave/Leave-Policy/LeavePolicy.js';
 import LeavePolicyPeriod from './components/Settings/Leave/Leave-policy-Period/LeavePolicyPeriod.js';
 import LeaveApproval from './components/Settings/Leave/Leave-Approval/LeaveApproval.js';
+<<<<<<< HEAD
 import BackDateProcess from './components/Processes/Attendence/Back Date Process/BackDateProcess.js';
+=======
+>>>>>>> fc415670b73afd29a3b2361240804dd607a9f5c2
 import Userroles from "./components/Settings/User/Userroles.js"
 import Generalsetup from './components/Settings/General Setup/Generalsetup.js';
+import AttendanceRule from './components/Settings/Attendance Settings/Attendance-Rule/AttendanceRule.js';
+import WorkingShift from './components/Settings/Attendance Settings/Working-shift/WorkingShift.js';
+import AttendanceApproval from './components/Settings/Attendance Settings/Attendance-Approval/AttendanceApproval.js';
 
 const App = () => {
   const [user, setUser] = useState(authService.getCurrentUser()); // Initialize user state
@@ -92,7 +98,15 @@ const App = () => {
           <Route path="leave-approval" element={<LeaveApproval />} />
           <Route path="userroles" element={< Userroles/>} />
           <Route path="generalsetup" element={<Generalsetup />} />
+<<<<<<< HEAD
           <Route path="backdateprocess" element={<BackDateProcess />} />
+=======
+          <Route path="attendance-rule" element={<AttendanceRule />} />
+          <Route path="working-shift" element={<WorkingShift />} />
+          <Route path="attendance-approval" element={<AttendanceApproval />} />
+
+
+>>>>>>> fc415670b73afd29a3b2361240804dd607a9f5c2
         </Route>
       </Routes>
     </Router>
