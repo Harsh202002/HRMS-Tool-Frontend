@@ -295,8 +295,8 @@ const DownBarForm = ({ onClose }) => {
         </div>
 
         <div className="form-actions">
-          <button type="submit">Submit</button>
-          <button type="button" onClick={handleReset}>
+          <button type="submit" className="downbarform-button">Submit</button>
+          <button type="button" className="downbarform-button" onClick={handleReset}>
             Reset
           </button>
         </div>

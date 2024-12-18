@@ -79,7 +79,7 @@
   
   
   /* Button styling */
-  button {
+  .downbarform-button {
     background-color: white;
     color: black;
     padding: 8px 15px;
@@ -90,7 +90,7 @@
     transition: background-color 0.3s ease;
   }
   
-  button:hover {
+  .downbarform-button:hover {
     background-color: #0056b3;
   }
   

@@ -5,8 +5,8 @@
 }
 
 .myInterview-container {
-  margin: 0 auto; /* Centering the container */
-  width: 1340px; /* Set max-width for responsiveness */
+  margin: 0 auto; 
+ width: auto;
   font-family: Arial, sans-serif;
 }
 

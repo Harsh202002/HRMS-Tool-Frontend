@@ -1,47 +1,30 @@
 // LeavePolicy.js
 import React, { useState } from 'react';
-import './LeavePolicy.css';
-import LeavePolicySidebar from './Leave-Policy-Sidebar/LeavePolicySidebar';
-import Pagination from '../../../ESS/Attendance/Pagination/Pagination';
+import './AddEmployee.css';
+import AddEmployeeSidebar from './Add Employee Sidebar/AddEmployeeSidebar';
+import Pagination from '../../ESS/Attendance/Pagination/Pagination'
 
 const AddEmployee = () => {
-    const leavePolicies = [
-        {
-            id: 1,
-            company: 'Nettech Solutions',
-            name: 'Leave Policy_General',
-            code: 'LPGEN',
-            type: 'SL, EL, PL, ML, LOP, BR, MR',
-            status: 'Active',
-            configStatus: 'Allocated'
-        },
-        {
-            id: 2,
-            company: 'Nettech Solutions',
-            name: 'Leave Policy_KOL',
-            code: 'LP2024',
-            type: 'EL',
-            status: 'Active',
-            configStatus: 'Allocated'
-        },
-        {
-            id: 3,
-            company: 'Nettech Solutions',
-            name: 'LP-2024',
-            code: 'LP2024',
-            type: 'EL',
-            status: 'Inactive',
-            configStatus: 'Allocated'
-        },
-    ];
+    const addemployee = [{
+        Employee_Code: "E001",
+        Company_Name: "Tech Solutions",
+        Employee_Name: "John Doe",
+        Location: "New York",
+        Reporting_Manager: "Jane Smith",
+        Department_Name: "Engineering",
+        Job_Title: "Software Engineer",
+        Status: "Active"
+    },
+
+   ]
 
     const [currentPage, setCurrentPage] = useState(1);
     const [entriesPerPage, setEntriesPerPage] = useState(10);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-    const totalEntries = leavePolicies.length;
+    const totalEntries = addemployee.length;
     const startIndex = (currentPage - 1) * entriesPerPage;
-    const currentItems = leavePolicies.slice(startIndex, startIndex + entriesPerPage);
+    const currentItems = addemployee.slice(startIndex, startIndex + entriesPerPage);
 
     const handlePageChange = (page) => setCurrentPage(page);
     const handleEntriesChange = (newEntriesPerPage) => {
@@ -53,45 +36,49 @@ const AddEmployee = () => {
     const closeSidebar = () => setIsSidebarOpen(false);
 
     return (
-        <div className="leave-policy-container">
-            <div className="leave-policy-header">
-                <button className="leave-policy-back-button">←</button>
-                <h2>Leave Policy</h2>
+        <div className="addemployee-container">
+            <div className="addemployee-header">
+                <button className="addemployee-back-button">←</button>
+                <h2>Add Employee</h2>
                 <button className="request-reason-filter-button" onClick={openSidebar}>
                     <i className="fa fa-filter"></i>
-                </button>  
+                </button>
             </div>
 
-            <div className="leave-policy-table-container">
-                <table className="leave-policy-table">
+            <div className="addemployee-table-container">
+                <table className="addemployee-table">
                     <thead>
                         <tr>
                             <th>Action</th>
                             <th>View</th>
-                            <th>Company</th>
-                            <th>Leave Policy Name</th>
-                            <th>Leave Policy Code</th>
-                            <th>Leave Type</th>
-                            <th>Leave Policy Status</th>
-                            <th>Configuration Status</th>
+                            <th>Employee Code</th>
+                            <th>Company Name</th>
+                            <th>Employee Name</th>
+                            <th>Location</th>
+                            <th>Reporting Manager</th>
+                            <th>Department Name</th>
+                            <th>Job tittle</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
                         {currentItems.length > 0 ? (
-                            currentItems.map((policy) => (
-                                <tr key={policy.id}>
-                                    <td><button className="action-button">⋮</button></td>
+                            currentItems.map((addemployee) => (
+                                <tr key={addemployee.id}>
+                                    <td><button className="addemployee-action-button">⋮</button></td>
                                     <td><button className="view-button">👁️</button></td>
-                                    <td>{policy.company}</td>
-                                    <td>{policy.name}</td>
-                                    <td>{policy.code}</td>
-                                    <td>{policy.type}</td>
+                                    <td>{addemployee.Employee_Code}</td>
+                                    <td>{addemployee.Company_Name}</td>
+                                    <td>{addemployee.Employee_Name}</td>
+                                    <td>{addemployee.Location}</td>
+                                    <td>{addemployee.Reporting_Manager}</td>
+                                    <td>{addemployee.Department_Name}</td>
+                                    <td>{addemployee.Job_Title}</td>
                                     <td>
-                                        <span className={`status-label ${policy.status.toLowerCase()}`}>
-                                            {policy.status}
+                                        <span className={`status-label ${addemployee.Status.toLowerCase()}`}>
+                                            {addemployee.Status}
                                         </span>
                                     </td>
-                                    <td>{policy.configStatus}</td>
                                 </tr>
                             ))
                         ) : (
@@ -113,7 +100,7 @@ const AddEmployee = () => {
                 onEntriesChange={handleEntriesChange}
             />
 
-            {isSidebarOpen && <LeavePolicySidebar onClose={closeSidebar} />}
+            {isSidebarOpen && <AddEmployeeSidebar onClose={closeSidebar} />}
         </div>
     );
 };

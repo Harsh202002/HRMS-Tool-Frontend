@@ -1,0 +1,77 @@
+/* LeavePolicySidebar.css */
+.addemployeesidebar-sidebar {
+    width: 700px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.addemployeesidebar-sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.addemployeesidebar-close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.addemployeesidebar-form-group {
+    margin-bottom: 15px;
+}
+
+.addemployeesidebar-form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.addemployeesidebar-form-group select,
+.addemployeesidebar-form-group input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border-left: 2px solid red;
+    border-radius: 4px;
+}
+
+.addemployeesidebar-form-checkbox label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.addemployeesidebar-form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.addemployeesidebar-save-button,
+.addemployeesidebar-reset-button {
+    padding: 15px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.addemployeesidebar-save-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+

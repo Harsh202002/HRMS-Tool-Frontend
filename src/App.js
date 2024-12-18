@@ -40,6 +40,7 @@ import Generalsetup from './components/Settings/General Setup/Generalsetup.js';
 import AttendanceRule from './components/Settings/Attendance Settings/Attendance-Rule/AttendanceRule.js';
 import WorkingShift from './components/Settings/Attendance Settings/Working-shift/WorkingShift.js';
 import AttendanceApproval from './components/Settings/Attendance Settings/Attendance-Approval/AttendanceApproval.js';
+import AddEmployee from './components/Processes/Employee/AddEmployee.js';
 
 const App = () => {
   const [user, setUser] = useState(authService.getCurrentUser()); // Initialize user state
@@ -99,6 +100,7 @@ const App = () => {
           <Route path="attendance-rule" element={<AttendanceRule />} />
           <Route path="working-shift" element={<WorkingShift />} />
           <Route path="attendance-approval" element={<AttendanceApproval />} />
+          <Route path="addemployee" element={<AddEmployee/>} />
 
 
         </Route>

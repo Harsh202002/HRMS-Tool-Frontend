@@ -10,6 +10,7 @@ const Sidebar = ({ role }) => {
     const [isEmployeeSettingOpen, setIsEmployeeSettingOpen] = useState(false);
     const [isLeaveOpen, setIsLeaveOpen] = useState(false); // New state for Leave menu
     const [isAttendanceOpen, setIsAttendanceOpen] = useState(false);
+    const [isProcessOpen, setIsProcessOpen] = useState(false);
 
     // Toggle the Dashboard menu
     const toggleDssMenu = () => {
@@ -49,6 +50,12 @@ const Sidebar = ({ role }) => {
     const toggleAttendanceMenu = () => {
         setIsAttendanceOpen(!isAttendanceOpen);
     };
+
+    const toggleProcessMenu = () => {
+        setIsProcessOpen(!isProcessOpen);
+    };
+
+    
 
     // Close all menus when the sidebar is collapsed
     const closeAllMenus = () => {
@@ -98,6 +105,18 @@ const Sidebar = ({ role }) => {
                             <li><button onClick={() => navigate(`/dashboardlayout/performancereview`)}>My Performance Review</button></li>
                         </ul>
                     )}
+                </li>
+                <li>
+                <button onClick={toggleProcessMenu}  className="dropdown-button">
+                <i class="fa-solid fa-plug"></i>
+                        <span className='sidebar-title'>Process</span>
+                        <i className={`fa-solid fa-chevron-right arrow ${isProcessOpen ? 'rotate' : ''}`}></i>
+                    </button>
+                    {isProcessOpen && (
+                                    <ul className="dropdown-menu">
+                                        <li><button onClick={() => navigate(`addemployee`)}>Add Employee</button></li>
+                                    </ul>
+                                )}
                 </li>
                 <li>
                     <button onClick={toggleSssMenu} className='dropdown-button'>
@@ -164,6 +183,7 @@ const Sidebar = ({ role }) => {
                         <li><button onClick={() => navigate(`generalsetup`)}>General</button></li>
                         <li><button onClick={() => navigate(`userroles`)}>User/Roles</button></li>
                         <li><button onClick={() => navigate(`backdateprocess`)}>BackDateProcess</button></li>
+                        
 
                     </ul>
                 )}
