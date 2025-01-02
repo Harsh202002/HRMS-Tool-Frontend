@@ -1,6 +1,6 @@
 /* SidebarForm.css */
 
-.addemployee-r-sidebar-form {
+.allocationwfh-r-sidebar-form {
     position: fixed;
     right: 0;
     top: 0;
@@ -15,18 +15,18 @@
 
   }
   
-  .addemployee-close-sidebar-button {
+  .allocationwfh-close-sidebar-button {
     background: none;
     border: none;
     font-size: 24px;
     cursor: pointer;
   }
   
-  .addemployee-r-sidebar-form h2 {
+  .allocationwfh-r-sidebar-form h2 {
     margin-bottom: 20px;
   }
   
-  .addemployee-rsidebar-form-group {
+  .allocationwfh-rsidebar-form-group {
     width: 45%;
     margin: 10px;
     display: flex;
@@ -40,20 +40,20 @@
     margin-bottom: 5px;
   }
   
-  .addemployee-rsidebar-form-group input,
-  .addemployee-rsidebar-form-group select,
-  .addemployee-rsidebar-form-group textarea {
+  .allocationwfh-rsidebar-form-group input,
+  .allocationwfh-rsidebar-form-group select,
+  .allocationwfh-rsidebar-form-group textarea {
     width: calc(100% - 20px);
     padding: 8px;
     border-left: 2px solid red;
     border-radius: 4px;
   }
   
-  .addemployee-rsidebar-form-group select {
+  .allocationwfh-rsidebar-form-group select {
     width: 100%;
   }
   
-  .addemployee-rsidebar-add-button {
+  .allocationwfh-rsidebar-add-button {
     background-color: #28a745;
     color: white;
     border: none;
@@ -63,24 +63,24 @@
     margin-left: 10px;
   }
   
-  .addemployee-rsidebar-add-button:hover {
+  .allocationwfh-rsidebar-add-button:hover {
     background-color: #218838;
   }
   
-  .addemployee-rsidebar-form-group small {
+  .allocationwfh-rsidebar-form-group small {
     display: block;
     color: #888;
     margin-top: 5px;
   }
   
-  .addemployee-rsidebar-form-actions {
+  .allocationwfh-rsidebar-form-actions {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
     margin-bottom: 30px;
   }
   
-  .addemployee-rsidebar-save-button {
+  .allocationwfh-rsidebar-save-button {
     background-color: #28a745;
     color: white;
     border: none;
@@ -90,7 +90,7 @@
     margin: 10px;
   }
   
-  .addemployee-rsidebar-save-new-button {
+  .allocationwfh-rsidebar-save-new-button {
     background-color: #ffc107;
     color: white;
     border: none;
@@ -100,7 +100,7 @@
     margin: 10px;
   }
   
-  .addemployee-rsidebar-reset-button {
+  .allocationwfh-rsidebar-reset-button {
     background-color: #dc3545;
     color: white;
     border: none;
@@ -110,30 +110,30 @@
     margin: 10px;
   }
   
-  .addemployee-rsidebar-save-button:hover,
-  .addemployee-rsidebar-save-new-button:hover,
-  .addemployee-rsidebar-reset-button:hover {
+  .allocationwfh-rsidebar-save-button:hover,
+  .allocationwfh-rsidebar-save-new-button:hover,
+  .allocationwfh-rsidebar-reset-button:hover {
     opacity: 0.8;
   }
-  .addemployee-rsidebar-form{
+  .allocationwfh-rsidebar-form{
     display: flex;
     flex-wrap: wrap;
   }
 
-  .addemployeeform-list-table {
+  .allocationwfhform-list-table {
     border-radius: 10px 10px 0px 0px;
     width: 100%;
     border-collapse: collapse;
     background-color: white;
   }
   
-  .addemployeeform-list-table th,
-  .addemployeeform-list-table td {
+  .allocationwfhform-list-table th,
+  .allocationwfhform-list-table td {
     padding: 10px;
     /* text-align: left; */
     border-bottom: 1px solid #ddd;
   }
-  .addemployeeform-list-table-container{
+  .allocationwfhform-list-table-container{
     background-color: white;
     height: auto;
     margin-bottom: 30px;

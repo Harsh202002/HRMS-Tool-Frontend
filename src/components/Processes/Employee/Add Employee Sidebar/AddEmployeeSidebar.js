@@ -1,83 +1,115 @@
-// LeavePolicySidebar.js
 import React from 'react';
 import './AddEmployeeSidebar.css';
 
 const AddEmployeeSidebar = ({ onClose }) => {
   return (
-    <div className="addemployeesidebar-sidebar">
-      <div className="addemployeesidebar-sidebar-header">
-        <h2>Add Employee</h2>
-        <button className="addemployeesidebar-close-button" onClick={onClose}>
-          &times;
-        </button>
+    <div className="addemployee-r-sidebar-form">
+        <div style={{display:'flex',justifyContent:'space-between'}}>
+      <h2>Add Employee</h2>
+      <button className="addemployee-close-sidebar-button" onClick={onClose}>
+        &times;
+      </button>
       </div>
-      <form className="addemployeesidebar-sidebar-content">
-        <div className="addemployeesidebar-form-group">
-          <label>Leave Policy Name</label>
+      <form className='addemployee-rsidebar-form'>
+      <div className="addemployee-rsidebar-form-group">
+          <label>Upload Document</label>
+          <input type="file" />
+          <small>(Doc can be uploaded in Gif, Pdf, Jpg, Jpeg, Png, Doc, Docx file.)</small>
+        </div>
+        <div className="addemployee-rsidebar-form-group">
+          <label>Employee Code</label>
+          <input type='text'/>
+        </div>
+        <div className="addemployee-rsidebar-form-group" >
+          <label>Employee Code</label>
           <select>
             <option>--Select--</option>
-            <option>Leave Policy_General</option>
-            {/* Add more options as needed */}
+            <option>EL</option>
+            <option>MR</option>
+            <option>SL</option>
+            <option>LOP</option>
           </select>
         </div>
-        <div className="addemployeesidebar-form-group">
-          <label>Leave Name</label>
-          <select>
-            <option>--Select--</option>
-            {/* Add more options as needed */}
-          </select>
+        <div className="addemployee-rsidebar-form-group">
+          <label>Salutation</label>
+          <input type='text'/>
         </div>
-        <div className="addemployeesidebar-form-group">
-          <label>Marital Status</label>
-          <select>
-            <option>--Select--</option>
-            {/* Add more options as needed */}
-          </select>
-        </div>
-        <div className="addemployeesidebar-form-group">
-          <label>Employee Type</label>
-          <select>
-            <option>--Select--</option>
-            {/* Add more options as needed */}
-          </select>
-        </div>
-        <div className="addemployeesidebar-form-checkbox">
-          <label><input type="checkbox" /> Is Accrual</label>
-          <label><input type="checkbox" /> Is Pro-rata</label>
-          <label><input type="checkbox" /> Carry Forward</label>
-          <label><input type="checkbox" /> Paid Leave</label>
-        </div>
-        <div className="addemployeesidebar-form-group">
-          <label>Minimum Avail Days</label>
-          <input type="number" />
-        </div>
-        <div className="addemployeesidebar-form-group">
-          <label>Maximum Avail Days</label>
-          <input type="number" />
-        </div>
-        <div className="addemployeesidebar-form-group">
-          <label>Minimum Avail Hours</label>
-          <input type="number" />
-        </div>
-        <div className="addemployeesidebar-form-group">
-          <label>Maximum Avail Hours</label>
-          <input type="number" />
-        </div>
-        <div className="addemployeesidebar-form-group">
-          <label>Maximum application per year</label>
-          <input type="number" />
-        </div>
-        <div className="addemployeesidebar-form-group">
-          <label>Leave Per Year</label>
-          <input type="number" />
-        </div>
-        <div className="addemployeesidebar-form-group">
-          <label>Applicable For</label>
+        <div className="addemployee-rsidebar-form-group">
+          <label>First Name</label>
           <input type="text" />
         </div>
-        <div className="addemployeesidebar-form-actions">
-          <button type="submit" className="addemployeesidebar-save-button">Save</button>
-          <button type="reset" className="addemployeesidebar-reset-button">Reset</button>
+        <div className="addemployee-rsidebar-form-group">
+          <label>Middle Name</label>
+          <input type='text'/>
+        </div>
+        <div className="addemployee-rsidebar-form-group">
+          <label>Last Name</label>
+        <input type='text'/>
+        </div>
+        <div className="addemployee-rsidebar-form-group">
+          <label>Company</label>
+          <input type='text'/>
+        </div>
+        <div className="addemployee-rsidebar-form-group">
+          <label>Location</label>
+          <input type='text'/>
+        </div>
+        <div className="addemployee-rsidebar-form-group">
+          <label>Department</label>
+          <input type='text'/>
+        </div>
+        <div className="addemployee-rsidebar-form-group">
+          <label>Job Tittle</label>
+          <input type='text'/>
+        </div>
+        <div className="addemployee-rsidebar-form-group">
+          <label>Date Of Birth</label>
+          <input type='text'/>
+        </div>
+        <div className="addemployee-rsidebar-form-group">
+          <label>Office Mail</label>
+          <input type='text'/>
+        </div>
+        <div className="addemployee-rsidebar-form-group">
+          <label>Date Of Joining</label>
+          <input type='text'/>
+        </div>
+        <div className="addemployee-rsidebar-form-group">
+          <label>Mobile Number</label>
+          <input type='text'/>
+        </div>
+        <div className="addemployee-rsidebar-form-group">
+          <label>Role</label>
+          <input type='text'/>
+        </div>
+        <div className="addemployee-rsidebar-form-group">
+          <label>Gender</label>
+          <input type='text'/>
+        </div>
+        <div className="addemployee-rsidebar-form-group">
+          <label>Martial Status</label>
+          <input type='text'/>
+        </div>
+        <div className="addemployee-rsidebar-form-group">
+          <label>Identification Type</label>
+          <input type='text'/>
+        </div>
+        <div className="addemployee-rsidebar-form-group">
+          <label>Id Code No.</label>
+          <input type='text'/>
+        </div>
+        <div className="addemployee-rsidebar-form-group">
+          <label>Type Of Employment</label>
+          <input type='text'/>
+        </div>
+        <div className="addemployee-rsidebar-form-group">
+          <label>Reporting Manager</label>
+          <input type='text'/>
+        </div>
+        <div className="addemployee-rsidebar-form-actions">
+          <button type="submit" className="addemployee-rsidebar-save-button">Save</button>
+          <button type="button" className="addemployee-rsidebar-save-new-button">Save & New</button>
+          <button type="reset" className="addemployee-rsidebar-reset-button">Reset</button>
         </div>
       </form>
     </div>
