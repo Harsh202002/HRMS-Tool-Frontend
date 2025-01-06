@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './profileSection.css';
 import profile from "../../../Assets/ImageAvtar.jpg";
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import Leftsection from './leftSection/leftSection';
-import Basicinformationhandle from './rightSection/BasicInformation/handleBI';
+// import Leftsection from './leftSection/leftSection';
+import EditableBasicInformation from './Editable Basic Information/EditableBasicInformation';
 // import Educationhandle from './rightSection/Education/educationHandle';
 // import SidebarForm from './Editable button/sidebarForm';
 // import Education from './rightSection/Education/education/education';
@@ -26,7 +26,7 @@ const AddEmployeeEdit = () => {
 
   return (
     <div className="editable-employee-profile">
-      <Leftsection/>
+      {/* <Leftsection/> */}
       <div className="editable-right-panel">
         <div className="editable-tabs">
           <button className={`tab-button ${activeTab === 'Basic Information' ? 'active' : ''}`} onClick={() => setActiveTab('Basic Information')}>Basic Information</button>
@@ -38,9 +38,9 @@ const AddEmployeeEdit = () => {
         </div>
         <div className="editable-tab-content">
           {activeTab === 'Basic Information' && (
-            <Basicinformationhandle/>
+            <EditableBasicInformation/>
           )}
-          {activeTab === 'Education' && (
+          {/* {activeTab === 'Education' && (
             <Educationhandle onOpenSidebar={handleOpenSidebar} />
           )}
           {activeTab === 'Documents' && (
@@ -54,7 +54,7 @@ const AddEmployeeEdit = () => {
           )}
            {activeTab === 'Work Info' && (
             <Workinfohandle/>
-          )}
+          )} */}
         </div>
       </div>
       {/* {isSidebarOpen && (

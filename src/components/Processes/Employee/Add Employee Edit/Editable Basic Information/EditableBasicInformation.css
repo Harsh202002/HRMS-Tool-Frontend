@@ -1,4 +1,4 @@
-.toggle-button {
+.editable-basicinformation-toggle-button {
     background-color: #ffffff;
     color: #007bff;
     padding: 7px 8px;
@@ -8,7 +8,7 @@
     
    
   }
-  .basic-i-h3{
+  .editable-basicinformation-basic-i-h3{
     font-family: "Open Sans";
     font-weight: 600;
   }
@@ -21,13 +21,13 @@
     border-bottom: 1px solid black;
   } */
   
-  .form {
+  .editable-basicinformation-form {
     display: flex;
     flex-wrap: wrap;
     margin-top: 1rem;
   }
   
-  .form-group {
+  .editable-basicinformation-form-group {
     width: 45%;
     margin: 10px 5%;
     display: flex;
@@ -35,7 +35,7 @@
     margin-bottom: 1rem;
   }
   
-  .form-group label {
+  .editable-basicinformation-form-group label {
     display: block;
     /* font-weight: bold; */
     margin-bottom: 0.5rem;
@@ -44,7 +44,7 @@
     font-family: open sans-serif;
   }
   
-  .form-group input {
+  .editable-basicinformation-form-group input {
     width: 100%;
     padding: 5px;
     border: 1px solid #ccc;
@@ -53,33 +53,33 @@
    
   }
 
-  .form {
+  .editable-basicinformation-form {
     display: flex;
     flex-wrap: wrap;
   }
   
-  .form-group {
+  .editable-basicinformation-form-group {
     flex: 1 1 45%;
     margin: 10px;
     display: flex;
     flex-direction: column;
   }
   
-  .form-group label {
+  .editable-basicinformation-form-group label {
     margin-bottom: 5px;
   }
   
-  .form-group input, .form-group select {
+  .editable-basicinformation-form-group input, .editable-basicinformation-form-group select {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
   }
   
-  .form-group input[type="text"] {
+  .editable-basicinformation-form-group input[type="text"] {
     width: calc(100% - 18px); /* Adjust for the button size */
   }
   
-  .form-group .eye-icon {
+  .editable-basicinformation-form-group .eye-icon {
     position: absolute;
     right: 10px;
     top: 32px; /* Adjust as needed */
@@ -98,11 +98,11 @@
     border-radius: 4px;
   }
   
-  .eye-icon {
+  .editable-basicinformation-eye-icon {
     margin-left: 0.5rem;
     align-self: center;
     cursor: pointer;
   }
-  .btn-holder{
+  .editable-basicinformation-btn-holder{
     border-bottom: 1px solid #DDDDDD;
   }
