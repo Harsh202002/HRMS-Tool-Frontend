@@ -16,11 +16,12 @@ const AddEmployee = () => {
         Status: "Active"
     },
 
-   ]
+    ]
 
     const [currentPage, setCurrentPage] = useState(1);
     const [entriesPerPage, setEntriesPerPage] = useState(10);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const totalEntries = addemployee.length;
     const startIndex = (currentPage - 1) * entriesPerPage;
@@ -34,6 +35,10 @@ const AddEmployee = () => {
 
     const openSidebar = () => setIsSidebarOpen(true);
     const closeSidebar = () => setIsSidebarOpen(false);
+
+    const toggleDropdown = () => {
+        setIsDropdownOpen((prev) => !prev);
+    };
 
     return (
         <div className="addemployee-container">
@@ -65,7 +70,7 @@ const AddEmployee = () => {
                         {currentItems.length > 0 ? (
                             currentItems.map((addemployee) => (
                                 <tr key={addemployee.id}>
-                                    <td><button className="addemployee-action-button">⋮</button></td>
+                                    <td><button onClick={toggleDropdown} className="addemployee-action-button">⋮</button></td>
                                     <td><button className="view-button">👁️</button></td>
                                     <td>{addemployee.Employee_Code}</td>
                                     <td>{addemployee.Company_Name}</td>
@@ -88,6 +93,12 @@ const AddEmployee = () => {
                                 </td>
                             </tr>
                         )}
+                        {isDropdownOpen && (
+                                        <ul className="addemployee_dropdown-menu">
+                                            <li><button>Edit</button></li>
+                                            <li><button>Delete</button></li> 
+                                        </ul>
+                                    )}
                     </tbody>
                 </table>
             </div>

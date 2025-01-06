@@ -1,0 +1,108 @@
+.toggle-button {
+    background-color: #ffffff;
+    color: #007bff;
+    padding: 7px 8px;
+    border: 2px solid #abcaea;
+    border-radius: 50%;
+    cursor: pointer;
+    
+   
+  }
+  .basic-i-h3{
+    font-family: "Open Sans";
+    font-weight: 600;
+  }
+  
+  /* .toggle-button:hover {
+    background-color: #0056b3;
+  } */
+  /* .basic-i-h3{
+    padding: 20px;
+    border-bottom: 1px solid black;
+  } */
+  
+  .form {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+  
+  .form-group {
+    width: 45%;
+    margin: 10px 5%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    /* font-weight: bold; */
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: open sans-serif;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+   
+  }
+
+  .form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .form-group {
+    flex: 1 1 45%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 5px;
+  }
+  
+  .form-group input, .form-group select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-group input[type="text"] {
+    width: calc(100% - 18px); /* Adjust for the button size */
+  }
+  
+  .form-group .eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 32px; /* Adjust as needed */
+    cursor: pointer;
+  }
+
+  input[type="date"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .eye-icon {
+    margin-left: 0.5rem;
+    align-self: center;
+    cursor: pointer;
+  }
+  .btn-holder{
+    border-bottom: 1px solid #DDDDDD;
+  }
