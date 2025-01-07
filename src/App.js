@@ -42,7 +42,7 @@ import WorkingShift from './components/Settings/Attendance Settings/Working-shif
 import AttendanceApproval from './components/Settings/Attendance Settings/Attendance-Approval/AttendanceApproval.js';
 import AddEmployee from './components/Processes/Employee/AddEmployee.js';
 import AllocationWfhPolicy from './components/Processes/Attendence/Allocation WFH Policy/AllocationWfhPolicy.js';
-
+import AddEmployeeEdit from './components/Processes/Employee/Add Employee Edit/AddEmployeeEdit.js';
 const App = () => {
   const [user, setUser] = useState(authService.getCurrentUser()); // Initialize user state
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // Import axios
-import "./basicInformation.css"
+import "./EditableBasicInformation.css"
 const EditableBasicInformation = ({ isVisible, onToggle }) => {
   const [employeeData, setEmployeeData] = useState({});
   useEffect(() => {

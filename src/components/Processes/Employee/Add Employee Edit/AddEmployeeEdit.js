@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './profileSection.css';
-import profile from "../../../Assets/ImageAvtar.jpg";
+import './AddEmployeeEdit.css';
+// import profile from "../../../Assets/ImageAvtar.jpg";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 // import Leftsection from './leftSection/leftSection';
 import EditableBasicInformation from './Editable Basic Information/EditableBasicInformation';
