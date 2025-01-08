@@ -43,6 +43,7 @@ import AttendanceApproval from './components/Settings/Attendance Settings/Attend
 import AddEmployee from './components/Processes/Employee/AddEmployee.js';
 import AllocationWfhPolicy from './components/Processes/Attendence/Allocation WFH Policy/AllocationWfhPolicy.js';
 import AddEmployeeEdit from './components/Processes/Employee/Add Employee Edit/AddEmployeeEdit.js';
+import EditableLeftSection from './components/Processes/Employee/Add Employee Edit/Editable Left Section/EditableLeftSection.js';
 const App = () => {
   const [user, setUser] = useState(authService.getCurrentUser()); // Initialize user state
 
@@ -103,7 +104,8 @@ const App = () => {
           <Route path="attendance-approval" element={<AttendanceApproval />} />
           <Route path="addemployee" element={<AddEmployee/>} />
           <Route path="allocationwfhpolicy" element={<AllocationWfhPolicy/>} />
-
+          <Route path="addemployeeedit" element={<AddEmployeeEdit/>} />
+          <Route path="editableleftsection" element={<EditableLeftSection/>} />
 
         </Route>
       </Routes>

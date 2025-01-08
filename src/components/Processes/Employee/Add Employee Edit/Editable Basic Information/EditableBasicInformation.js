@@ -2,22 +2,22 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // Import axios
 import "./EditableBasicInformation.css"
 const EditableBasicInformation = ({ isVisible, onToggle }) => {
-  const [employeeData, setEmployeeData] = useState({});
-  useEffect(() => {
-    const storedEmployeeCode = localStorage.getItem('employeeCode');
-    if (storedEmployeeCode) {
-        fetchEmployeeData(storedEmployeeCode); // Fetch employee data
-    }
-}, []);
-const fetchEmployeeData = async (employeeCode) => {
-  try {
-      const response = await axios.get(`http://localhost:8080/employee/${employeeCode}`);
-      const data = response.data;
-      setEmployeeData(data); // Set the employee data, including the name
-  } catch (error) {
-      console.error('Error fetching employee data:', error);
-  }
-};
+  // const [employeeData, setEmployeeData] = useState({});
+//   useEffect(() => {
+//     const storedEmployeeCode = localStorage.getItem('employeeCode');
+//     if (storedEmployeeCode) {
+//         fetchEmployeeData(storedEmployeeCode); // Fetch employee data
+//     }
+// }, []);
+// const fetchEmployeeData = async (employeeCode) => {
+//   try {
+//       const response = await axios.get(`http://localhost:8080/employee/${employeeCode}`);
+//       const data = response.data;
+//       setEmployeeData(data); // Set the employee data, including the name
+//   } catch (error) {
+//       console.error('Error fetching employee data:', error);
+//   }
+// };
 
 
   return (
@@ -32,72 +32,72 @@ const fetchEmployeeData = async (employeeCode) => {
         <div className="editable-basicinformation-form">
           <div className="editable-basicinformation-form-group">
             <label>Employment Source</label>
-            <input type="text" value={employeeData.employmentSource} readOnly />
+            <input type="text" />
           </div>
           <div className="editable-basicinformation-form-group">
             <label>Company</label>
             <select>
-              <option>{employeeData.company || ''}</option>
+              <option></option>
             </select>
           </div>
           <div className="editable-basicinformation-form-group">
             <label>Location</label>
-            <input type="text" value={employeeData.location || ''} readOnly />
+            <input type="text" />
           </div>
           <div className="editable-basicinformation-form-group">
             <label>Department</label>
             <select>
-              <option>{employeeData.department || ''}</option>
+              <option></option>
             </select>
           </div>
           <div className="editable-basicinformation-form-group">
             <label>Job Title</label>
             <select>
-              <option>{employeeData.jobTitle || ''}</option>
+              <option></option>
             </select>
           </div>
           <div className="editable-basicinformation-form-group">
             <label>Job Level</label>
             <select>
-              <option>{employeeData.jobLevel || ''}</option>
+              <option></option>
             </select>
           </div>
           <div className="editable-basicinformation-form-group">
             <label>Employee Code</label>
-            <input type="text" value={employeeData.employeeCode || ''} readOnly />
+            <input type="text" />
           </div>
           <div className="editable-basicinformation-form-group">       
             <label>Salutation</label>
             <select>
-              <option>{employeeData.salutation || ''}</option>
+              <option></option>
               {/* <option>Ms.</option>
               <option>Mrs.</option> */}
             </select>
           </div>
           <div className="editable-basicinformation-form-group">
             <label>First Name</label>
-            <input type="text" value={employeeData.firstName || ''} readOnly />
+            <input type="text" />
           </div>
           <div className="editable-basicinformation-form-group">
             <label>Middle Name</label>
-            <input type="text" value={employeeData.middleName || ''} />
+            <input type="text"  />
           </div>
           <div className="editable-basicinformation-form-group">
             <label>Last Name</label>
-            <input type="text" value={employeeData.lastName || ''} readOnly />
+            <input type="text" />
           </div>
           <div className="editable-basicinformation-form-group">
             <label>Date Of Birth</label>
-            <input type="text" value={employeeData.dateOfBirth || ''} readOnly />
+            <input type="text" />
           </div>
           <div className="editable-basicinformation-form-group">
             <label>Date Of Joining</label>
-            <input type="text" value={employeeData.dateOfJoining || ''} readOnly />
+            <input type="text" />
           </div>
           <div className="editable-basicinformation-form-group">
             <label>Mobile No</label>
             <div style={{ display: 'flex' }}>
-              <input type="text" value={employeeData.mobileNumber || ''} readOnly />
+              <input type="text" />
               {/* <i className="eye-icon fas fa-eye"></i> */}
             </div>
           </div>
@@ -108,35 +108,35 @@ const fetchEmployeeData = async (employeeCode) => {
           <div className="editable-basicinformation-form-group">
             <label>Marital Status</label>
             <select>
-              <option>{employeeData.maritalStatus || ''}</option>
+              <option></option>
             </select>
           </div>
           <div className="editable-basicinformation-form-group">
             <label>Father Name</label>
-            <input type="text" value={employeeData.fatherName || ''} />
+            <input type="text"  />
           </div>
           <div className="editable-basicinformation-form-group">
             <label>Age</label>
-            <input type="text" value={employeeData.age || ''} readOnly />
+            <input type="text" />
           </div>
           <div className="editable-basicinformation-form-group">
             <label>Home Phone No</label>
-            <input type="text" value={employeeData.homePhone || ''} />
+            <input type="text"  />
           </div>
           <div className="editable-basicinformation-form-group">
             <label>Office Phone</label>
-            <input type="text" value={employeeData.officePhone || ''} />
+            <input type="text"  />
           </div>
           <div className="editable-basicinformation-form-group">
             <label>Official Email</label>
             <div style={{ display: 'flex' }}>
-              <input type="text" value={employeeData.officialEmail || ''} readOnly />
+              <input type="text" />
               {/* <i className="eye-icon fas fa-eye"></i> */}
             </div>
           </div>
           <div className="editable-basicinformation-form-group">
             <label>Nationality</label>
-            <input type="text" value={employeeData.nationality|| ''} readOnly />
+            <input type="text" />
           </div>
         </div>
       )}

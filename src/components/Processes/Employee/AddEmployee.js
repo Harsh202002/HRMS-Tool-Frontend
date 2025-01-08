@@ -1,10 +1,12 @@
 // LeavePolicy.js
 import React, { useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
 import './AddEmployee.css';
 import AddEmployeeSidebar from './Add Employee Sidebar/AddEmployeeSidebar';
 import Pagination from '../../ESS/Attendance/Pagination/Pagination'
 
 const AddEmployee = () => {
+    const navigate = useNavigate();
     const addemployee = [{
         Employee_Code: "E001",
         Company_Name: "Tech Solutions",
@@ -94,11 +96,12 @@ const AddEmployee = () => {
                             </tr>
                         )}
                         {isDropdownOpen && (
-                                        <ul className="addemployee_dropdown-menu">
-                                            <li><button>Edit</button></li>
-                                            <li><button>Delete</button></li> 
-                                        </ul>
-                                    )}
+                            <ul className="addemployee_dropdown-menu">
+                                    <button onClick={() => navigate(`/dashboardlayout/addemployeeedit`)}>Edit</button>
+                                
+                                <li><button>Delete</button></li>
+                            </ul>
+                        )}
                     </tbody>
                 </table>
             </div>

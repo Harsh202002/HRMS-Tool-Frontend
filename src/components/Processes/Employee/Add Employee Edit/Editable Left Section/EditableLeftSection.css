@@ -1,0 +1,135 @@
+.editable-left-section {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+  }
+  
+  .editable-left-panel-h,
+  .editable-left-panel,
+  .editable-left-panel-l
+  {
+    background-color: #fff;
+    border-right: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+  }
+  
+  .editable-left-panel-h{
+    margin-bottom: 20px;
+    /* border-radius: 12px; */
+  }
+  .editable-left-panel-l{
+    margin-top: 20px;
+  
+  }
+  
+  .editable-profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .editable-profile-pic {
+    width: 140px;
+    height: 140px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.15)0px 5px 10px 0px;
+    border: 2px solid #ffffff;
+  }
+  
+  .editable-profile-completeness {
+    margin-top: 10px;
+  }
+  
+  .editable-progress-bar {
+    width: 80%;
+    background-color: #e0e0e0;
+    margin: 0 auto;
+  }
+  
+  .editable-progress {
+    height: 3px;
+    background-color: #4caf50;
+  }
+  
+  .editable-info-section {
+    margin-top: 20px;
+  }
+  
+  .editable-info-box {
+    padding: 10px 0;
+    /* border-top: 1px solid #ccc; */
+  }
+  
+  .editable-info-box:first-of-its-kind {
+    border-top: none;
+  }
+  
+  .editable-info-box p {
+    margin: 5px 0;
+  }
+  
+  .editable-info-box .title {
+    font-weight: bold;
+  }
+  
+  .editable-info-box .subtitle {
+    font-size: 0.9em;
+    color: #666;
+  }
+  
+  .editable-info-box .contact {
+    color: #333;
+    font-size: 0.95em;
+  }
+
+  .editable-profile-completeness-icon{
+    background-color: #22C55E;
+    height: 20px;
+    width: 20px;
+    color: #ffffff;
+    margin: 2px 0 1px 0;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 10px;
+    line-height:20px;
+    text-align: center;
+    outline: rgb(255, 255, 255) 0px;
+    text-decoration: none rgb(255, 255, 255);
+    margin-right: 5px;
+    margin-bottom: 6px;
+    }
+
+    .editable-progress-number{
+        font-weight: 600;
+          background: #e5f6ff;
+          color: #02aaff;
+          padding: 2px 5px;
+          border-radius: 6px;
+          font-size: 13px;
+      }
+
+      .editable-side-icon{
+        display: inline-block;
+        margin: 2px 2px 1px 2px;
+        width: 30px;
+        line-height: 30px;
+        border-radius: 6px;
+        text-align: center;
+        font-size: 14px;
+        color: #00A9FF;
+        background: rgba(0, 169, 255, 0.1);
+      }
+
+      .editable-left-img-icon{
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        box-shadow: rgba(0,0,0,0.15)0px 5px 10px 0px;
+        border: 2px solid #ffffff;
+      }
+

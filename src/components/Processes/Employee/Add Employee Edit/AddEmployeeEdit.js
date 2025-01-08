@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './AddEmployeeEdit.css';
 // import profile from "../../../Assets/ImageAvtar.jpg";
 import '@fortawesome/fontawesome-free/css/all.min.css';
-// import Leftsection from './leftSection/leftSection';
+import EditableLeftSection from './Editable Left Section/EditableLeftSection';
 import EditableBasicInformation from './Editable Basic Information/EditableBasicInformation';
 // import Educationhandle from './rightSection/Education/educationHandle';
 // import SidebarForm from './Editable button/sidebarForm';
@@ -15,6 +15,11 @@ import EditableBasicInformation from './Editable Basic Information/EditableBasic
 const AddEmployeeEdit = () => {
   const [activeTab, setActiveTab] = useState('Basic Information');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [visibleComponent, setVisibleComponent] = useState('basicinformation');
+  
+      const handleToggle = (componentName) => {
+          setVisibleComponent(visibleComponent === componentName ? null : componentName);
+      };
 
   const handleOpenSidebar = () => {
     setIsSidebarOpen(true);
@@ -27,6 +32,7 @@ const AddEmployeeEdit = () => {
   return (
     <div className="editable-employee-profile">
       {/* <Leftsection/> */}
+      <EditableLeftSection/>
       <div className="editable-right-panel">
         <div className="editable-tabs">
           <button className={`tab-button ${activeTab === 'Basic Information' ? 'active' : ''}`} onClick={() => setActiveTab('Basic Information')}>Basic Information</button>
@@ -38,7 +44,10 @@ const AddEmployeeEdit = () => {
         </div>
         <div className="editable-tab-content">
           {activeTab === 'Basic Information' && (
-            <EditableBasicInformation/>
+            <EditableBasicInformation
+            isVisible={visibleComponent === 'basicinformation'}
+            onToggle={() => handleToggle('basicinformation')}
+            />
           )}
           {/* {activeTab === 'Education' && (
             <Educationhandle onOpenSidebar={handleOpenSidebar} />

@@ -117,6 +117,7 @@ const Sidebar = ({ role }) => {
                     {isProcessOpen && (
                                     <ul className="dropdown-menu">
                                         <li><button onClick={() => navigate(`addemployee`)}>Add Employee</button></li>
+                                        {/* <li><button onClick={() => navigate(`addemployeeedit`)}>Add Employee Edit</button></li> */}
                                         <li><button onClick={() => navigate(`allocationwfhpolicy`)}>Allocation WFH Policy</button></li>
                                     </ul>
                                 )}
