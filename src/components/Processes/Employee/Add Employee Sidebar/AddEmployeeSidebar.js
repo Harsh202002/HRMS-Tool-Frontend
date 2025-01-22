@@ -1,115 +1,213 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AddEmployeeSidebar.css';
+import employeeService from '../../../../services/employeeService';
 
-const AddEmployeeSidebar = ({ onClose }) => {
+const AddEmployeeSidebar = ({ onClose, onEmployeeAdded }) => {
+  const [formData, setFormData] = useState({
+    employeeCode: '',
+    salutation: '',
+    firstName: '',
+    middleName: '',
+    lastName: '',
+    company: '',
+    location: '',
+    department: '',
+    jobTitle: '',
+    dateOfBirth: '',
+    officialEmail: '',
+    dateOfJoining: '',
+    mobileNumber: '',
+    role: '',
+    gender: '',
+    maritalStatus: '',
+    identificationType: '',
+    uniqueIdentificationNumber: '',
+    typeOfEmployement: '',
+    reportingManager: '',
+  });
+
+  const [documentFile, setDocumentFile] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const requiredFields = [
+    'employeeCode',
+    'firstName',
+    'lastName',
+    'company',
+    'location',
+    'department',
+    'jobTitle',
+    'officialEmail',
+    'gender',
+  ];
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleFileChange = (e) => {
+    setDocumentFile(e.target.files[0]);
+  };
+
+  const resetForm = () => {
+    setFormData({
+      employeeCode: '',
+      salutation: '',
+      firstName: '',
+      middleName: '',
+      lastName: '',
+      company: '',
+      location: '',
+      department: '',
+      jobTitle: '',
+      dateOfBirth: '',
+      officialEmail: '',
+      dateOfJoining: '',
+      mobileNumber: '',
+      role: '',
+      gender: '',
+      maritalStatus: '',
+      identificationType: '',
+      uniqueIdentificationNumber: '',
+      typeOfEmployement: '',
+      reportingManager: '',
+    });
+    setDocumentFile(null);
+    setError(null);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    try {
+      // Validate required fields
+      for (const field of requiredFields) {
+        if (!formData[field]) {
+          setError(`Field "${field}" is required.`);
+          setLoading(false);
+          return;
+        }
+      }
+
+      // Get the current date and time (ISO format)
+      const currentDate = new Date().toISOString();
+
+      // Format date fields: if not provided, set to current date
+      const formattedData = {
+        ...formData,
+        dateOfBirth: formData.dateOfBirth
+          ? new Date(formData.dateOfBirth).toISOString()
+          : currentDate, // Use current date if empty
+        dateOfJoining: formData.dateOfJoining
+          ? new Date(formData.dateOfJoining).toISOString()
+          : currentDate, // Use current date if empty
+      };
+
+      // Prepare FormData
+      const formDataToSend = new FormData();
+      Object.entries(formattedData).forEach(([key, value]) => {
+        if (value) formDataToSend.append(key, value);
+      });
+      if (documentFile) {
+        formDataToSend.append('document', documentFile);
+      }
+
+      // Send data to the backend (employeeService will call the backend API)
+      const response = await employeeService.createEmployee(formDataToSend);
+      console.log('Employee created successfully:', response);
+
+      // Notify parent component
+      if (onEmployeeAdded) {
+        onEmployeeAdded(response);
+      }
+
+      resetForm();
+      setLoading(false);
+    } catch (error) {
+      console.error('Error adding employee:', error.response?.data || error.message);
+      setError(error.response?.data?.message || 'Failed to add employee. Please try again.');
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="addemployee-r-sidebar-form">
-        <div style={{display:'flex',justifyContent:'space-between'}}>
-      <h2>Add Employee</h2>
-      <button className="addemployee-close-sidebar-button" onClick={onClose}>
-        &times;
-      </button>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <h2>Add Employee</h2>
+        <button className="addemployee-close-sidebar-button" onClick={onClose}>
+          &times;
+        </button>
       </div>
-      <form className='addemployee-rsidebar-form'>
-      <div className="addemployee-rsidebar-form-group">
+      <form className="addemployee-rsidebar-form" onSubmit={handleSubmit}>
+        {error && <div className="error-message">{error}</div>}
+
+        <div className="addemployee-rsidebar-form-group">
           <label>Upload Document</label>
-          <input type="file" />
-          <small>(Doc can be uploaded in Gif, Pdf, Jpg, Jpeg, Png, Doc, Docx file.)</small>
+          <input type="file" onChange={handleFileChange} />
+          <small>(Allowed formats: Gif, Pdf, Jpg, Jpeg, Png, Doc, Docx)</small>
         </div>
-        <div className="addemployee-rsidebar-form-group">
-          <label>Employee Code</label>
-          <input type='text'/>
-        </div>
-        <div className="addemployee-rsidebar-form-group" >
-          <label>Employee Code</label>
-          <select>
-            <option>--Select--</option>
-            <option>EL</option>
-            <option>MR</option>
-            <option>SL</option>
-            <option>LOP</option>
-          </select>
-        </div>
-        <div className="addemployee-rsidebar-form-group">
-          <label>Salutation</label>
-          <input type='text'/>
-        </div>
-        <div className="addemployee-rsidebar-form-group">
-          <label>First Name</label>
-          <input type="text" />
-        </div>
-        <div className="addemployee-rsidebar-form-group">
-          <label>Middle Name</label>
-          <input type='text'/>
-        </div>
-        <div className="addemployee-rsidebar-form-group">
-          <label>Last Name</label>
-        <input type='text'/>
-        </div>
-        <div className="addemployee-rsidebar-form-group">
-          <label>Company</label>
-          <input type='text'/>
-        </div>
-        <div className="addemployee-rsidebar-form-group">
-          <label>Location</label>
-          <input type='text'/>
-        </div>
-        <div className="addemployee-rsidebar-form-group">
-          <label>Department</label>
-          <input type='text'/>
-        </div>
-        <div className="addemployee-rsidebar-form-group">
-          <label>Job Tittle</label>
-          <input type='text'/>
-        </div>
-        <div className="addemployee-rsidebar-form-group">
-          <label>Date Of Birth</label>
-          <input type='text'/>
-        </div>
-        <div className="addemployee-rsidebar-form-group">
-          <label>Office Mail</label>
-          <input type='text'/>
-        </div>
-        <div className="addemployee-rsidebar-form-group">
-          <label>Date Of Joining</label>
-          <input type='text'/>
-        </div>
-        <div className="addemployee-rsidebar-form-group">
-          <label>Mobile Number</label>
-          <input type='text'/>
-        </div>
-        <div className="addemployee-rsidebar-form-group">
-          <label>Role</label>
-          <input type='text'/>
-        </div>
-        <div className="addemployee-rsidebar-form-group">
-          <label>Gender</label>
-          <input type='text'/>
-        </div>
-        <div className="addemployee-rsidebar-form-group">
-          <label>Martial Status</label>
-          <input type='text'/>
-        </div>
-        <div className="addemployee-rsidebar-form-group">
-          <label>Identification Type</label>
-          <input type='text'/>
-        </div>
-        <div className="addemployee-rsidebar-form-group">
-          <label>Id Code No.</label>
-          <input type='text'/>
-        </div>
-        <div className="addemployee-rsidebar-form-group">
-          <label>Type Of Employment</label>
-          <input type='text'/>
-        </div>
-        <div className="addemployee-rsidebar-form-group">
-          <label>Reporting Manager</label>
-          <input type='text'/>
-        </div>
+
+        {[ 
+          { label: 'Employee Code', name: 'employeeCode' },
+          { label: 'Salutation', name: 'salutation' },
+          { label: 'First Name', name: 'firstName' },
+          { label: 'Middle Name', name: 'middleName' },
+          { label: 'Last Name', name: 'lastName' },
+          { label: 'Company', name: 'company' },
+          { label: 'Location', name: 'location' },
+          { label: 'Department', name: 'department' },
+          { label: 'Job Title', name: 'jobTitle' },
+          { label: 'Date of Birth', name: 'dateOfBirth', type: 'date' },
+          { label: 'Office Mail', name: 'officialEmail', type: 'email' },
+          { label: 'Date of Joining', name: 'dateOfJoining', type: 'date' },
+          { label: 'Mobile Number', name: 'mobileNumber', type: 'tel' },
+          { label: 'Role', name: 'role' },
+          { label: 'Gender', name: 'gender' },
+          { label: 'Marital Status', name: 'maritalStatus' },
+          { label: 'Identification Type', name: 'identificationType' },
+          { label: 'Unique ID Code', name: 'uniqueIdentificationNumber' },
+          { label: 'Type of Employment', name: 'typeOfEmployement' },
+          { label: 'Reporting Manager', name: 'reportingManager' },
+        ].map(({ label, name, type = 'text' }) => (
+          <div className="addemployee-rsidebar-form-group" key={name}>
+            <label>{label}</label>
+            <input
+              type={type}
+              name={name}
+              value={formData[name]}
+              onChange={handleInputChange}
+              required={requiredFields.includes(name)}
+            />
+          </div>
+        ))}
+
         <div className="addemployee-rsidebar-form-actions">
-          <button type="submit" className="addemployee-rsidebar-save-button">Save</button>
-          <button type="button" className="addemployee-rsidebar-save-new-button">Save & New</button>
-          <button type="reset" className="addemployee-rsidebar-reset-button">Reset</button>
+          <button type="submit" className="addemployee-rsidebar-save-button" disabled={loading}>
+            {loading ? 'Saving...' : 'Save'}
+          </button>
+          <button
+            type="button"
+            className="addemployee-rsidebar-save-new-button"
+            onClick={() => {
+              handleSubmit();
+              resetForm();
+            }}
+            disabled={loading}
+          >
+            Save & New
+          </button>
+          <button
+            type="reset"
+            className="addemployee-rsidebar-reset-button"
+            onClick={resetForm}
+            disabled={loading}
+          >
+            Reset
+          </button>
         </div>
       </form>
     </div>
