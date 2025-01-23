@@ -29,17 +29,17 @@ const fetchAllEmployees = async () => {
 };
 
 const fetchEmployeeById = async (id) => {
-    const url = `${API_URL}/${id}`;
-    console.log("Fetching from URL:", url);
-    try {
-      const response = await axios.get(url, getAuthHeaders());
-      return response.data;
-    } catch (error) {
-      console.error("Error fetching employee by ID:", error.response?.data || error.message);
-      throw error;
-    }
-  };
-  
+  const url = `${API_URL}/${id}`;  // Use the correct URL with the id
+  console.log("Fetching from URL:", url);
+  try {
+    const response = await axios.get(url, getAuthHeaders()); // Use getAuthHeaders() to get the token
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching employee by ID:", error.response?.data || error.message);
+    throw new Error("Failed to fetch employee details.");
+  }
+};
+
 
 // Create a new employee with FormData (Admin only)
 export const createEmployee = async (employeeData) => {
@@ -90,13 +90,29 @@ const deleteEmployee = async (id) => {
   }
 };
 
-// Export all service methods
-const employeeService = {
-  fetchAllEmployees,
-  fetchEmployeeById,
-  createEmployee,
-  updateEmployee,
-  deleteEmployee,
+const fetchEducationById = async (id) => {
+    try {
+      const response = await axios.get(`http://localhost:4000/api/v1/auth/${id}`, getAuthHeaders());
+      return response.data;
+    } catch (error) {
+      console.error("Error fetching education details:", error.response?.data || error.message);
+      throw error;
+    }
 };
 
-export default employeeService;
+
+  
+  
+  const employeeService = {
+    fetchAllEmployees,
+    fetchEmployeeById,
+    fetchEducationById,  // Add the new function here
+    createEmployee,
+    updateEmployee,
+    deleteEmployee,
+  };
+  
+
+  
+  export default employeeService;
+  

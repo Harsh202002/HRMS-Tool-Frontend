@@ -10,11 +10,12 @@ const login = async (username, password) => {
       // Store the entire user object
       localStorage.setItem("user", JSON.stringify(response.data));
 
-      // Store role and employeeId separately for quick access
-      const { role, employeeId , userId } = response.data.user;
-      localStorage.setItem("role", role);
-      localStorage.setItem("employeeId", employeeId);
-      localStorage.setItem("userId", userId);
+      const { role, employeeId, user } = response.data;
+        const userId = user.id;  // Correct way to get userId
+        localStorage.setItem("role", role);
+        localStorage.setItem("employeeId", employeeId);
+        localStorage.setItem("userId", userId);
+
       
     }
 
@@ -29,6 +30,7 @@ const logout = () => {
   localStorage.removeItem("user");
   localStorage.removeItem("role");
   localStorage.removeItem("employeeId");
+  localStorage.removeItem("userId");
 };
 
 const getCurrentUser = () => {
@@ -43,12 +45,18 @@ const getEmployeeId = () => {
   return localStorage.getItem("employeeId");
 };
 
+const getUserId = () => {
+  return localStorage.getItem("userId"); // Use the correct key
+};
+
+
 const authService = {
   login,
   logout,
   getCurrentUser,
   getRole,
   getEmployeeId,
+  getUserId,
 };
 
 export default authService;

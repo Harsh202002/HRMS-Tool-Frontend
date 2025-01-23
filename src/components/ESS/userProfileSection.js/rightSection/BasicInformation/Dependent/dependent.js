@@ -1,25 +1,49 @@
 import React, {useState, useEffect} from "react";
-import axios from 'axios'; // Import axios
+import employeeService from "../../../../../../services/employeeService";
 import "./dependent.css"
 const Dependent = ({ isVisible, onToggle }) =>{
   const [employeeData, setEmployeeData] = useState({});
   const [isSidebarOpen, setSidebarOpen] = useState(false); // Sidebar state
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
 
   useEffect(() => {
-    const storedEmployeeCode = localStorage.getItem('employeeCode');
-    if (storedEmployeeCode) {
-        fetchEmployeeData(storedEmployeeCode); // Fetch employee data
-    }
-}, []);
-const fetchEmployeeData = async (employeeCode) => {
-  try {
-      const response = await axios.get(`http://localhost:8080/employee/${employeeCode}`);
-      const data = response.data;
-      setEmployeeData(data); // Set the employee data, including the name
-  } catch (error) {
-      console.error('Error fetching employee data:', error);
-  }
-};
+    const fetchEmployeeData = async () => {
+      try {
+        // Get user data from localStorage
+        const user = JSON.parse(localStorage.getItem("user"));
+        console.log("LocalStorage User:", user);
+
+        // Validate if employeeId exists
+        const employeeId = user?.user?.employeeId;
+        if (!employeeId) {
+          throw new Error("Employee ID is missing. Please log in again.");
+        }
+
+        // Fetch employee details by employeeId
+        const response = await employeeService.fetchEmployeeById(employeeId);
+        console.log("Fetched Employee Data:", response);
+
+        if (response && response.success && response.employee) {
+          setEmployeeData(response.employee);
+        } else {
+          throw new Error("No employee data found.");
+        }
+      } catch (err) {
+        console.error("Error fetching employee data:", err.message);
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchEmployeeData();
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+  if (!employeeData) return <p>No data available</p>;
 
 const handleSidebarToggle = () => {
   setSidebarOpen(!isSidebarOpen);

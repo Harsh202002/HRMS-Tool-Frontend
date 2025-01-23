@@ -9,23 +9,23 @@ const Login = (  ) => {
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error , setErrorMessage] = useState(''); // State for error handling
-  const [rememberMe, setRememberMe] = useState(false); // State for 'Remember Me'
+  const [error , setErrorMessage] = useState(''); 
+  const [rememberMe, setRememberMe] = useState(false); 
 
-  // Handle login function
+  
   const handleLogin = async (e) => {
     e.preventDefault(); 
     try {
       await authService.login(username, password);
-      navigate("/dashboardlayout/dashboard"); // Redirect to dashboard after login
+      navigate("/dashboardlayout/dashboard"); 
     } catch (error) {
       setErrorMessage("Invalid username or password");
     }
   };
 
-  // Handle forgot password (Placeholder for now)
+  
   const handleForgotPassword = () => {
-    // Placeholder action for forgot password functionality
+  
     console.log('Forgot Password clicked');
   };
 
@@ -40,10 +40,10 @@ const Login = (  ) => {
       <div className="login-right-side">
         <div className="login-box">
           <h2>LOGIN</h2>
-          {/* Display error message if login fails */}
+        
           {error && <p className="error-message">{error}</p>}
           
-          {/* Login Form */}
+         
           <form onSubmit={handleLogin}>
             <div className="login-input-group">
               <input
@@ -64,7 +64,7 @@ const Login = (  ) => {
               />
             </div>
             
-            {/* Remember Me */}
+          
             <div className="login-remember-me">
               <input
                 type="checkbox"
@@ -75,14 +75,14 @@ const Login = (  ) => {
               <label htmlFor="rememberMe">Remember me</label>
             </div>
 
-            {/* Forgot Password Button */}
+            
             <div className="login-forgot-password">
               <button type="button" className="login-forgot-password-button" onClick={handleForgotPassword}>
                 Forgot Password?
               </button>
             </div>
 
-            {/* Submit Button */}
+         
             <button type="submit" className='login-submit-button'>Login</button>
           </form>
         </div>

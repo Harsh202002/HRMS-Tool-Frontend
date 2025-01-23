@@ -1,91 +1,111 @@
-import React, { useState, useEffect } from 'react';
-import "./EditableLeftSection.css"
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import profile from "../../../../../Assets/ImageAvtar.jpg"
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import "./EditableLeftSection.css";
+import profile from "../../../../../Assets/ImageAvtar.jpg";
+import employeeService from "../../../../../services/employeeService";
+
 const EditableLeftSection = () => {
-//   const [employeeData, setEmployeeData] = useState({});
+  const { employeeId } = useParams();
+  const [employeeData, setEmployeeData] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
+  // Fetching employee data from the service
+  useEffect(() => {
+    if (!employeeId) {
+      setError("No employee ID provided");
+      setLoading(false);
+      return;
+    }
 
-//   useEffect(() => {
-//     const storedEmployeeCode = localStorage.getItem('employeeCode');
+    const fetchEmployeeData = async () => {
+      try {
+        // Log the employeeId and data to debug
+        console.log("Employee ID:", employeeId);
+        
+        const data = await employeeService.fetchEmployeeById(employeeId);
+        
+        
+        console.log("Fetched Employee Data:", data);
 
+        setEmployeeData(data.employee || {}); 
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false); 
+      }
+    };
 
-//     if (storedEmployeeCode) {
-//         fetchEmployeeData(storedEmployeeCode); // Fetch employee data
-//     }
-// }, []);
+    fetchEmployeeData();
+  }, [employeeId]);
 
-// const fetchEmployeeData = async (employeeCode) => {
-//     try {
-//         const response = await axios.get(`http://localhost:8080/employee/${employeeCode}`);
-//         const data = response.data;
-//         setEmployeeData(data); // Set the employee data, including the name
-//     } catch (error) {
-//         console.error('Error fetching employee data:', error);
-//     }
-// };
+  // Display loading or error messages if needed
+  if (loading) return <p>Loading employee details...</p>;
+  if (error) return <p>Error: {error}</p>;
+  if (!employeeData || Object.keys(employeeData).length === 0) return <p>No employee data found</p>;
 
-  
-    return(
-        <div className="editable-left-section">
-        <div className="editable-left-panel-h">
-          <div className="editable-profile-header">
-            <div><img className="editable-profile-pic" src={profile} alt="editable-Profile" /></div>
-            <h2>Hard</h2>
-            <p>Software Engineer</p>
-            <div className="editable-profile-completeness">
-              <p><i className="editable-profile-completeness-icon fas fa-check" ></i>Profile Completeness</p>
-              <div className="editable-progress-bar">
-                <div className="editable-progress" style={{ width: '41%' }}></div>
-              </div>
-              <span className='editable-progress-number'>41%</span>
-            </div>
+  return (
+    <div className="editable-left-section">
+      <div className="editable-left-panel-h">
+        <div className="editable-profile-header">
+          <div>
+            <img className="editable-profile-pic" src={profile} alt="Employee Profile" />
           </div>
-        </div>
-        <div className="editable-left-panel">
-          <div className="editable-info-section">
-            <div className="editable-info-box">
-              <p className="editable-title">Joining Date</p>
-              <p>12/02/2002</p>
-              <p className="editable-subtitle">(0 Year 4 Months 30 Days)</p>
+          <h2>
+            {employeeData.firstName || "N/A"} {employeeData.lastName || ""}
+          </h2>
+          <p>{employeeData.jobTitle || "No job title available"}</p>
+
+          <div className="editable-profile-completeness">
+            <p>
+              <i className="editable-profile-completeness-icon fas fa-check"></i>
+              Profile Completeness
+            </p>
+            <div className="editable-progress-bar">
+              <div
+                className="editable-progress"
+                style={{ width: `${employeeData.profileCompletion || 0}%` }}
+              ></div>
             </div>
-            <div className="editable-info-box">
-              <p className="editable-title">Basic Information</p>
-              <p><i className="editable-side-icon fas fa-hourglass-1" ></i>Full Time</p>
-              <p><i className="editable-side-icon fas fa-user-group" ></i>Product Engineering & Innovations</p>
-            </div>
-            <div className="editable-info-box">
-              <p className="editable-title">Company</p>
-              <p>Netfotech</p>
-            </div>
-            <div className="editable-info-box">
-              <p className="editable-title">Location</p>
-              <p>Titagarh</p>
-            </div>
-          </div>
-        </div>
-        <div className='editable-left-panel-l'>
-          <div className="editable-info-box">
-            <p className="editable-title">Reporting Manager</p>
-            <img className='editable-left-img-icon' src={profile} alt="Manager" />
-            <p>Rajdip Banerjee</p>
-            <p className="editable-contact"><i className="editable-side-icon fas fa-phone" ></i>9831072104</p>
-          </div>
-          <div className="editable-info-box">
-            <p className="editable-title">Functional Manager</p>
-            <img className='editable-left-img-icon' src={profile} alt="Manager" />
-            <p>Anyone</p>
-            <p className="editable-contact"><i className="editable-side-icon fas fa-phone" ></i>9831072104</p>
-            <p className="editable-title">Reporting HR</p>
-            <img className='editable-left-img-icon' src={profile} alt="HR" />
-            <p>Nandini Choudhary</p>
-            <p className="editable-contact"><i className="editable-side-icon fas fa-phone" ></i>7003586596</p>
-          </div>
-          <div className="editable-info-box">
-            <p className="editable-title">Direct Reportees</p>
+            <span className="editable-progress-number">
+              {employeeData.profileCompletion || 0}%
+            </span>
           </div>
         </div>
       </div>
-    )
-}
-export default EditableLeftSection
+
+      <div className="editable-left-panel">
+        <div className="editable-info-section">
+          <div className="editable-info-box">
+            <p className="editable-title">Joining Date</p>
+            <p>{employeeData.dateOfJoining || "Not available"}</p>
+          </div>
+
+          <div className="editable-info-box">
+            <p className="editable-title">Basic Information</p>
+            <p>
+              <i className="editable-side-icon fas fa-hourglass-1"></i>
+              {employeeData.typeOfEmployement || "Unknown"}
+            </p>
+            <p>
+              <i className="editable-side-icon fas fa-user-group"></i>
+              {employeeData.department || "No department"}
+            </p>
+          </div>
+
+          <div className="editable-info-box">
+            <p className="editable-title">Company</p>
+            <p>{employeeData.company || "N/A"}</p>
+          </div>
+
+          <div className="editable-info-box">
+            <p className="editable-title">Location</p>
+            <p>{employeeData.location || "Unknown"}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default EditableLeftSection;
