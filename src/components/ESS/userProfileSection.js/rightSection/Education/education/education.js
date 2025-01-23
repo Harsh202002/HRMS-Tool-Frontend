@@ -10,27 +10,26 @@ const Education = ({ isVisible, onToggle, onOpenSidebar }) => {
   useEffect(() => {
     const fetchEducationData = async () => {
       try {
-        // Get user data from localStorage
-        const user = JSON.parse(localStorage.getItem("user"));
-        console.log("LocalStorage User:", user);
+        const storedUser = JSON.parse(localStorage.getItem("user"));
 
-        // Validate if employeeId exists
-        const employeeId = user?.user?.employeeId;
-        if (!employeeId) {
-          throw new Error("Employee ID is missing. Please log in again.");
-        }
+        if (!storedUser || !storedUser.user) throw new Error("User data not found");
 
-        // Fetch employee education details by employeeId
-        const response = await employeeService.fetchEmployeeById(employeeId);
-        console.log("Fetched Employee Data:", response);
+        const userId = storedUser.user.id; // Extract userId
+        if (!userId) throw new Error("User ID is missing.");
 
-        if (response && response.success && response.employee && response.employee.education) {
-          setEducationData(response.employee.education);
+        // Fetch education data using userId
+        const response = await employeeService.fetchEducationById(userId);
+
+        console.log("Fetched Education Data:", response);
+
+        // Ensure the response structure matches the expected state
+        if (response && Array.isArray(response.education) && response.education.length > 0) {
+          setEducationData(response.education); // Assuming `response.education` contains the array
         } else {
           throw new Error("No education data found.");
         }
       } catch (err) {
-        console.error("Error fetching employee education data:", err.message);
+        console.error("Error fetching education data:", err.message);
         setError(err.message);
       } finally {
         setLoading(false);
@@ -88,8 +87,8 @@ const Education = ({ isVisible, onToggle, onOpenSidebar }) => {
                       <button disabled>No Certificate</button>
                     )}
                   </td>
-                  <td>{educationData.Standard}</td>
-                  <td>{edu.course}</td>
+                  <td>{edu.Standard}</td>
+                  <td>{edu.Course}</td>
                   <td>{edu.boardUniversity}</td>
                   <td>{edu.collegeInstitution}</td>
                   <td>{edu.subjects}</td>

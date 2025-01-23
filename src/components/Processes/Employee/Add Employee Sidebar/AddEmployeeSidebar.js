@@ -84,7 +84,7 @@ const AddEmployeeSidebar = ({ onClose, onEmployeeAdded }) => {
     setError(null);
 
     try {
-      // Validate required fields
+    
       for (const field of requiredFields) {
         if (!formData[field]) {
           setError(`Field "${field}" is required.`);
@@ -96,18 +96,18 @@ const AddEmployeeSidebar = ({ onClose, onEmployeeAdded }) => {
       // Get the current date and time (ISO format)
       const currentDate = new Date().toISOString();
 
-      // Format date fields: if not provided, set to current date
+      
       const formattedData = {
         ...formData,
         dateOfBirth: formData.dateOfBirth
           ? new Date(formData.dateOfBirth).toISOString()
-          : currentDate, // Use current date if empty
+          : currentDate,
         dateOfJoining: formData.dateOfJoining
           ? new Date(formData.dateOfJoining).toISOString()
-          : currentDate, // Use current date if empty
+          : currentDate, 
       };
 
-      // Prepare FormData
+     
       const formDataToSend = new FormData();
       Object.entries(formattedData).forEach(([key, value]) => {
         if (value) formDataToSend.append(key, value);
@@ -116,7 +116,7 @@ const AddEmployeeSidebar = ({ onClose, onEmployeeAdded }) => {
         formDataToSend.append('document', documentFile);
       }
 
-      // Send data to the backend (employeeService will call the backend API)
+   
       const response = await employeeService.createEmployee(formDataToSend);
       console.log('Employee created successfully:', response);
 

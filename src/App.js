@@ -104,7 +104,7 @@ const App = () => {
           <Route path="attendance-approval" element={<AttendanceApproval />} />
           <Route path="addemployee" element={<AddEmployee/>} />
           <Route path="allocationwfhpolicy" element={<AllocationWfhPolicy/>} />
-          <Route path="addemployeeedit" element={<AddEmployeeEdit/>} />
+          <Route path="addemployeeedit/:employeeId" element={<AddEmployeeEdit/>} />
           <Route path="editableleftsection" element={<EditableLeftSection/>} />
 
         </Route>

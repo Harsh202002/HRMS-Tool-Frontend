@@ -157,7 +157,7 @@ const Navbar = () => {
                         <div ref={profileRef} className="navbar-user">
                             <div className="navbar-user-dropdown">
                                 <button className="dropdown-button-N" onClick={togglePrMenu}>
-                                    <span>{employeeData.firstName}</span>
+                                    <span>{`${employeeData.firstName || "N/A"} ${employeeData.lastName || "N/A"}`}</span>
                                     <i className="fa-solid fa-circle-chevron-down"></i>
                                 </button>
                                 {isProfileOpen && (

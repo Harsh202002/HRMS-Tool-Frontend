@@ -1,98 +1,133 @@
 import React, { useState, useEffect } from 'react';
 import './AttendanceTable.css';
 import Pagination from '../Pagination/Pagination';
-
-const sampleData = [
-  { date: '07-01-2024', day: 'Monday', inTime: '00:00', outTime: '00:00', spentHours: '00:00', isManual: 'No', status: 'A-A', remarks: 'Absent', missedPunch: '00:00', overTime: '00:00' },
-  { date: '07-01-2024', day: 'Tuesday', inTime: '00:00', outTime: '00:00', spentHours: '00:00', isManual: 'No', status: 'P-P', remarks: 'Present', missedPunch: '00:00', overTime: '00:00' },
-  { date: '07-01-2024', day: 'Wednesday', inTime: '00:00', outTime: '00:00', spentHours: '00:00', isManual: 'No', status: 'P-P', remarks: 'Present', missedPunch: '00:00', overTime: '00:00' },
-  { date: '07-01-2024', day: 'Thursday', inTime: '00:00', outTime: '00:00', spentHours: '00:00', isManual: 'No', status: 'A-A', remarks: 'Absent', missedPunch: '00:00', overTime: '00:00' },
-  { date: '07-01-2024', day: 'Friday', inTime: '00:00', outTime: '00:00', spentHours: '00:00', isManual: 'No', status: 'P-P', remarks: 'Present', missedPunch: '00:00', overTime: '00:00' },
-  { date: '07-01-2024', day: 'Saturday', inTime: '00:00', outTime: '00:00', spentHours: '00:00', isManual: 'No', status: 'L', remarks: 'Absent', missedPunch: '00:00', overTime: '00:00' },
-  { date: '07-01-2024', day: 'Sunday', inTime: '00:00', outTime: '00:00', spentHours: '00:00', isManual: 'No', status: 'P-P', remarks: 'Present', missedPunch: '00:00', overTime: '00:00' },
-  { date: '07-01-2024', day: 'Monday', inTime: '00:00', outTime: '00:00', spentHours: '00:00', isManual: 'No', status: 'A-A', remarks: 'Absent', missedPunch: '00:00', overTime: '00:00' },
-  { date: '07-01-2024', day: 'Tuesday', inTime: '00:00', outTime: '00:00', spentHours: '00:00', isManual: 'No', status: 'P-P', remarks: 'Present', missedPunch: '00:00', overTime: '00:00' },
-  { date: '07-01-2024', day: 'Wednesday', inTime: '00:00', outTime: '00:00', spentHours: '00:00', isManual: 'No', status: 'A-A', remarks: 'Absent', missedPunch: '00:00', overTime: '00:00' },
-  { date: '07-01-2024', day: 'Thursday', inTime: '00:00', outTime: '00:00', spentHours: '00:00', isManual: 'No', status: 'L', remarks: 'Absent', missedPunch: '00:00', overTime: '00:00' },
-  { date: '07-01-2024', day: 'Friday', inTime: '00:00', outTime: '00:00', spentHours: '00:00', isManual: 'No', status: 'W', remarks: 'Absent', missedPunch: '00:00', overTime: '00:00' },
-];
-
-// Additional sample data for Edited Attendance List
-const editedData = [
-  { date: '07-01-2024', day: 'Monday', inTime: '09:00', outTime: '18:00', spentHours: '09:00', isManual: 'Yes', status: 'P-P', remarks: 'Present - Edited', missedPunch: '00:00', overTime: '00:00' },
-  { date: '08-01-2024', day: 'Tuesday', inTime: '09:00', outTime: '18:00', spentHours: '09:00', isManual: 'Yes', status: 'P-P', remarks: 'Present - Edited', missedPunch: '00:00', overTime: '00:00' },
-  // more edited data...
-];
+import attendanceService from '../../../../services/attendanceService';
 
 const AttendanceTable = ({ filters }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [entriesPerPage, setEntriesPerPage] = useState(5);
-  const [filteredData, setFilteredData] = useState(sampleData);
-  const [showEdited, setShowEdited] = useState(false); // State to toggle between My Attendance and Edited Attendance
+  const [filteredData, setFilteredData] = useState([]); 
+  const [showEdited, setShowEdited] = useState(false); 
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    let filtered = showEdited ? editedData : sampleData;
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+  
+      try {
+        const storedUser = JSON.parse(localStorage.getItem('user'));
+  
+        if (!storedUser || !storedUser.user) {
+          throw new Error('User data not found in localStorage.');
+        }
+  
+        const userId = storedUser.user.id; 
+        if (!userId) {
+          throw new Error('User ID is missing.');
+        }
+  
+      
+        const data = await attendanceService.fetchAttendanceById(userId);
+  
+        if (!data || typeof data !== 'object') {
+          throw new Error('Invalid attendance data.');
+        }
+  
+        console.log('Fetched attendance record by ID:', data);
+  
+        
+        const attendance = showEdited ? data.editedAttendance || [] : data.attendance || [];
+  
+        
+        let filtered = attendance;
+        if (filters.fromDate) {
+          filtered = filtered.filter(row => new Date(row.date) >= new Date(filters.fromDate));
+        }
+        if (filters.toDate) {
+          filtered = filtered.filter(row => new Date(row.date) <= new Date(filters.toDate));
+        }
+        if (filters.status) {
+          filtered = filtered.filter(row => row.status.includes(filters.status));
+        }
+  
+        setFilteredData(filtered);
+      } catch (err) {
+        console.error('Error fetching attendance data:', err.message);
+        setError(err.message);
+        setFilteredData([]); 
+      } finally {
+        setLoading(false);
+      }
+    };
+  
+    fetchData();
+  }, [filters, showEdited]);
+  
 
-    if (filters.fromDate) {
-      filtered = filtered.filter(row => new Date(row.date) >= new Date(filters.fromDate));
-    }
-
-    if (filters.toDate) {
-      filtered = filtered.filter(row => new Date(row.date) <= new Date(filters.toDate));
-    }
-
-    if (filters.status) {
-      filtered = filtered.filter(row => row.status.includes(filters.status));
-    }
-
-    setFilteredData(filtered);
-  }, [filters, showEdited]); // Depend on showEdited state
-
-  // Calculate the indices for slicing the filteredData array
+  
   const indexOfLastEntry = currentPage * entriesPerPage;
   const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
-  const currentEntries = filteredData.slice(indexOfFirstEntry, indexOfLastEntry);
+  const currentEntries = filteredData?.slice(indexOfFirstEntry, indexOfLastEntry) || []; // Safeguard slice
 
   return (
-    <div>
     <div className="attendance-table">
       <div className="header">
-        <h2 className={showEdited ? '' : 'active'} onClick={() => setShowEdited(false)}>My Attendance</h2>
-        <h2 className={showEdited ? 'active' : ''} onClick={() => setShowEdited(true)}>Edited Attendance List</h2>
+        <h2
+          className={!showEdited ? 'active' : ''}
+          onClick={() => setShowEdited(false)}
+        >
+          My Attendance
+        </h2>
+        <h2
+          className={showEdited ? 'active' : ''}
+          onClick={() => setShowEdited(true)}
+        >
+          Edited Attendance List
+        </h2>
       </div>
       <div className="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Day</th>
-              <th>In Time</th>
-              <th>Out Time</th>
-              <th>Spent Hours</th>
-              <th>Is Manual</th>
-              <th>Status</th>
-              <th>Remarks</th>
-              <th>Missed Punch</th>
-              <th>OverTime</th>
-            </tr>
-          </thead>
-          <tbody>
-            {currentEntries.map((row, index) => (
-              <tr key={index}>
-                <td>{row.date}</td>
-                <td>{row.day}</td>
-                <td>{row.inTime}</td>
-                <td>{row.outTime}</td>
-                <td>{row.spentHours}</td>
-                <td>{row.isManual}</td>
-                <td>{row.status}</td>
-                <td>{row.remarks}</td>
-                <td>{row.missedPunch}</td>
-                <td>{row.overTime}</td>
+        {loading ? (
+          <p>Loading attendance data...</p>
+        ) : error ? (
+          <p className="error-message">{error}</p>
+        ) : filteredData.length === 0 ? (
+          <p>No attendance records found.</p>
+        ) : (
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Day</th>
+                <th>In Time</th>
+                <th>Out Time</th>
+                <th>Spent Hours</th>
+                <th>Is Manual</th>
+                <th>Status</th>
+                <th>Remarks</th>
+                <th>Missed Punch</th>
+                <th>OverTime</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {currentEntries.map((row, index) => (
+                <tr key={index}>
+                  <td>{row.date}</td>
+                  <td>{row.day}</td>
+                  <td>{row.checkInTime}</td>
+                  <td>{row.checkOutTime}</td>
+                  <td>{row.spentHours}</td>
+                  <td>{row.isManual ? 'Yes' : 'No'}</td>
+                  <td>{row.status}</td>
+                  <td>{row.remarks}</td>
+                  <td>{row.missedPunch ? 'Yes' : 'No'}</td>
+                  <td>{row.overTime}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
       <Pagination
         totalEntries={filteredData.length}
@@ -101,7 +136,6 @@ const AttendanceTable = ({ filters }) => {
         onPageChange={setCurrentPage}
         onEntriesChange={setEntriesPerPage}
       />
-    </div>
     </div>
   );
 };

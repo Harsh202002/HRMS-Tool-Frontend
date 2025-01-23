@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import employeeService from "../../../services/employeeService";
+import employeeService from "../../../services/employeeService"; // Importing employeeService
 import "./AddEmployee.css";
 import AddEmployeeSidebar from "./Add Employee Sidebar/AddEmployeeSidebar";
 import Pagination from "../../ESS/Attendance/Pagination/Pagination";
-
 
 const AddEmployee = () => {
   const navigate = useNavigate();
@@ -35,6 +34,7 @@ const AddEmployee = () => {
   useEffect(() => {
     fetchEmployees();
   }, [fetchEmployees]);
+
   const handleEmployeeAdded = async (employeeData) => {
     try {
       await employeeService.createEmployee(employeeData, jwtToken); // Pass the token
@@ -43,8 +43,6 @@ const AddEmployee = () => {
       console.error("Error adding employee:", error.message);
     }
   };
-  
-  
 
   // Pagination logic
   const totalEntries = employees.length;
@@ -62,6 +60,17 @@ const AddEmployee = () => {
 
   const toggleDropdown = (employeeId) => {
     setDropdownOpenFor((prev) => (prev === employeeId ? null : employeeId));
+  };
+
+  // Delete employee function using employeeService
+  const deleteEmployee = async (id) => {
+    try {
+      await employeeService.deleteEmployee(id, jwtToken); // Call delete method from employeeService
+      // Remove the deleted employee from the state
+      setEmployees((prevEmployees) => prevEmployees.filter((employee) => employee.id !== id));
+    } catch (error) {
+      console.error("Error deleting employee:", error.message);
+    }
   };
 
   return (
@@ -105,12 +114,14 @@ const AddEmployee = () => {
                     {dropdownOpenFor === (employee.id || employee.employeeCode) && (
                       <ul className="addemployee_dropdown-menu">
                         <li>
-                          <button onClick={() => navigate(`/dashboardlayout/addemployeeedit`)}>
+                          <button onClick={() => navigate(`/dashboardlayout/addemployeeedit/${employee.id}`)}>
                             Edit
                           </button>
                         </li>
                         <li>
-                          <button>Delete</button>
+                          <button onClick={() => deleteEmployee(employee.id || employee.employeeCode)}>
+                            Delete
+                          </button>
                         </li>
                       </ul>
                     )}
@@ -144,13 +155,12 @@ const AddEmployee = () => {
         onEntriesChange={handleEntriesChange}
       />
 
-{isSidebarOpen && (
-  <AddEmployeeSidebar
-    onClose={closeSidebar}
-    onEmployeeAdded={handleEmployeeAdded} // Correct prop name
-  />
-)}
-
+      {isSidebarOpen && (
+        <AddEmployeeSidebar
+          onClose={closeSidebar}
+          onEmployeeAdded={handleEmployeeAdded} // Correct prop name
+        />
+      )}
     </div>
   );
 };
