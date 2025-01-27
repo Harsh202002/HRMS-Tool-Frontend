@@ -1,0 +1,72 @@
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+} */
+
+.employee-directory-page-main-container{
+    padding: 10px;
+    background-color: #eaf4fc;
+    height: 100vh;
+}
+
+.employee-directory-page-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    /* background-color: #eaf4fc; */
+}
+
+.employee-directory-page-header button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.employee-directory-page-header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.employee-directory-page-employee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.employee-directory-page-employee-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+}
+
+.employee-directory-page-employee-card img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.employee-directory-page-employee-card h2 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+}
+
+.employee-directory-page-employee-card p {
+    color: gray;
+    margin: 0;
+}
+
+.employee-directory-page-filter-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}

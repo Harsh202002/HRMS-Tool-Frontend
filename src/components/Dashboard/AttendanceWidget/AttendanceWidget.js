@@ -10,7 +10,6 @@ const AttendanceWidget = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  
   useEffect(() => {
     const fetchAttendanceStatus = async () => {
       try {
@@ -24,7 +23,6 @@ const AttendanceWidget = () => {
     fetchAttendanceStatus();
   }, []);
 
-  
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
@@ -36,35 +34,31 @@ const AttendanceWidget = () => {
     return () => clearInterval(timer);
   }, []);
 
- 
   const handleCheckIn = async () => {
     try {
       setLoading(true);
       await attendanceService.checkIn();
       setIsCheckedIn(true);
       alert("Check-in successful");
-      setError(""); 
     } catch (err) {
       const errorMessage =
         err.response?.data?.message || err.message || "An unexpected error occurred.";
-      setError(errorMessage);
+      alert(errorMessage); // Show error in an alert box
     } finally {
       setLoading(false);
     }
   };
-
-
+  
   const handleCheckOut = async () => {
     try {
       setLoading(true);
       await attendanceService.checkOut();
       setIsCheckedIn(false);
       alert("Check-out successful");
-      setError(""); // Clear any previous errors
     } catch (err) {
       const errorMessage =
         err.response?.data?.message || err.message || "An unexpected error occurred.";
-      setError(errorMessage);
+      alert(errorMessage); // Show error in an alert box
     } finally {
       setLoading(false);
     }
@@ -81,15 +75,22 @@ const AttendanceWidget = () => {
             <span className="attendance-clock">{formattedTime}</span>
           </div>
           <div className="attendance-actions">
-            {!isCheckedIn ? (
-              <button onClick={handleCheckIn} disabled={loading} className="check-in-button">
-                {loading ? "Loading..." : "Check-In"}
+              <button
+                onClick={handleCheckIn}
+                disabled={loading}
+                className={` ${isCheckedIn ? "check-in-button" : "checked-in-button" }`}
+              >
+               {loading ? "Loading..." : "Check-In"}
               </button>
-            ) : (
-              <button onClick={handleCheckOut} disabled={loading} className="clock-out-button">
-                {loading ? "Loading..." : "Clock Out"}
+            
+              <button
+                onClick={handleCheckOut}
+                disabled={loading}
+                className={` ${isCheckedIn ? "check-out-button" : "checked-out-button" }`}
+              >
+                {loading ? "Loading..." : "Check-Out"}
               </button>
-            )}
+            
           </div>
           {error && <p className="error-message">{error}</p>}
         </div>

@@ -44,6 +44,7 @@ import AddEmployee from './components/Processes/Employee/AddEmployee.js';
 import AllocationWfhPolicy from './components/Processes/Attendence/Allocation WFH Policy/AllocationWfhPolicy.js';
 import AddEmployeeEdit from './components/Processes/Employee/Add Employee Edit/AddEmployeeEdit.js';
 import EditableLeftSection from './components/Processes/Employee/Add Employee Edit/Editable Left Section/EditableLeftSection.js';
+import EmployeeDirectoryPage from './components/Dashboard/EmployeeDirectoryWidget/Employee Directory/EmployeeDirectoryPage.js';
 const App = () => {
   const [user, setUser] = useState(authService.getCurrentUser()); // Initialize user state
 
@@ -106,7 +107,7 @@ const App = () => {
           <Route path="allocationwfhpolicy" element={<AllocationWfhPolicy/>} />
           <Route path="addemployeeedit/:employeeId" element={<AddEmployeeEdit/>} />
           <Route path="editableleftsection" element={<EditableLeftSection/>} />
-
+          <Route path="directory" element={<EmployeeDirectoryPage/>} />
         </Route>
       </Routes>
     </Router>

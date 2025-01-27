@@ -11,6 +11,7 @@
   .shift-widget {
       background-color: #ffffff;
       padding: 10px;
+      flex-grow: 1;
       /* width: 310px; */
       height: 95px;
       border-radius: 8px;

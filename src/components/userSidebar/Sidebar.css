@@ -2,7 +2,7 @@
   width: 60px; /* Collapsed width */
   background-color: #2b2f3a;
   color: white;
-  position: absolute;
+  position: fixed;
   top: 61px;
   left: 0px;
   bottom: 0;

@@ -17,13 +17,13 @@
     font-weight: 600;
     color: #000000;
     margin: 0;
-    position: absolute;
+    /* position: absolute;
     top: 10px;
-    left: 20px;
+    left: 20px; */
 }
 
 .celeberation-divider-line {
-    margin-top: 30px;
+    /* margin-top: 30px; */
     border-bottom: 1px solid #070000;
     width: 100%;
 }

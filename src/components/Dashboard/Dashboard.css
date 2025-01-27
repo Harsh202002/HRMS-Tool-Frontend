@@ -1,54 +1,96 @@
-
 body {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  .dash-dashboard-container {
-    display: flex;
-    height: auto;
-  }
-  
-  
-  
-  .dashboard-main-content {
-    flex: 1;
-    background-color: aliceblue;
-    padding: 15px;
-    /* margin-left: 20px; Ensure content doesn't overlap with sidebar */
-  }
-  
-  .dash-dashboard-header {
-    padding-bottom: 20px;
-    color: rgb(8, 8, 8);
-    text-align: left;
-  }
-  
-  .widgets-container {
-    display: flex;
-    justify-content: space-between; /* Align widgets to the left */
-    gap: 20px; /* Space between widgets */
-    flex-wrap: nowrap; /* Allow widgets to wrap to the next line if necessary */
-    width: 100%; /* Ensure widgets container takes full width */
-    padding: 10px 0; /* Add some padding at the top and bottom */
-  }
-  
-  .containers-row {
-    display: flex; /* Enables flexbox layout */
-    justify-content: space-between; /* Ensures space is distributed evenly */
-    width: 100%;
-    margin-top: 20px; /* Adjust margin as needed */
-  }
-  
-  .new-joining-container, .celebration-container {
-    flex: 1; /* Allows containers to grow and fit side by side */
-    max-width: 48%; /* Ensures they don’t exceed 50% of the parent's width */
-  }
-  
-  .attendanceT-container, .performance-feedback-container{
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dash-dashboard-container {
+  display: flex;
+  flex-direction: column; /* Stack content vertically for smaller screens */
+  height: auto;
+}
+
+.dashboard-main-content {
   flex: 1;
-  max-width: 48%;
-  
+  background-color: aliceblue;
+  padding: 15px;
+}
+
+.dash-dashboard-header {
+  padding-bottom: 20px;
+  color: rgb(8, 8, 8);
+  text-align: left;
+}
+
+.widgets-container,
+.containers-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow widgets to wrap on smaller screens */
+  width: 100%;
+  padding: 10px 0;
+}
+
+.widgets-container > div,
+.containers-row > div {
+  flex: 1;
+  box-sizing: border-box;
+}
+
+/* Tablets and small devices */
+@media (max-width: 1024px) {
+  .widgets-container > div,
+  .containers-row > div {
+    max-width: 48%; /* Two widgets per row on tablets */
+    min-width: 200px;
+    margin-bottom: 15px; /* Add space between rows */
   }
+
+  .dashboard-main-content {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .dash-dashboard-header {
+    text-align: center; /* Center header text */
+    font-size: 1.5rem;
+  }
+}
+
+/* Phones and small screens */
+@media (max-width: 768px) {
+  .widgets-container > div,
+  .containers-row > div {
+    max-width: 100%; /* Stack widgets in a single column */
+    margin-bottom: 15px;
+  }
+
+  .dashboard-main-content {
+    padding: 10px;
+  }
+
+  .dash-dashboard-header {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+}
+
+/* Extra small devices (e.g., older or very small phones) */
+@media (max-width: 480px) {
+  .dash-dashboard-header {
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+  }
+
+  .widgets-container,
+  .containers-row {
+    flex-direction: column; /* Stack all widgets vertically */
+    gap: 10px; /* Reduce the gap between elements */
+  }
+
+  .widgets-container > div,
+  .containers-row > div {
+    margin-bottom: 10px; /* Add space between widgets */
+  }
+}

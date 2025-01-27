@@ -14,7 +14,7 @@ const EmployeeDirectoryWidget = () => {
             <h3>Employee Directory</h3>
           </div>
           <div>
-            <Link to="/directory" className="employee-search-icon">
+            <Link to="/dashboardlayout/directory" className="employee-search-icon">
               <img src={SearchIcon} alt="Search Icon" />
             </Link>
           </div>

@@ -9,7 +9,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 10px;
     position: relative;
-    max-width: 40%;
+    /* max-width: 40%; */
     flex: 1;
   }
   

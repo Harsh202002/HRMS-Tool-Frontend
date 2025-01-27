@@ -8,7 +8,7 @@
     height: 330px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 30px;
-    margin-right: 2%; /* Space if it's next to another container */
+    /* margin-right: 2%;  */
     position: relative; /* To help position elements if needed */
     display: flex;
     flex-direction: column;
@@ -23,12 +23,13 @@
     color: #000000;
     margin: 0;
     position: absolute;
-    top: 10px; /* Adjusts the top position */
+    /* top: 10px;  */
     left: 20px; 
   }
   
   .newjoinings-divider-line {
-    margin-top: 30px; /* Position the line just under the heading */
+    text-align: end;
+    /* margin-top: 30px; Position the line just under the heading */
     border-bottom: 1px solid #070000; /* Line thickness and color */
     width: 100%; /* Span the full width of the container */
   }
@@ -85,5 +86,15 @@
     margin: 5px 0;
     display: flex;
     align-items: center;
+    justify-content: center;
     
   }
+
+.joining-slider-btn{
+  display: flex;
+  justify-items: end;
+}
+
+
+
+

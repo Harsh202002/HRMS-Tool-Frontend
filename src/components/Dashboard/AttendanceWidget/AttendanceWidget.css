@@ -7,9 +7,10 @@
 }
 
 .attendance-widget {
+  flex-grow: 1;
     background-color: #ffffff;
     padding: 10px;
-    /* width: 310px; */
+    width: auto;
     height: 95px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -111,7 +112,7 @@
     gap: 10px;
   }
   
-.check-in-box {
+.check-in-button {
     background-color: #09ed37a7;
     border-radius: 4px;
     font-size: 13px;
@@ -154,5 +155,45 @@
   
 .clock-out-button:hover {
     background-color: #d32f2f;
+  }
+
+  .checked-in-button{
+    background-color: #f2eceb;
+    color: rgb(19, 19, 19);
+    border-radius: 4px;
+    font-size: 13px;
+    /* font-weight: 500; */
+    line-height: 18px;
+    text-align: center;
+    text-transform: capitalize;
+    white-space: pre;
+    height: 27px;
+    border: 1px solid #DDDDDD;
+    margin: 0 5px 0 0;
+    padding: 4px 5px 4px 5px;
+    float: left;
+    display: block;
+    overflow: clip;
+    box-sizing: border-box;
+  }
+
+  .checked-out-button{
+    background-color: #f2eceb;
+    color: rgb(19, 19, 19);
+    border-radius: 4px;
+    font-size: 13px;
+    /* font-weight: 500; */
+    line-height: 18px;
+    text-align: center;
+    text-transform: capitalize;
+    white-space: pre;
+    height: 27px;
+    border: 1px solid #DDDDDD;
+    margin: 0 5px 0 0;
+    padding: 4px 5px 4px 5px;
+    float: left;
+    display: block;
+    overflow: clip;
+    box-sizing: border-box;
   }
   
