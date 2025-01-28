@@ -17,7 +17,7 @@ const getAuthHeaders = () => {
   };
 };
 
-// Check-in method
+
 const checkIn = async () => {
   try {
     const response = await axios.post(`${API_URL}/check-in`, {}, getAuthHeaders());
@@ -29,7 +29,7 @@ const checkIn = async () => {
   }
 };
 
-// Check-out method
+
 const checkOut = async () => {
   try {
     const response = await axios.post(`${API_URL}/check-out`, {}, getAuthHeaders());
@@ -41,7 +41,7 @@ const checkOut = async () => {
   }
 };
 
-// Fetch attendance records
+
 const getAttendanceRecords = async () => {
   try {
     const response = await axios.get(`${API_URL}/records`, getAuthHeaders());
@@ -53,7 +53,7 @@ const getAttendanceRecords = async () => {
   }
 };
 
-// Fetch a specific attendance record by ID
+
 const fetchAttendanceById = async (id) => {
   try {
     const response = await axios.get(`http://localhost:4000/api/v1/auth/${id}`, getAuthHeaders());
@@ -65,7 +65,7 @@ const fetchAttendanceById = async (id) => {
   }
 };
 
-// Delete an attendance record (Admin only)
+
 const deleteAttendanceRecord = async (id) => {
   try {
     const response = await axios.delete(`${API_URL}/${id}`, getAuthHeaders());
@@ -77,7 +77,7 @@ const deleteAttendanceRecord = async (id) => {
   }
 };
 
-// Update attendance details (Admin only)
+
 const updateAttendanceRecord = async (id, updatedData) => {
   try {
     const response = await axios.put(`${API_URL}/${id}`, updatedData, getAuthHeaders());
@@ -89,7 +89,7 @@ const updateAttendanceRecord = async (id, updatedData) => {
   }
 };
 
-// Attendance Service Object
+
 const attendanceService = {
   checkIn,
   checkOut,

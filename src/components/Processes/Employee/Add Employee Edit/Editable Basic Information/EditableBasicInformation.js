@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import employeeService from "../../../../../services/employeeService"; // Ensure correct path
-import "./EditableBasicInformation.css"; // Add styling if necessary
+import "./EditableBasicInformation.css"; 
 
 const EditableBasicInformation = ({ isVisible, onToggle }) => {
   const { employeeId } = useParams();

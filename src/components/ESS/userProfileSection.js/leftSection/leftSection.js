@@ -12,17 +12,17 @@ const Leftsection = () => {
   useEffect(() => {
     const fetchEmployeeData = async () => {
       try {
-        // Get user data from localStorage
+     
         const user = JSON.parse(localStorage.getItem("user"));
         console.log("LocalStorage User:", user);
 
-        // Validate if employeeId exists
+      
         const employeeId = user?.user?.employeeId;
         if (!employeeId) {
           throw new Error("Employee ID is missing. Please log in again.");
         }
 
-        // Fetch employee details by employeeId
+        
         const response = await employeeService.fetchEmployeeById(employeeId);
         console.log("Fetched Employee Data:", response);
 

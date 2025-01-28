@@ -14,17 +14,17 @@ const Education = ({ isVisible, onToggle, onOpenSidebar }) => {
 
         if (!storedUser || !storedUser.user) throw new Error("User data not found");
 
-        const userId = storedUser.user.id; // Extract userId
+        const userId = storedUser.user.id; 
         if (!userId) throw new Error("User ID is missing.");
 
-        // Fetch education data using userId
+        
         const response = await employeeService.fetchEducationById(userId);
 
         console.log("Fetched Education Data:", response);
 
-        // Ensure the response structure matches the expected state
+      
         if (response && Array.isArray(response.education) && response.education.length > 0) {
-          setEducationData(response.education); // Assuming `response.education` contains the array
+          setEducationData(response.education); 
         } else {
           throw new Error("No education data found.");
         }

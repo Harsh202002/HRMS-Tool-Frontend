@@ -1,23 +1,23 @@
 import axios from "axios";
  
-const API_URL = "http://localhost:4000/api/v1/auth"; // Replace with your backend URL
+const API_URL = "http://localhost:4000/api/v1/auth"; 
  
 const login = async (username, password) => {
   try {
     const response = await axios.post(`${API_URL}/login`, { username, password });
  
     if (response.data && response.data.user) {
-      // Store the entire user object
+      
       localStorage.setItem("user", JSON.stringify(response.data));
  
       const { user } = response.data;
  
-      // Extract values correctly from nested structure
+     
       const userId = user.id;
       const role = user.role;
-      const employeeId = user.employee?.id || null;  // Handle case where employee might not exist
+      const employeeId = user.employee?.id || null;  
  
-      // Store values safely in localStorage
+     
       localStorage.setItem("userId", userId || "");
       localStorage.setItem("role", role || "");
       localStorage.setItem("employeeId", employeeId || "");
