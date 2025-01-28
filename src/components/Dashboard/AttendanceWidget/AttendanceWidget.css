@@ -175,6 +175,7 @@
     display: block;
     overflow: clip;
     box-sizing: border-box;
+    cursor: not-allowed;
   }
 
   .checked-out-button{
@@ -195,5 +196,6 @@
     display: block;
     overflow: clip;
     box-sizing: border-box;
+    cursor: not-allowed;
   }
   

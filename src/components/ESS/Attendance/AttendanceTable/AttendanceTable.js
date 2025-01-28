@@ -6,41 +6,50 @@ import attendanceService from '../../../../services/attendanceService';
 const AttendanceTable = ({ filters }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [entriesPerPage, setEntriesPerPage] = useState(5);
-  const [filteredData, setFilteredData] = useState([]); 
-  const [showEdited, setShowEdited] = useState(false); 
+  const [filteredData, setFilteredData] = useState([]);
+  const [showEdited, setShowEdited] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = String(date.getFullYear()).slice(-2);
+    return `${day}/${month}/${year}`;
+  };
+
+  const formatTime = (dateString) => {
+    return new Date(dateString).toISOString().split('T')[1].split('.')[0]; // Extracts HH:mm:ss
+};
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       setError(null);
-  
+
       try {
         const storedUser = JSON.parse(localStorage.getItem('user'));
-  
+
         if (!storedUser || !storedUser.user) {
           throw new Error('User data not found in localStorage.');
         }
-  
-        const userId = storedUser.user.id; 
+
+        const userId = storedUser.user.id;
         if (!userId) {
           throw new Error('User ID is missing.');
         }
-  
-      
+
         const data = await attendanceService.fetchAttendanceById(userId);
-  
+
         if (!data || typeof data !== 'object') {
           throw new Error('Invalid attendance data.');
         }
-  
+
         console.log('Fetched attendance record by ID:', data);
-  
-        
+
         const attendance = showEdited ? data.editedAttendance || [] : data.attendance || [];
-  
-        
+
         let filtered = attendance;
         if (filters.fromDate) {
           filtered = filtered.filter(row => new Date(row.date) >= new Date(filters.fromDate));
@@ -51,25 +60,23 @@ const AttendanceTable = ({ filters }) => {
         if (filters.status) {
           filtered = filtered.filter(row => row.status.includes(filters.status));
         }
-  
+
         setFilteredData(filtered);
       } catch (err) {
         console.error('Error fetching attendance data:', err.message);
         setError(err.message);
-        setFilteredData([]); 
+        setFilteredData([]);
       } finally {
         setLoading(false);
       }
     };
-  
+
     fetchData();
   }, [filters, showEdited]);
-  
 
-  
   const indexOfLastEntry = currentPage * entriesPerPage;
   const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
-  const currentEntries = filteredData?.slice(indexOfFirstEntry, indexOfLastEntry) || []; // Safeguard slice
+  const currentEntries = filteredData?.slice(indexOfFirstEntry, indexOfLastEntry) || [];
 
   return (
     <div className="attendance-table">
@@ -113,10 +120,10 @@ const AttendanceTable = ({ filters }) => {
             <tbody>
               {currentEntries.map((row, index) => (
                 <tr key={index}>
-                  <td>{row.date}</td>
+                  <td>{formatDate(row.date)}</td>
                   <td>{row.day}</td>
-                  <td>{row.checkInTime}</td>
-                  <td>{row.checkOutTime}</td>
+                  <td>{formatTime(row.checkInTime)}</td>
+                  <td>{formatTime(row.checkOutTime)}</td>
                   <td>{row.spentHours}</td>
                   <td>{row.isManual ? 'Yes' : 'No'}</td>
                   <td>{row.status}</td>

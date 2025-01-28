@@ -78,7 +78,7 @@ const AttendanceWidget = () => {
               <button
                 onClick={handleCheckIn}
                 disabled={loading}
-                className={` ${isCheckedIn ? "check-in-button" : "checked-in-button" }`}
+                className={` ${isCheckedIn ? "checked-in-button" : "check-in-button" }`}
               >
                {loading ? "Loading..." : "Check-In"}
               </button>
@@ -86,7 +86,7 @@ const AttendanceWidget = () => {
               <button
                 onClick={handleCheckOut}
                 disabled={loading}
-                className={` ${isCheckedIn ? "check-out-button" : "checked-out-button" }`}
+                className={` ${isCheckedIn ? "clock-out-button" : "checked-out-button" }`}
               >
                 {loading ? "Loading..." : "Check-Out"}
               </button>
