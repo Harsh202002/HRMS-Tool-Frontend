@@ -1,28 +1,41 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
+import employeeService from "../../../../../../services/employeeService";
 import "./addressInformation.css";
 import AddressSidebar from './Address Sidebar/AddressSidebar'; // Import AddressSidebar
 
 const Addressinformation = ({ isVisible, onToggle }) => {
   const [employeeData, setEmployeeData] = useState({});
   const [isSidebarOpen, setSidebarOpen] = useState(false); // Sidebar state
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const storedEmployeeCode = localStorage.getItem('employeeCode');
-    if (storedEmployeeCode) {
-      fetchEmployeeData(storedEmployeeCode); // Fetch employee data
-    }
+    const fetchEmployeeData = async () => {
+      try {
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (!user?.user?.employeeId) {
+          throw new Error("Employee ID is missing. Please log in again.");
+        }
+
+        const response = await employeeService.fetchEmployeeById(user.user.employeeId);
+        if (response && response.success && response.employee) {
+          setEmployeeData(response.employee);
+        } else {
+          throw new Error("No employee data found.");
+        }
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchEmployeeData();
   }, []);
 
-  const fetchEmployeeData = async (employeeCode) => {
-    try {
-      const response = await axios.get(`http://localhost:8080/employee/${employeeCode}`);
-      const data = response.data;
-      setEmployeeData(data); // Set the employee data
-    } catch (error) {
-      console.error('Error fetching employee data:', error);
-    }
-  };
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+  if (!employeeData) return <p>No data available</p>;
 
   const handleSidebarToggle = () => {
     setSidebarOpen(!isSidebarOpen);

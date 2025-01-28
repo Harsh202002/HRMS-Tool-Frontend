@@ -8,7 +8,7 @@ const AttendanceWidget = () => {
   const [formattedDate, setFormattedDate] = useState("");
   const [formattedTime, setFormattedTime] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error] = useState("");
 
   useEffect(() => {
     const fetchAttendanceStatus = async () => {
