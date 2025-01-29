@@ -13,18 +13,18 @@ const AddEmployee = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [dropdownOpenFor, setDropdownOpenFor] = useState(null);
 
-  const jwtToken = localStorage.getItem("jwtToken"); // Fetch JWT token
+  const jwtToken = localStorage.getItem("jwtToken"); 
 
-  // Fetch employees from the backend
+  
   const fetchEmployees = useCallback(async () => {
     try {
       const data = await employeeService.fetchAllEmployees(jwtToken);
       console.log("Fetched employees:", data);
-      setEmployees(data.employees || []); // Use 'employees' field or fallback to empty array
+      setEmployees(data.employees || []); 
     } catch (error) {
       if (error.response?.status === 403) {
         console.error("Access denied. Admin role required.");
-        navigate("/unauthorized"); // Redirect to unauthorized page
+        navigate("/unauthorized"); 
       } else {
         console.error("Error fetching employees:", error.message);
       }
@@ -38,13 +38,13 @@ const AddEmployee = () => {
   const handleEmployeeAdded = async (employeeData) => {
     try {
       await employeeService.createEmployee(employeeData, jwtToken); // Pass the token
-      fetchEmployees(); // Refresh the employee list after adding
+      fetchEmployees(); 
     } catch (error) {
       console.error("Error adding employee:", error.message);
     }
   };
 
-  // Pagination logic
+
   const totalEntries = employees.length;
   const startIndex = (currentPage - 1) * entriesPerPage;
   const currentItems = employees.slice(startIndex, startIndex + entriesPerPage);
@@ -62,11 +62,11 @@ const AddEmployee = () => {
     setDropdownOpenFor((prev) => (prev === employeeId ? null : employeeId));
   };
 
-  // Delete employee function using employeeService
+  
   const deleteEmployee = async (id) => {
     try {
-      await employeeService.deleteEmployee(id, jwtToken); // Call delete method from employeeService
-      // Remove the deleted employee from the state
+      await employeeService.deleteEmployee(id, jwtToken); 
+     
       setEmployees((prevEmployees) => prevEmployees.filter((employee) => employee.id !== id));
     } catch (error) {
       console.error("Error deleting employee:", error.message);
@@ -103,15 +103,15 @@ const AddEmployee = () => {
           <tbody>
             {currentItems.length > 0 ? (
               currentItems.map((employee) => (
-                <tr key={employee.id || employee.employeeCode}>
+                <tr key={employee.id }>
                   <td>
                     <button
-                      onClick={() => toggleDropdown(employee.id || employee.employeeCode)}
+                      onClick={() => toggleDropdown(employee.id )}
                       className="addemployee-action-button"
                     >
                       ⋮
                     </button>
-                    {dropdownOpenFor === (employee.id || employee.employeeCode) && (
+                    {dropdownOpenFor === (employee.id ) && (
                       <ul className="addemployee_dropdown-menu">
                         <li>
                           <button onClick={() => navigate(`/dashboardlayout/addemployeeedit/${employee.id}`)}>
@@ -119,7 +119,7 @@ const AddEmployee = () => {
                           </button>
                         </li>
                         <li>
-                          <button onClick={() => deleteEmployee(employee.id || employee.employeeCode)}>
+                          <button onClick={() => deleteEmployee(employee.id )}>
                             Delete
                           </button>
                         </li>

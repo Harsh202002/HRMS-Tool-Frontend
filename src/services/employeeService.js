@@ -1,9 +1,9 @@
 import axios from "axios";
-import authService from "./authService"; // Assuming authService is already set up
+import authService from "./authService"; 
 
-const API_URL = "http://localhost:4000/api/v1/employees"; // Backend employee route
+const API_URL = "http://localhost:4000/api/v1/employees"; 
 
-// Set headers with Authorization token
+
 const getAuthHeaders = () => {
     const user = authService.getCurrentUser();
     if (!user?.token) {
@@ -11,13 +11,13 @@ const getAuthHeaders = () => {
     }
     return {
       headers: {
-        Authorization: `Bearer ${user.token}`, // Include the token from the current user
-        "Content-Type": "application/json", // Ensure the payload is sent as JSON
+        Authorization: `Bearer ${user.token}`, 
+        "Content-Type": "application/json", 
       },
     };
   };
 
-// Fetch all employees (Admin only)
+
 const fetchAllEmployees = async () => {
   try {
     const response = await axios.get(API_URL, getAuthHeaders());
@@ -29,10 +29,10 @@ const fetchAllEmployees = async () => {
 };
 
 const fetchEmployeeById = async (id) => {
-  const url = `${API_URL}/${id}`;  // Use the correct URL with the id
+  const url = `${API_URL}/${id}`;  
   console.log("Fetching from URL:", url);
   try {
-    const response = await axios.get(url, getAuthHeaders()); // Use getAuthHeaders() to get the token
+    const response = await axios.get(url, getAuthHeaders()); 
     return response.data;
   } catch (error) {
     console.error("Error fetching employee by ID:", error.response?.data || error.message);
@@ -41,18 +41,18 @@ const fetchEmployeeById = async (id) => {
 };
 
 
-// Create a new employee with FormData (Admin only)
+
 export const createEmployee = async (employeeData) => {
     try {
-      const headers = getAuthHeaders(); // Get headers with token from authService
+      const headers = getAuthHeaders(); 
       
       console.log("Employee Data being sent:", employeeData);
   
-      // Send the POST request to create a new employee
+     
       const response = await axios.post(API_URL, employeeData, headers);
       
       console.log("Backend Response:", response.data);
-      return response.data; // Return the response data (employee details)
+      return response.data; 
     } catch (error) {
       console.error("Full error object:", error);
   
@@ -68,7 +68,7 @@ export const createEmployee = async (employeeData) => {
   
   
 
-// Update an employee (Admin only)
+
 const updateEmployee = async (id, updatedData) => {
   try {
     const response = await axios.put(`${API_URL}/${id}`, updatedData, getAuthHeaders());
@@ -79,7 +79,7 @@ const updateEmployee = async (id, updatedData) => {
   }
 };
 
-// Delete an employee (Admin only)
+
 const deleteEmployee = async (id) => {
   try {
     const response = await axios.delete(`${API_URL}/${id}`, getAuthHeaders());
@@ -100,16 +100,33 @@ const fetchEducationById = async (id) => {
     }
 };
 
+  
+const addEducation = async (educationData) => {
+  try {
+    const response = await axios.post(
+      `http://localhost:4000/api/v1/education/`,
+      educationData, // Contains fields like Standard, Course, etc.
+      getAuthHeaders() // Includes the token for authentication
+    );
+    return response.data;
+  } catch (error) {
+    console.error("Error adding education details:", error.response?.data || error.message);
+    throw error;
+  }
+};
 
-  
-  
+
+
+
   const employeeService = {
     fetchAllEmployees,
     fetchEmployeeById,
-    fetchEducationById,  // Add the new function here
+    fetchEducationById,  
     createEmployee,
     updateEmployee,
     deleteEmployee,
+    addEducation,
+
   };
   
 
