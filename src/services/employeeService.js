@@ -100,13 +100,23 @@ const fetchEducationById = async (id) => {
     }
 };
 
+const fetchSkillById = async (id) => {
+  try {
+    const response = await axios.get(`http://localhost:4000/api/v1/auth/${id}`, getAuthHeaders());
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching skill details:", error.response?.data || error.message);
+    throw error;
+  }
+};
+
   
 const addEducation = async (educationData) => {
   try {
     const response = await axios.post(
       `http://localhost:4000/api/v1/education/`,
-      educationData, // Contains fields like Standard, Course, etc.
-      getAuthHeaders() // Includes the token for authentication
+      educationData, 
+      getAuthHeaders() 
     );
     return response.data;
   } catch (error) {
@@ -126,6 +136,7 @@ const addEducation = async (educationData) => {
     updateEmployee,
     deleteEmployee,
     addEducation,
+    fetchSkillById
 
   };
   
