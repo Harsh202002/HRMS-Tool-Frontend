@@ -18,7 +18,7 @@ const Education = ({ isVisible, onToggle, onOpenSidebar }) => {
         if (!userId) throw new Error("User ID is missing.");
 
         
-        const response = await employeeService.fetchEducationById(userId);
+        const response = await employeeService.fetchDataById(userId);
 
         console.log("Fetched Education Data:", response);
 

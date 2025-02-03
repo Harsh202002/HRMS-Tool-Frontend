@@ -12,19 +12,18 @@ const Skill = ({ isVisible, onToggle }) => {
       try {
         const storedUser = JSON.parse(localStorage.getItem("user"));
         if (!storedUser || !storedUser.user) throw new Error("User data not found");
-    
-        const userId = storedUser.user.id; 
+  
+        const userId = storedUser.user.id;
         if (!userId) throw new Error("User ID is missing.");
-    
-        // Fetch skills from API
-        const response = await employeeService.fetchSkillById(userId);
-    
-        console.log("Full Response Object:", response);  // Log the entire response
-    
-
-        // Check if skills is available under response.data.user.skills
-        if (response && Array.isArray(response.skills) && response.skills.length > 0) {
-          setSkillData(response.skills);  // Access skills correctly
+  
+       
+        const response = await employeeService.fetchDataById(userId);
+  
+        console.log("Full Response Object:", response);  
+  
+        
+        if (response && Array.isArray(response.skills)) {
+          setSkillData(response.skills);
         } else {
           throw new Error("No skill data found.");
         }
@@ -35,10 +34,10 @@ const Skill = ({ isVisible, onToggle }) => {
         setLoading(false);
       }
     };
-    
-    
+  
     fetchSkillData();
   }, []);
+  
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;

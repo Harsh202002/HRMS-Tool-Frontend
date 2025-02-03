@@ -16,15 +16,18 @@ const login = async (username, password) => {
       const userId = user.id;
       const role = user.role;
       const employeeId = user.employee?.id || null;  
+      const employeeCode = user.employee?.employeeCode || null;
  
      
       localStorage.setItem("userId", userId || "");
       localStorage.setItem("role", role || "");
       localStorage.setItem("employeeId", employeeId || "");
+      localStorage.setItem("employeeCode", employeeCode || "");
  
       console.log("Stored userId:", userId);
       console.log("Stored role:", role);
       console.log("Stored employeeId:", employeeId);
+      console.log("Stored employeeCode:", employeeCode);
     }
  
     return response.data;
@@ -39,6 +42,7 @@ const logout = () => {
   localStorage.removeItem("role");
   localStorage.removeItem("employeeId");
   localStorage.removeItem("userId");
+  localStorage.removeItem("employeeCode");
 };
  
 const getCurrentUser = () => {
@@ -56,6 +60,10 @@ const getEmployeeId = () => {
 const getUserId = () => {
   return localStorage.getItem("userId");
 };
+
+const getEmployeeCode = () => {
+  return localStorage.getItem("employeeCode");
+};
  
 const authService = {
   login,
@@ -64,6 +72,7 @@ const authService = {
   getRole,
   getEmployeeId,
   getUserId,
+  getEmployeeCode,
 };
  
 export default authService;
