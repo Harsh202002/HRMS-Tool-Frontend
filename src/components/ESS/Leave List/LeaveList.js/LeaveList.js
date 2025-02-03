@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./LeaveList.css";
 import Pagination from "../../Attendance/Pagination/Pagination";
 import Leavesidebarform from "./Leavesidebarform/leaveSidebarForm";
+import employeeService from "../../../../services/employeeService";
 
 const LeaveList = () => {
     const [leaveData, setLeaveData] = useState([]);
@@ -9,6 +10,8 @@ const LeaveList = () => {
     const [currentPage, setCurrentPage] = useState(1); // State to manage current page
      const [entriesPerPage, setEntriesPerPage] = useState(5); // State to define items per page
      const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+     const [loading, setLoading] = useState(true);
+     const [error, setError] = useState(null);
 
   const handleOpenSidebar = () => {
     setIsSidebarOpen(true);
@@ -18,103 +21,41 @@ const LeaveList = () => {
     setIsSidebarOpen(false);
   };
 
-    useEffect(() => {
-        const fetchData = async () => {
-            await new Promise((resolve) => setTimeout(resolve, 1000));
-            const data = [
-                // Your data here
+  useEffect(() => {
+    const fetchSkillData = async () => {
+      try {
+        const storedUser = JSON.parse(localStorage.getItem("user"));
+        if (!storedUser || !storedUser.user) throw new Error("User data not found");
+  
+        const userId = storedUser.user.id;
+        if (!userId) throw new Error("User ID is missing.");
+  
+       
+        const response = await employeeService.fetchDataById(userId);
+  
+        console.log("Full Response Object:", response);  
+  
+        
+        if (response && Array.isArray(response.leaves)) {
+            setLeaveData(response.leaves);
+        } else {
+          throw new Error("No skill data found.");
+        }
+      } catch (err) {
+        console.error("Error fetching skill data:", err.message);
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+  
+    fetchSkillData();
+  }, []);
+  
 
-                    {
-                        id: 1,
-                        leaveType: "Annual Leave",
-                        attachment: "None",
-                        leaveFrom: "2024-08-01",
-                        leaveTo: "2024-08-05",
-                        days: 5,
-                        halfDay: "No",
-                        reason: "Vacation",
-                        leaveStatus: "Approved",
-                        remarks: "Have a good trip!",
-                        actionBy: "Manager",
-                        cancelLeave: "No",
-                    },
-                    {
-                        id: 2,
-                        leaveType: "Sick Leave",
-                        attachment: "Doctor's Note",
-                        leaveFrom: "2024-08-10",
-                        leaveTo: "2024-08-12",
-                        days: 2,
-                        halfDay: "No",
-                        reason: "Flu",
-                        leaveStatus: "Pending",
-                        remarks: "",
-                        actionBy: "",
-                        cancelLeave: "Yes",
-                    },
-                    {
-                        id: 3,
-                        leaveType: "Sick Leave",
-                        attachment: "Doctor's Note",
-                        leaveFrom: "2024-08-10",
-                        leaveTo: "2024-08-12",
-                        days: 2,
-                        halfDay: "No",
-                        reason: "Flu",
-                        leaveStatus: "Pending",
-                        remarks: "",
-                        actionBy: "",
-                        cancelLeave: "Yes",
-                    },
-                    {
-                        id: 4,
-                        leaveType: "Sick Leave",
-                        attachment: "Doctor's Note",
-                        leaveFrom: "2024-08-10",
-                        leaveTo: "2024-08-12",
-                        days: 2,
-                        halfDay: "No",
-                        reason: "Flu",
-                        leaveStatus: "Pending",
-                        remarks: "",
-                        actionBy: "",
-                        cancelLeave: "Yes",
-                    },
-                    {
-                        id: 5,
-                        leaveType: "Sick Leave",
-                        attachment: "Doctor's Note",
-                        leaveFrom: "2024-08-10",
-                        leaveTo: "2024-08-12",
-                        days: 2,
-                        halfDay: "No",
-                        reason: "Flu",
-                        leaveStatus: "Pending",
-                        remarks: "",
-                        actionBy: "",
-                        cancelLeave: "Yes",
-                    },
-                    {
-                        id: 6,
-                        leaveType: "Sick Leave",
-                        attachment: "Doctor's Note",
-                        leaveFrom: "2024-08-10",
-                        leaveTo: "2024-08-12",
-                        days: 2,
-                        halfDay: "No",
-                        reason: "Flu",
-                        leaveStatus: "Pending",
-                        remarks: "",
-                        actionBy: "",
-                        cancelLeave: "Yes",
-                    },
-                
-            ];
-            setLeaveData(data);
-        };
-
-        fetchData();
-    }, []);
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+  if (!leaveData || leaveData.length === 0) return <p>No education details available</p>;
 
     const handleTabClick = (tab) => {
         setActiveTab(tab);
@@ -188,15 +129,15 @@ const LeaveList = () => {
                                             <button>View</button>
                                         </td>
                                         <td>{leave.leaveType}</td>
-                                        <td>{leave.attachment}</td>
+                                        <td>{leave.document}</td>
                                         <td>{leave.leaveFrom}</td>
                                         <td>{leave.leaveTo}</td>
-                                        <td>{leave.days}</td>
+                                        <td>{leave.duration}</td>
                                         <td>{leave.halfDay}</td>
                                         <td>{leave.reason}</td>
-                                        <td>{leave.leaveStatus}</td>
+                                        <td>{leave.status}</td>
                                         <td>{leave.remarks}</td>
-                                        <td>{leave.actionBy}</td>
+                                        <td>{leave.approvedBy}</td>
                                         <td>
                                             {leave.cancelLeave === "Yes" && (
                                                 <button>Cancel</button>

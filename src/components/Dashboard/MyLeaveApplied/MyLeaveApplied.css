@@ -22,6 +22,57 @@
     color: #000000;
     margin: 0;
   }
+
+  .myleaveapplied-table{
+    overflow-x: auto; 
+    background-color: #ffffff; 
+    padding: 20px;
+    height: 300px;
+    border-radius: 10px; 
+    box-shadow: 1 4px 8px rgba(0, 0, 0, 0.1); 
+    display: block;
+  }
+
+  .myleaveapplied-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .myleaveapplied-table th, .myleaveapplied-table td {
+    padding: 12px 18px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap;
+  }
+  
+  .myleaveapplied-table th {
+    background-color: #f2f2f2; 
+    color: #333; 
+    font-weight: bold;
+  }
+  
+  .myleaveapplied-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light grey */
+  }
+  
+  .myleaveapplied-table tr:nth-child(odd) {
+    background-color: #ffffff; 
+  }
+  
+  .myleaveapplied-table tr:hover {
+    background-color: #e6f7ff; 
+  }
+  
+  .myleaveapplied-table th {
+    padding: 16px 18px;
+    background-color: #f2f2f2; 
+    color: #333; 
+    font-weight: bold;
+  }
+  
+  .myleaveapplied-table td {
+    color: #555;
+  }
   
   .no-data {
     position: relative;

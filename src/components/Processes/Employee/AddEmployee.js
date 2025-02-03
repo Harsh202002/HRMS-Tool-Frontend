@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import employeeService from "../../../services/employeeService"; // Importing employeeService
+import employeeService from "../../../services/employeeService"; 
 import "./AddEmployee.css";
 import AddEmployeeSidebar from "./Add Employee Sidebar/AddEmployeeSidebar";
 import Pagination from "../../ESS/Attendance/Pagination/Pagination";

@@ -90,7 +90,7 @@ const deleteEmployee = async (id) => {
   }
 };
 
-const fetchEducationById = async (id) => {
+const fetchDataById = async (id) => {
     try {
       const response = await axios.get(`http://localhost:4000/api/v1/auth/${id}`, getAuthHeaders());
       return response.data;
@@ -98,16 +98,6 @@ const fetchEducationById = async (id) => {
       console.error("Error fetching education details:", error.response?.data || error.message);
       throw error;
     }
-};
-
-const fetchSkillById = async (id) => {
-  try {
-    const response = await axios.get(`http://localhost:4000/api/v1/auth/${id}`, getAuthHeaders());
-    return response.data;
-  } catch (error) {
-    console.error("Error fetching skill details:", error.response?.data || error.message);
-    throw error;
-  }
 };
 
   
@@ -131,12 +121,11 @@ const addEducation = async (educationData) => {
   const employeeService = {
     fetchAllEmployees,
     fetchEmployeeById,
-    fetchEducationById,  
+    fetchDataById,  
     createEmployee,
     updateEmployee,
     deleteEmployee,
     addEducation,
-    fetchSkillById
 
   };
   
